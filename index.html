@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrgLogic — The Enterprise AI Operating System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0a0f;
+  --ink-90: #14141f;
+  --ink-80: #1e1e2d;
+  --ink-70: #2a2a3d;
+  --ink-50: #4a4a6a;
+  --ink-30: #8888a8;
+  --ink-20: #aaaac4;
+  --ink-10: #d0d0e0;
+  --surface: #fafafe;
+  --white: #ffffff;
+  --accent: #6d5cff;
+  --accent-light: #8b7dff;
+  --accent-glow: rgba(109, 92, 255, 0.15);
+  --accent-glow2: rgba(109, 92, 255, 0.06);
+  --green: #22c55e;
+  --green-soft: rgba(34, 197, 94, 0.1);
+  --amber: #f59e0b;
+  --amber-soft: rgba(245, 158, 11, 0.08);
+  --red-soft: rgba(239, 68, 68, 0.08);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --max-w: 1140px;
+  --section-pad: 100px 0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 1px 24px rgba(0,0,0,0.06); }
+nav .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--serif); font-size: 1.35rem; color: var(--ink);
+  text-decoration: none; letter-spacing: -0.02em;
+}
+.logo-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--accent); display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 18px; height: 18px; fill: white; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 0.82rem; font-weight: 500; color: var(--ink-50);
+  text-decoration: none; letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.btn-nav {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 20px; border-radius: 8px;
+  background: var(--ink); color: white;
+  font-size: 0.82rem; font-weight: 600; text-decoration: none;
+  transition: all 0.25s; letter-spacing: 0.01em;
+}
+.btn-nav:hover { background: var(--accent); transform: translateY(-1px); }
+
+/* ─── HERO ─── */
+.hero {
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 0%, var(--accent-glow) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 400px at 80% 100%, rgba(34,197,94,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.hero-grid { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: start; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px 6px 8px; border-radius: 100px;
+  background: var(--green-soft); border: 1px solid rgba(34,197,94,0.15);
+  font-size: 0.78rem; font-weight: 600; color: #16a34a;
+  margin-bottom: 24px;
+}
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse-dot 2s infinite; }
+@keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.hero h1 {
+  font-family: var(--serif); font-size: 3.5rem;
+  line-height: 1.08; letter-spacing: -0.03em;
+  color: var(--ink); margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--accent), #9d8cff);
+  -webkit-background-clip: text; -webkit-text-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.hero-sub {
+  font-size: 1.15rem; color: var(--ink-50); line-height: 1.65;
+  max-width: 520px; margin-bottom: 32px;
+}
+
+.hero-ctas { display: flex; gap: 14px; margin-bottom: 40px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 10px;
+  background: var(--accent); color: white;
+  font-size: 0.95rem; font-weight: 600; text-decoration: none;
+  transition: all 0.3s; border: none; cursor: pointer;
+  box-shadow: 0 2px 20px rgba(109,92,255,0.25);
+}
+.btn-primary:hover { background: #5a49e6; transform: translateY(-2px); box-shadow: 0 4px 30px rgba(109,92,255,0.35); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 10px;
+  background: transparent; color: var(--ink);
+  font-size: 0.95rem; font-weight: 600; text-decoration: none;
+  transition: all 0.3s; border: 1.5px solid var(--ink-10); cursor: pointer;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-arrow { transition: transform 0.2s; }
+.btn-primary:hover .btn-arrow { transform: translateX(3px); }
+
+.hero-proof {
+  display: flex; align-items: center; gap: 20px;
+  padding-top: 16px; border-top: 1px solid var(--ink-10);
+}
+.hero-proof-item { display: flex; flex-direction: column; }
+.hero-proof-num { font-family: var(--mono); font-size: 1.3rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+.hero-proof-label { font-size: 0.72rem; color: var(--ink-30); font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; }
+.hero-proof-divider { width: 1px; height: 36px; background: var(--ink-10); }
+
+/* Hero right — demo form card */
+.hero-card {
+  background: var(--white); border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  padding: 32px 28px;
+}
+.hero-card-title {
+  font-family: var(--serif); font-size: 1.25rem; color: var(--ink);
+  margin-bottom: 4px;
+}
+.hero-card-sub { font-size: 0.82rem; color: var(--ink-30); margin-bottom: 20px; }
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block; font-size: 0.75rem; font-weight: 600;
+  color: var(--ink-50); margin-bottom: 5px; letter-spacing: 0.02em;
+}
+.form-group input, .form-group select {
+  width: 100%; padding: 10px 14px; border-radius: 8px;
+  border: 1.5px solid var(--ink-10); font-family: var(--sans);
+  font-size: 0.88rem; color: var(--ink); background: var(--surface);
+  transition: border-color 0.2s; outline: none;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.btn-form {
+  width: 100%; padding: 13px; border-radius: 10px;
+  background: var(--ink); color: white;
+  font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
+  border: none; cursor: pointer; transition: all 0.25s;
+  margin-top: 6px;
+}
+.btn-form:hover { background: var(--accent); }
+.form-note {
+  font-size: 0.7rem; color: var(--ink-30); text-align: center;
+  margin-top: 10px; line-height: 1.5;
+}
+
+/* ─── LOGO BAR ─── */
+.logos-section {
+  padding: 50px 0 60px;
+  border-top: 1px solid var(--ink-10);
+  border-bottom: 1px solid var(--ink-10);
+  background: var(--surface);
+}
+.logos-label {
+  text-align: center; font-size: 0.72rem; font-weight: 600;
+  color: var(--ink-30); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.logos-grid {
+  display: flex; justify-content: center; align-items: center;
+  flex-wrap: wrap; gap: 40px 52px;
+}
+.logo-item {
+  font-family: var(--serif); font-size: 1.2rem;
+  color: var(--ink-30); opacity: 0.6; transition: opacity 0.3s;
+  letter-spacing: -0.01em;
+}
+.logo-item:hover { opacity: 1; }
+
+/* ─── OUTCOMES ─── */
+.outcomes { padding: var(--section-pad); }
+.section-label {
+  font-size: 0.72rem; font-weight: 700; color: var(--accent);
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--serif); font-size: 2.4rem;
+  line-height: 1.15; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 12px; max-width: 640px;
+}
+.section-sub {
+  font-size: 1.05rem; color: var(--ink-50); max-width: 580px;
+  margin-bottom: 48px; line-height: 1.65;
+}
+
+.outcomes-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.outcome-card {
+  padding: 32px 28px; border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: var(--white);
+  transition: all 0.3s;
+  position: relative;
+}
+.outcome-card:hover { border-color: var(--accent); box-shadow: 0 4px 30px var(--accent-glow2); transform: translateY(-3px); }
+.outcome-metric {
+  font-family: var(--mono); font-size: 2rem; font-weight: 700;
+  color: var(--accent); letter-spacing: -0.03em; margin-bottom: 4px;
+}
+.outcome-label {
+  font-size: 0.95rem; font-weight: 600; color: var(--ink);
+  margin-bottom: 8px;
+}
+.outcome-desc { font-size: 0.84rem; color: var(--ink-50); line-height: 1.6; }
+
+/* ─── DEPARTMENTS / USE CASES ─── */
+.usecases {
+  padding: var(--section-pad);
+  background: var(--ink);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.usecases::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 1000px 600px at 50% 0%, rgba(109,92,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.usecases .wrap { position: relative; }
+.usecases .section-label { color: var(--accent-light); }
+.usecases .section-title { color: white; }
+.usecases .section-sub { color: var(--ink-20); }
+
+.dept-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.dept-card {
+  padding: 24px 20px; border-radius: 12px;
+  background: var(--ink-90); border: 1px solid var(--ink-70);
+  transition: all 0.3s;
+}
+.dept-card:hover { border-color: var(--accent); background: var(--ink-80); }
+.dept-icon { font-size: 1.4rem; margin-bottom: 10px; }
+.dept-name {
+  font-size: 0.88rem; font-weight: 700; color: white;
+  margin-bottom: 6px; letter-spacing: -0.01em;
+}
+.dept-examples {
+  font-size: 0.76rem; color: var(--ink-20); line-height: 1.55;
+}
+
+.dept-bottom-note {
+  margin-top: 36px; text-align: center;
+  font-size: 0.88rem; color: var(--ink-20);
+  padding: 16px 24px; border-radius: 10px;
+  background: var(--ink-90); border: 1px dashed var(--ink-70);
+  display: inline-block;
+}
+.dept-bottom-note strong { color: var(--accent-light); }
+.dept-bottom-center { text-align: center; }
+
+/* ─── HOW IT WORKS ─── */
+.how {
+  padding: var(--section-pad);
+}
+.how-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  position: relative;
+}
+.how-grid::before {
+  content: '';
+  position: absolute; top: 36px; left: 10%; right: 10%;
+  height: 2px; background: linear-gradient(90deg, var(--accent-glow), var(--accent), var(--accent), var(--accent-glow));
+}
+.how-step {
+  text-align: center; padding: 0 20px;
+  position: relative;
+}
+.how-num {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--accent); color: white;
+  font-family: var(--serif); font-size: 1.6rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; position: relative; z-index: 1;
+  box-shadow: 0 4px 20px rgba(109,92,255,0.3);
+}
+.how-title {
+  font-size: 0.95rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 4px;
+}
+.how-time {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--accent); margin-bottom: 8px; font-weight: 500;
+}
+.how-desc { font-size: 0.82rem; color: var(--ink-50); line-height: 1.55; }
+
+/* ─── DIFFERENTIATION ─── */
+.diff {
+  padding: var(--section-pad);
+  background: var(--surface);
+}
+.diff-table-wrap {
+  overflow-x: auto; border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--white);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+}
+.diff-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.84rem;
+}
+.diff-table thead th {
+  padding: 16px 20px; font-weight: 700;
+  text-align: left; border-bottom: 2px solid var(--ink-10);
+  font-size: 0.78rem; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--ink-50);
+}
+.diff-table thead th:last-child {
+  background: var(--accent); color: white;
+  border-radius: 0;
+}
+.diff-table td {
+  padding: 14px 20px; border-bottom: 1px solid rgba(0,0,0,0.04);
+  vertical-align: middle;
+}
+.diff-table tbody tr:last-child td { border-bottom: none; }
+.diff-table td:first-child { font-weight: 600; color: var(--ink); }
+.diff-table td:nth-child(2), .diff-table td:nth-child(3) { color: var(--ink-30); }
+.diff-table td:last-child { color: var(--accent); font-weight: 600; background: var(--accent-glow2); }
+.diff-table tbody tr:hover { background: var(--surface); }
+
+/* ─── SECURITY ─── */
+.security {
+  padding: var(--section-pad);
+}
+.security-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  margin-bottom: 32px;
+}
+.sec-card {
+  padding: 28px 24px; border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06); background: var(--white);
+}
+.sec-icon { font-size: 1.3rem; margin-bottom: 12px; }
+.sec-title {
+  font-size: 0.95rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 8px;
+}
+.sec-list { list-style: none; }
+.sec-list li {
+  font-size: 0.82rem; color: var(--ink-50); padding: 4px 0;
+  padding-left: 18px; position: relative; line-height: 1.5;
+}
+.sec-list li::before {
+  content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.sec-badges {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+  padding: 20px 0;
+}
+.sec-badge {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 18px; border-radius: 8px;
+  background: var(--surface); border: 1px solid var(--ink-10);
+  font-size: 0.78rem; font-weight: 600; color: var(--ink-50);
+}
+
+/* ─── GUARANTEE / FRICTION KILLER ─── */
+.guarantee {
+  padding: 60px 0 80px;
+  background: var(--surface);
+}
+.guarantee-box {
+  max-width: 800px; margin: 0 auto;
+  padding: 44px 48px; border-radius: 16px;
+  background: var(--white);
+  border: 2px solid rgba(34,197,94,0.2);
+  text-align: center;
+}
+.guarantee-title {
+  font-family: var(--serif); font-size: 1.6rem;
+  color: var(--ink); margin-bottom: 16px;
+}
+.guarantee-points {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 12px 32px; text-align: left; margin: 24px auto;
+  max-width: 600px;
+}
+.g-point {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.88rem; color: var(--ink-50);
+}
+.g-check { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+/* ─── CTA ─── */
+.cta {
+  padding: 100px 0;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 800px 500px at 50% 50%, rgba(109,92,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta .wrap { position: relative; text-align: center; }
+.cta-title {
+  font-family: var(--serif); font-size: 2.6rem;
+  color: white; margin-bottom: 14px; letter-spacing: -0.02em;
+}
+.cta-sub {
+  font-size: 1.1rem; color: var(--ink-20); margin-bottom: 36px;
+  max-width: 540px; margin-left: auto; margin-right: auto;
+}
+.cta-buttons { display: flex; justify-content: center; gap: 14px; margin-bottom: 28px; }
+.btn-cta-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 36px; border-radius: 12px;
+  background: var(--accent); color: white;
+  font-size: 1.05rem; font-weight: 700; text-decoration: none;
+  transition: all 0.3s; border: none; cursor: pointer;
+  box-shadow: 0 4px 30px rgba(109,92,255,0.35);
+}
+.btn-cta-primary:hover { background: #5a49e6; transform: translateY(-2px); }
+.btn-cta-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 36px; border-radius: 12px;
+  background: transparent; color: white;
+  font-size: 1.05rem; font-weight: 600; text-decoration: none;
+  transition: all 0.3s; border: 1.5px solid var(--ink-70); cursor: pointer;
+}
+.btn-cta-secondary:hover { border-color: var(--accent-light); color: var(--accent-light); }
+.cta-note { font-size: 0.78rem; color: var(--ink-50); }
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 40px 0; background: var(--ink);
+  border-top: 1px solid var(--ink-80);
+}
+footer .wrap {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-left { font-size: 0.78rem; color: var(--ink-50); }
+.footer-right { display: flex; gap: 24px; }
+.footer-right a {
+  font-size: 0.78rem; color: var(--ink-50); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-right a:hover { color: var(--ink-20); }
+
+/* ─── ANIMATIONS ─── */
+.fade-up {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.6rem; }
+  .hero-card { margin-top: 32px; }
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .dept-grid { grid-template-columns: repeat(2, 1fr); }
+  .how-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .how-grid::before { display: none; }
+  .security-grid { grid-template-columns: 1fr; }
+  .guarantee-points { grid-template-columns: 1fr; }
+  .diff-table { font-size: 0.78rem; }
+  .cta-title { font-size: 2rem; }
+  .nav-links a:not(.btn-nav) { display: none; }
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-ctas { flex-direction: column; }
+  .dept-grid { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      OrgLogic
+    </a>
+    <div class="nav-links">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#how">How It Works</a>
+      <a href="#security">Security</a>
+      <a href="#demo" class="btn-nav">Book a Demo →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Deployed at 10+ global enterprises
+        </div>
+        <h1>AI that actually works across your <em>entire enterprise.</em></h1>
+        <p class="hero-sub">OrgLogic is the AI operating system that connects every department, every knowledge source, and every enterprise app — deployed in weeks, not months. One platform. Real outcomes. No hallucinations.</p>
+        <div class="hero-ctas">
+          <a href="#demo" class="btn-primary">Book a Demo <span class="btn-arrow">→</span></a>
+          <a href="#capabilities" class="btn-secondary">See Capabilities</a>
+        </div>
+        <div class="hero-proof">
+          <div class="hero-proof-item">
+            <span class="hero-proof-num">60–80%</span>
+            <span class="hero-proof-label">Reduction in resolution time</span>
+          </div>
+          <div class="hero-proof-divider"></div>
+          <div class="hero-proof-item">
+            <span class="hero-proof-num">2–6 wks</span>
+            <span class="hero-proof-label">Deployment timeline</span>
+          </div>
+          <div class="hero-proof-divider"></div>
+          <div class="hero-proof-item">
+            <span class="hero-proof-num">50–70%</span>
+            <span class="hero-proof-label">Auto-resolution rate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM CARD -->
+      <div class="hero-card" id="demo">
+        <div class="hero-card-title">See OrgLogic in Action</div>
+        <div class="hero-card-sub">30-min demo tailored to your use case. No commitment.</div>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Work Email</label>
+            <input type="email" placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" placeholder="Acme Corp">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Company Size</label>
+              <select>
+                <option>Select...</option>
+                <option>50–200</option>
+                <option>201–1,000</option>
+                <option>1,001–5,000</option>
+                <option>5,001–20,000</option>
+                <option>20,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Primary Use Case</label>
+              <select>
+                <option>Select...</option>
+                <option>IT Helpdesk</option>
+                <option>Customer Support</option>
+                <option>Knowledge Management</option>
+                <option>HR Operations</option>
+                <option>Sales Enablement</option>
+                <option>Multiple Departments</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-form" type="submit">Book My Demo</button>
+          <div class="form-note">No credit card required · 30-min live walkthrough · Custom to your stack</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO BAR -->
+<section class="logos-section">
+  <div class="wrap">
+    <div class="logos-label">Trusted by teams at</div>
+    <div class="logos-grid">
+      <span class="logo-item">Snowflake</span>
+      <span class="logo-item">Spotify</span>
+      <span class="logo-item">Rakuten</span>
+      <span class="logo-item">Cubic</span>
+      <span class="logo-item">Aptean</span>
+      <span class="logo-item">Snap</span>
+      <span class="logo-item">Deliveryhero</span>
+      <span class="logo-item">Wayfair</span>
+      <span class="logo-item">Aurora</span>
+    </div>
+  </div>
+</section>
+
+<!-- MEASURABLE OUTCOMES -->
+<section class="outcomes fade-up">
+  <div class="wrap">
+    <div class="section-label">Measurable Outcomes</div>
+    <div class="section-title">Results from production deployments — not projections.</div>
+    <div class="section-sub">These are metrics from live enterprise deployments, not benchmarks or estimates.</div>
+
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-metric">60–80%</div>
+        <div class="outcome-label">Faster knowledge retrieval</div>
+        <div class="outcome-desc">Employees find answers in seconds instead of hours. Industry-best RAG surfaces grounded, source-cited responses from any knowledge base — docs, wikis, APIs, databases.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-metric">40–60%</div>
+        <div class="outcome-label">IT ticket deflection</div>
+        <div class="outcome-desc">AI agents resolve password resets, access requests, VPN issues, and software provisioning autonomously — directly inside Slack, Teams, or any chat platform employees already use.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-metric">50–70%</div>
+        <div class="outcome-label">Customer query auto-resolution</div>
+        <div class="outcome-desc">AI agents handle tier-1 and tier-2 support end-to-end: answer questions, update records, trigger workflows — with seamless handoff to humans when needed.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-metric">2–6 wks</div>
+        <div class="outcome-label">Time to production</div>
+        <div class="outcome-desc">Not 6–18 months. Our 300+ AI implementation experts deploy the first agents in Week 1, expand across departments by Week 3, and optimize for your edge cases by Week 6.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-metric">50–80%</div>
+        <div class="outcome-label">Lower total cost vs. alternatives</div>
+        <div class="outcome-desc">Usage-based pricing (not per-seat licensing) + India-based expert services team = the lowest total cost of any enterprise AI platform. No shelfware. You pay for what works.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-metric">90 days</div>
+        <div class="outcome-label">Typical time to measurable ROI</div>
+        <div class="outcome-desc">Most deployments show measurable EBITDA impact within the first quarter — from reduced headcount needs, faster resolution times, and eliminated process bottlenecks.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES / DEPARTMENTS -->
+<section class="usecases fade-up" id="capabilities">
+  <div class="wrap">
+    <div class="section-label">Out-of-Box Capabilities</div>
+    <div class="section-title">One platform. Eight departments. Hundreds of workflows.</div>
+    <div class="section-sub">Every capability ships with pre-built connectors, configurable agents, and enterprise governance — ready to deploy in days.</div>
+
+    <div class="dept-grid">
+      <div class="dept-card">
+        <div class="dept-icon">🖥️</div>
+        <div class="dept-name">IT Helpdesk</div>
+        <div class="dept-examples">Auto-resolve tickets · Password resets · Access provisioning · Software requests · VPN troubleshooting · Status page alerts</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">🎧</div>
+        <div class="dept-name">Customer Support</div>
+        <div class="dept-examples">Tier 1–2 auto-resolution · Ticket triage & routing · CRM updates · Refund processing · Escalation workflows · CSAT improvement</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">📚</div>
+        <div class="dept-name">Knowledge Management</div>
+        <div class="dept-examples">Enterprise search · Policy Q&A · Onboarding assistant · Document summarization · Cross-system knowledge unification</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">👥</div>
+        <div class="dept-name">HR Operations</div>
+        <div class="dept-examples">Benefits Q&A · Leave management · Policy lookup · New hire onboarding · Payroll inquiries · Compliance training</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">📈</div>
+        <div class="dept-name">Sales Enablement</div>
+        <div class="dept-examples">Competitive intel lookup · Proposal generation · CRM data enrichment · Deal insights · Playbook retrieval</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">🛠️</div>
+        <div class="dept-name">Product & Engineering</div>
+        <div class="dept-examples">Codebase Q&A · Incident response · Sprint summary · API documentation · Architecture decision retrieval</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">⚖️</div>
+        <div class="dept-name">Legal & Compliance</div>
+        <div class="dept-examples">Contract analysis · Regulatory Q&A · Policy comparison · Audit preparation · Risk assessment support</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">💰</div>
+        <div class="dept-name">Finance & Procurement</div>
+        <div class="dept-examples">Invoice processing · Budget inquiries · Vendor lookup · Expense policy Q&A · Financial report generation</div>
+      </div>
+    </div>
+
+    <div class="dept-bottom-center">
+      <div class="dept-bottom-note">
+        <strong>+ Bespoke Workflows:</strong> Our 300+ AI experts build any custom automation your business needs — typically within days.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how fade-up" id="how">
+  <div class="wrap">
+    <div class="section-label" style="text-align:center;">Deployment</div>
+    <div class="section-title" style="text-align:center; max-width:700px; margin:0 auto 12px;">Live in weeks, not months.</div>
+    <div class="section-sub" style="text-align:center; max-width:600px; margin:0 auto 56px;">No multi-year integration project. No rip-and-replace. OrgLogic connects to your existing tools and starts delivering value in the first week.</div>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-title">Connect & Configure</div>
+        <div class="how-time">Week 1</div>
+        <div class="how-desc">Connect knowledge sources, enterprise apps, and chat platforms. Configure roles, permissions, and guardrails.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-title">Deploy First Agents</div>
+        <div class="how-time">Week 2</div>
+        <div class="how-desc">Launch AI agents for your highest-impact use case. Live users, real data, measurable results from day one.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-title">Expand Departments</div>
+        <div class="how-time">Weeks 3–4</div>
+        <div class="how-desc">Roll out across additional departments using pre-built templates. Each deployment leverages learnings from the last.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-title">Optimize & Scale</div>
+        <div class="how-time">Weeks 5–6 + Ongoing</div>
+        <div class="how-desc">Fine-tune for edge cases. Build custom workflows. Continuous optimization by our dedicated AI team.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="diff fade-up">
+  <div class="wrap">
+    <div class="section-label">Why OrgLogic</div>
+    <div class="section-title">Not another chatbot. A complete AI operating system.</div>
+    <div class="section-sub">See how OrgLogic compares to generic AI copilots and single-department point solutions.</div>
+
+    <div class="diff-table-wrap">
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:24%"></th>
+            <th style="width:22%">AI Copilots</th>
+            <th style="width:22%">Point Solutions</th>
+            <th style="width:32%">OrgLogic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Departments</td><td>Generic, 0</td><td>1 department</td><td>8 departments, out of box</td></tr>
+          <tr><td>Data Access</td><td>None</td><td>Limited scope</td><td>Any knowledge source, any app</td></tr>
+          <tr><td>Actions in Apps</td><td>None</td><td>Read-only</td><td>Read + Write + Trigger</td></tr>
+          <tr><td>RAG Quality</td><td>No RAG</td><td>Basic</td><td>Industry-best, source-cited</td></tr>
+          <tr><td>Governance</td><td>None</td><td>Basic</td><td>Enterprise-grade, built-in</td></tr>
+          <tr><td>Agentic Automation</td><td>Prompt/response</td><td>Rule-based</td><td>Natural language, multi-step</td></tr>
+          <tr><td>Chat Platforms</td><td>Own UI only</td><td>1 platform</td><td>Slack, Teams, GChat, WhatsApp</td></tr>
+          <tr><td>Custom Workflows</td><td>Not possible</td><td>Extra vendor needed</td><td>300+ experts, any workflow</td></tr>
+          <tr><td>Time to Value</td><td>Immediate / low value</td><td>3–6 months</td><td>2–6 weeks to production</td></tr>
+          <tr><td>Total Cost</td><td>Low cost, no enterprise value</td><td>High per department</td><td>Lowest — platform + services</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="security fade-up" id="security">
+  <div class="wrap">
+    <div class="section-label">Enterprise Security</div>
+    <div class="section-title">Security isn't an add-on. It's the foundation.</div>
+    <div class="section-sub">OrgLogic is built for enterprises that can't compromise on data security, compliance, or governance.</div>
+
+    <div class="security-grid">
+      <div class="sec-card">
+        <div class="sec-icon">🛡️</div>
+        <div class="sec-title">AI Governance</div>
+        <ul class="sec-list">
+          <li>Role-based access control (RBAC)</li>
+          <li>Complete audit trails for every interaction</li>
+          <li>Configurable AI guardrails & response policies</li>
+          <li>Automatic PII redaction</li>
+          <li>Human-in-the-loop escalation controls</li>
+        </ul>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">🔐</div>
+        <div class="sec-title">Data Security</div>
+        <ul class="sec-list">
+          <li>AES-256 encryption at rest and in transit</li>
+          <li>Zero data used for model training — ever</li>
+          <li>Customer-managed encryption keys (CMEK)</li>
+          <li>Data residency controls by region</li>
+          <li>SOC 2 Type II certified</li>
+        </ul>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">📋</div>
+        <div class="sec-title">Compliance & Deployment</div>
+        <ul class="sec-list">
+          <li>GDPR, HIPAA, SOX compliant</li>
+          <li>FedRAMP-ready architecture</li>
+          <li>On-premises / private cloud / VPC options</li>
+          <li>SSO & MFA via SAML 2.0 / OIDC</li>
+          <li>Penetration tested & vulnerability scanned</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec-badges">
+      <div class="sec-badge">🏆 SOC 2 Type II</div>
+      <div class="sec-badge">🇪🇺 GDPR Compliant</div>
+      <div class="sec-badge">🏥 HIPAA Ready</div>
+      <div class="sec-badge">🏛️ FedRAMP Ready</div>
+      <div class="sec-badge">🔒 AES-256 Encryption</div>
+      <div class="sec-badge">🚫 Zero Training on Your Data</div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE / FRICTION KILLER -->
+<section class="guarantee fade-up">
+  <div class="wrap">
+    <div class="guarantee-box">
+      <div class="guarantee-title">Zero-risk way to get started.</div>
+      <div class="guarantee-points">
+        <div class="g-point"><span class="g-check">✓</span> No long-term contract required to start</div>
+        <div class="g-point"><span class="g-check">✓</span> No integration project — connects in hours</div>
+        <div class="g-point"><span class="g-check">✓</span> No per-seat licensing — pay for usage only</div>
+        <div class="g-point"><span class="g-check">✓</span> No data leaves your environment</div>
+        <div class="g-point"><span class="g-check">✓</span> Dedicated AI expert assigned from Day 1</div>
+        <div class="g-point"><span class="g-check">✓</span> First agents live within 1–2 weeks</div>
+        <div class="g-point"><span class="g-check">✓</span> Cancel anytime — no lock-in</div>
+        <div class="g-point"><span class="g-check">✓</span> 300+ expert team handles implementation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-title">See what AI should actually do<br>for your enterprise.</div>
+    <div class="cta-sub">30-minute live demo. Custom to your use case, your tools, your data. No commitment, no sales pressure.</div>
+    <div class="cta-buttons">
+      <a href="#demo" class="btn-cta-primary">Book a Demo →</a>
+      <a href="mailto:raj@orglogic.ai" class="btn-cta-secondary">Email Us Directly</a>
+    </div>
+    <div class="cta-note">Or email raj@orglogic.ai · Typical response time: under 4 hours</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-left">© 2026 OrgLogic · The Enterprise AI Operating System</div>
+    <div class="footer-right">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Security</a>
+      <a href="mailto:raj@orglogic.ai">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Nav shadow on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
