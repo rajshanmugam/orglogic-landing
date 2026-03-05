@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="fg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="fg2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Simplified: two overlapping rounded squares + 4 nodes + center -->
+  <rect x="18" y="18" width="28" height="28" rx="6" fill="#6D28D9" opacity="0.35" transform="rotate(45 32 32)"/>
+  <rect x="20" y="20" width="24" height="24" rx="5" fill="url(#fg2)" opacity="0.8"/>
+
+  <!-- Cardinal nodes - larger relative to canvas -->
+  <circle cx="32" cy="14" r="4" fill="#7C3AED"/>
+  <circle cx="50" cy="32" r="4" fill="#8B5CF6"/>
+  <circle cx="32" cy="50" r="4" fill="#7C3AED"/>
+  <circle cx="14" cy="32" r="4" fill="#8B5CF6"/>
+
+  <!-- Center node -->
+  <circle cx="32" cy="32" r="5" fill="#7C3AED"/>
+  <circle cx="32" cy="32" r="2.5" fill="#ffffff"/>
+</svg>
