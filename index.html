@@ -538,11 +538,15 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center}
     </div>
     <div class="form-wrap">
       <form id="demo-form">
+        <input type="hidden" name="_subject" value="New OrgLogic Demo Request">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
         <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required></div><div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required></div></div>
         <div class="form-group"><label>Work Email</label><input type="email" name="email" placeholder="jane@company.com" required></div>
         <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Acme Corp" required></div>
         <div class="form-row"><div class="form-group"><label>Company Size</label><select name="companySize" required><option value="">Select...</option><option>50–200</option><option>201–1,000</option><option>1,001–5,000</option><option>5,001–20,000</option><option>20,000+</option></select></div><div class="form-group"><label>Primary Use Case</label><select name="useCase" required><option value="">Select...</option><option>IT Helpdesk</option><option>Customer Support</option><option>Knowledge Management</option><option>HR Operations</option><option>Sales Enablement</option><option>Multiple Departments</option><option>Other</option></select></div></div>
-        <button class="btn-form" type="submit">Book My Demo →</button>
+        <button class="btn-form" type="submit" id="submit-btn">Book My Demo →</button>
         <div class="form-note">30-min tailored walkthrough · Outcomes from comparable deployments · No commitment</div>
         <div class="form-status" id="form-status"></div>
       </form>
@@ -586,35 +590,87 @@ document.getElementById('cta-email-text').textContent=_em;
 document.getElementById('footer-email-link').href='mail'+'to:'+_em;
 
 // Fade-in animations
-const els=document.querySelectorAll('.fade-in');
-els.forEach(e=>e.classList.add('will-animate'));
-const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.classList.remove('will-animate')}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-els.forEach(e=>o.observe(e));
+var els=document.querySelectorAll('.fade-in');
+els.forEach(function(e){e.classList.add('will-animate')});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');e.target.classList.remove('will-animate')}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+els.forEach(function(e){obs.observe(e)});
 
 // Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));t&&t.scrollIntoView({behavior:'smooth',block:'start'})})});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
 
-// Form submission — no page navigation, show thank-you in place
+// Form submission via FormSubmit.co — sends real email, no page navigation
 document.getElementById('demo-form').addEventListener('submit',function(e){
   e.preventDefault();
   e.stopPropagation();
-  var d=new FormData(this);
-  var fn=d.get('firstName'),ln=d.get('lastName'),em=d.get('email'),co=d.get('company'),sz=d.get('companySize'),uc=d.get('useCase');
+
+  var form=this;
+  var d=new FormData(form);
+  var fn=d.get('firstName');
+  var ln=d.get('lastName');
+  var em=d.get('email');
+  var co=d.get('company');
+  var sz=d.get('companySize');
+  var uc=d.get('useCase');
   var s=document.getElementById('form-status');
-  if(!fn||!ln||!em||!co||!sz||!uc){s.textContent='Please fill in all fields.';s.className='form-status error';return false}
-  // Build mailto without literal email in source
-  var to=_ea+'@'+_eb;
-  var subj=encodeURIComponent('OrgLogic Demo Request - '+co);
-  var body=encodeURIComponent('New demo request from orglogic.ai:\n\nName: '+fn+' '+ln+'\nEmail: '+em+'\nCompany: '+co+'\nCompany Size: '+sz+'\nPrimary Use Case: '+uc+'\n\n---\nSubmitted via orglogic.ai');
-  var url='mail'+'to:'+to+'?subject='+subj+'&body='+body;
-  // Open mailto without navigating current page
-  var link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener';
-  link.style.display='none';document.body.appendChild(link);link.click();
-  setTimeout(function(){document.body.removeChild(link)},100);
-  // Show thank-you, hide form
-  this.style.display='none';
-  s.innerHTML='<div style="padding:32px 0;text-align:center"><div style="font-size:2.5rem;margin-bottom:12px">✓</div><div style="font-size:1.2rem;font-weight:800;color:#0f0f1a;margin-bottom:8px">Thank you, '+fn+'!</div><div style="font-size:.92rem;color:#6b6b85;line-height:1.6;margin-bottom:16px">We have received your demo request for <strong>'+co+'</strong>.<br>Our team will reach out to <strong>'+em+'</strong> within 4 hours.</div><div style="font-size:.82rem;color:#9a9ab0">If your email client opened, please send the pre-filled message.<br>Otherwise, reach us at <a href="'+('mail'+'to:'+to)+'" style="color:#7C3AED;text-decoration:none;font-weight:600">'+to+'</a></div></div>';
-  s.className='form-status success';
+  var btn=document.getElementById('submit-btn');
+
+  // Validate
+  if(!fn||!ln||!em||!co||!sz||!uc){
+    s.textContent='Please fill in all fields.';
+    s.className='form-status error';
+    return false;
+  }
+
+  // Disable button, show sending state
+  btn.disabled=true;
+  btn.textContent='Sending...';
+
+  // Send via FormSubmit.co AJAX endpoint
+  var endpoint='https://formsubmit.co/ajax/'+_em;
+  var payload=JSON.stringify({
+    firstName:fn,
+    lastName:ln,
+    email:em,
+    company:co,
+    companySize:sz,
+    useCase:uc,
+    _subject:'OrgLogic Demo Request — '+co,
+    _template:'table'
+  });
+
+  fetch(endpoint,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:payload
+  })
+  .then(function(r){return r.json()})
+  .then(function(data){
+    // Hide the form, show thank-you
+    form.style.display='none';
+    s.innerHTML=''
+      +'<div style="padding:40px 0;text-align:center">'
+      +'<div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,0.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>'
+      +'<div style="font-size:1.3rem;font-weight:800;color:#0f0f1a;margin-bottom:8px">Thank you, '+fn+'!</div>'
+      +'<div style="font-size:.95rem;color:#6b6b85;line-height:1.7;margin-bottom:4px">Your demo request for <strong>'+co+'</strong> has been submitted.</div>'
+      +'<div style="font-size:.95rem;color:#6b6b85;line-height:1.7;margin-bottom:20px">We\'ll reach out to <strong>'+em+'</strong> within 4 hours.</div>'
+      +'<div style="font-size:.82rem;color:#9a9ab0">Questions? Email us at <a href="'+'mail'+'to:'+_em+'" style="color:#7C3AED;text-decoration:none;font-weight:600">'+_em+'</a></div>'
+      +'</div>';
+    s.className='form-status success';
+  })
+  .catch(function(err){
+    // On network error, show fallback
+    btn.disabled=false;
+    btn.textContent='Book My Demo →';
+    s.innerHTML='Something went wrong. Please email us directly at <a href="'+'mail'+'to:'+_em+'" style="color:#7C3AED;text-decoration:none;font-weight:600">'+_em+'</a>';
+    s.className='form-status error';
+  });
+
   return false;
 });
 </script>
