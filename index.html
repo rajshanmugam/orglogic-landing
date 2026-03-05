@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OrgLogic — Enterprise AI Agent Platform</title>
 <meta name="description" content="OrgLogic is the enterprise AI agent platform that automates real operational workflows across departments. Built on a proven platform deployed across 600+ enterprises, backed by 100+ AI experts who guarantee business outcomes.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237C3AED'/%3E%3Cstop offset='100%25' stop-color='%23A78BFA'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M8.5 18.5h15c1.9 0 3.5-1.6 3.5-3.5 0-1.5-1-2.8-2.4-3.3.1-.3.1-.6.1-.9 0-3.2-2.6-5.8-5.8-5.8-2.3 0-4.3 1.4-5.2 3.3-.5-.2-1-.3-1.6-.3-2.4 0-4.4 2-4.4 4.4 0 .3 0 .6.1.8C7 14.1 6 15.6 6 17.3c0 .7.3 1.2.7 1.2h1.8z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="orglogic-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="orglogic-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="orglogic-favicon-16x16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
@@ -182,16 +186,31 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center}
 <nav>
   <div class="wrap">
     <a href="#" class="logo">
-      <svg viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="14" cy="14" r="13" stroke="#7C3AED" stroke-width="1.5" fill="none" opacity="0.3"/>
-        <circle cx="14" cy="14" r="8.5" fill="#7C3AED"/>
-        <circle cx="11" cy="12.5" r="1.2" fill="white"/>
-        <circle cx="17" cy="12.5" r="1.2" fill="white"/>
-        <path d="M11.5 16c0 0 1 1.2 2.5 1.2s2.5-1.2 2.5-1.2" stroke="white" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <circle cx="3.5" cy="7" r="1.5" fill="#A78BFA"/>
-        <circle cx="24.5" cy="7" r="1.5" fill="#A78BFA"/>
-        <circle cx="14" cy="1.5" r="1.5" fill="#A78BFA"/>
-        <text x="34" y="19.5" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="17.5" fill="white" letter-spacing="-0.3">OrgLogic</text>
+      <!-- OrgLogic logo: layered squares + cardinal nodes + wordmark -->
+      <svg viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:32px;width:auto">
+        <defs>
+          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#6D28D9"/></linearGradient>
+          <linearGradient id="lg2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient>
+        </defs>
+        <!-- Back rotated square -->
+        <rect x="9.9" y="9.9" width="12.2" height="12.2" rx="2.6" fill="#6D28D9" opacity="0.3" transform="rotate(45 16 16)"/>
+        <!-- Front square -->
+        <rect x="10.9" y="10.9" width="10.2" height="10.2" rx="2.2" fill="url(#lg2)" opacity="0.8"/>
+        <!-- Cardinal nodes -->
+        <circle cx="16" cy="8.3" r="1.1" fill="#7C3AED"/>
+        <circle cx="23.7" cy="16" r="1.1" fill="#8B5CF6"/>
+        <circle cx="16" cy="23.7" r="1.1" fill="#7C3AED"/>
+        <circle cx="8.3" cy="16" r="1.1" fill="#8B5CF6"/>
+        <!-- Center node -->
+        <circle cx="16" cy="16" r="1.6" fill="#7C3AED"/>
+        <circle cx="16" cy="16" r="0.8" fill="#ffffff"/>
+        <!-- Connecting lines -->
+        <line x1="16" y1="9.4" x2="16" y2="14.4" stroke="#7C3AED" stroke-width="0.4" opacity="0.5"/>
+        <line x1="22.6" y1="16" x2="17.6" y2="16" stroke="#8B5CF6" stroke-width="0.4" opacity="0.5"/>
+        <line x1="16" y1="22.6" x2="16" y2="17.6" stroke="#7C3AED" stroke-width="0.4" opacity="0.5"/>
+        <line x1="9.4" y1="16" x2="14.4" y2="16" stroke="#8B5CF6" stroke-width="0.4" opacity="0.5"/>
+        <!-- Wordmark -->
+        <text x="34" y="20.5" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="16" fill="white" letter-spacing="-0.3">OrgLogic</text>
       </svg>
     </a>
     <div class="nav-links">
@@ -534,15 +553,13 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center}
 <!-- ═══════════ CTA ═══════════ -->
 <section class="cta-section">
   <div class="wrap">
-    <!-- WAS: "Start free. Prove value. Scale when ready." (PLG/startup tone)
-         NOW: Outcome-focused, enterprise-appropriate -->
     <div class="cta-title">Proven platform. Expert delivery.<br>Guaranteed outcomes.</div>
     <div class="cta-sub">See how organizations operationalize AI across departments — with a proven platform and expert teams that own the outcome.</div>
     <div class="cta-buttons">
       <a href="#book-demo" class="btn-primary">Book a Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="/cdn-cgi/l/email-protection#9ff0edf8f3f0f8f6fcdfebedf0f0efedb1fef6" class="btn-outline">Email Us Directly</a>
+      <a id="cta-email-btn" href="#" class="btn-outline">Email Us Directly</a>
     </div>
-    <div class="cta-note"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="88e7faefe4e7efe1ebc8fcfae7e7f8faa6e9e1">[email&#160;protected]</a> · Typical response time: under 4 hours</div>
+    <div class="cta-note"><span id="cta-email-text"></span> · Typical response time: under 4 hours</div>
   </div>
 </section>
 
@@ -556,20 +573,50 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center}
       <a href="https://www.troopr.ai/tos" target="_blank">Terms</a>
       <a href="https://www.troopr.ai/security" target="_blank">Security</a>
       <a href="https://www.troopr.ai/gdpr" target="_blank">GDPR</a>
-      <a href="/cdn-cgi/l/email-protection#224d50454e4d454b416256504d4d52500c434b">Contact</a>
+      <a id="footer-email-link" href="#">Contact</a>
     </div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+// Build email address in JS to prevent obfuscation
+var _ea='orglogic';var _eb='troopr.ai';var _em=_ea+'@'+_eb;
+document.getElementById('cta-email-btn').href='mail'+'to:'+_em;
+document.getElementById('cta-email-text').textContent=_em;
+document.getElementById('footer-email-link').href='mail'+'to:'+_em;
+
+// Fade-in animations
 const els=document.querySelectorAll('.fade-in');
 els.forEach(e=>e.classList.add('will-animate'));
 const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.classList.remove('will-animate')}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 els.forEach(e=>o.observe(e));
+
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));t&&t.scrollIntoView({behavior:'smooth',block:'start'})})});
+
+// Form submission — no page navigation, show thank-you in place
 document.getElementById('demo-form').addEventListener('submit',function(e){
   e.preventDefault();
-  const d=new FormData(this),fn=d.get('firstName'),ln=d.get('lastName'),em=d.get('email'),co=d.get('company'),sz=d.get('companySize'),uc=d.get('useCase');
-  if(!fn||!ln||!em||!co||!sz||!uc){const s=document.getElementById('form-status');s.textContent='Please fill in all fields.';s.className='form-status error';return}
-  const subj=encodeURIComponent('OrgLogic Demo Request — '+co);
-  const body=encodeURIComponent('New demo request from orglogic.ai:\n\nName: '+fn+' '+ln+'\nEmail: '+em+'\nCompany: '+co+'\nCompany Size: '+sz+'\nPrimary Use Case: '+uc+'\n\n---\nSubmitted
+  e.stopPropagation();
+  var d=new FormData(this);
+  var fn=d.get('firstName'),ln=d.get('lastName'),em=d.get('email'),co=d.get('company'),sz=d.get('companySize'),uc=d.get('useCase');
+  var s=document.getElementById('form-status');
+  if(!fn||!ln||!em||!co||!sz||!uc){s.textContent='Please fill in all fields.';s.className='form-status error';return false}
+  // Build mailto without literal email in source
+  var to=_ea+'@'+_eb;
+  var subj=encodeURIComponent('OrgLogic Demo Request - '+co);
+  var body=encodeURIComponent('New demo request from orglogic.ai:\n\nName: '+fn+' '+ln+'\nEmail: '+em+'\nCompany: '+co+'\nCompany Size: '+sz+'\nPrimary Use Case: '+uc+'\n\n---\nSubmitted via orglogic.ai');
+  var url='mail'+'to:'+to+'?subject='+subj+'&body='+body;
+  // Open mailto without navigating current page
+  var link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener';
+  link.style.display='none';document.body.appendChild(link);link.click();
+  setTimeout(function(){document.body.removeChild(link)},100);
+  // Show thank-you, hide form
+  this.style.display='none';
+  s.innerHTML='<div style="padding:32px 0;text-align:center"><div style="font-size:2.5rem;margin-bottom:12px">✓</div><div style="font-size:1.2rem;font-weight:800;color:#0f0f1a;margin-bottom:8px">Thank you, '+fn+'!</div><div style="font-size:.92rem;color:#6b6b85;line-height:1.6;margin-bottom:16px">We have received your demo request for <strong>'+co+'</strong>.<br>Our team will reach out to <strong>'+em+'</strong> within 4 hours.</div><div style="font-size:.82rem;color:#9a9ab0">If your email client opened, please send the pre-filled message.<br>Otherwise, reach us at <a href="'+('mail'+'to:'+to)+'" style="color:#7C3AED;text-decoration:none;font-weight:600">'+to+'</a></div></div>';
+  s.className='form-status success';
+  return false;
+});
+</script>
+</body>
+</html>
