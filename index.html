@@ -1,678 +1,2055 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OrgLogic — Enterprise AI Agent Platform</title>
-<meta name="description" content="OrgLogic is the enterprise AI agent platform that automates real operational workflows across departments. Built on a proven platform deployed across 600+ enterprises, backed by 100+ AI experts who guarantee business outcomes.">
-<link rel="icon" type="image/svg+xml" href="orglogic-favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="orglogic-favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="orglogic-favicon-16x16.png">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-<style>
-:root{--bg-dark:#0a0a0f;--bg-dark-2:#111118;--bg-dark-card:#18182a;--bg-light:#fff;--bg-surface:#f8f9fc;--bg-surface-2:#f0f1f7;--purple:#7C3AED;--purple-light:#A78BFA;--purple-lighter:#C4B5FD;--purple-bg:rgba(124,58,237,0.08);--purple-glow:rgba(124,58,237,0.15);--purple-dark:#5B21B6;--text-white:#fff;--text-white-70:rgba(255,255,255,0.7);--text-white-50:rgba(255,255,255,0.5);--text-white-30:rgba(255,255,255,0.3);--text-dark:#0f0f1a;--text-dark-70:#3b3b54;--text-dark-50:#6b6b85;--text-dark-30:#9a9ab0;--green:#22c55e;--green-bg:rgba(34,197,94,0.1);--border-dark:rgba(255,255,255,0.08);--border-light:rgba(0,0,0,0.08);--font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--max-w:1120px;--radius:12px;--radius-lg:16px;--radius-xl:24px}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--text-dark);background:var(--bg-light);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.wrap{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-.deco-star{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
-.deco-star svg{width:20px;height:20px}
-.deco-star span{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.deco-line{width:100%;height:1px;background:repeating-linear-gradient(90deg,var(--border-light) 0,var(--border-light) 6px,transparent 6px,transparent 12px)}
-.deco-line-dark{background:repeating-linear-gradient(90deg,var(--border-dark) 0,var(--border-dark) 6px,transparent 6px,transparent 12px)}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dark)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{display:flex;align-items:center;text-decoration:none}
-.logo svg{height:28px;width:auto}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-links a{font-size:.82rem;font-weight:500;color:var(--text-white-50);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--text-white)}
-.btn-nav{padding:10px 22px;border-radius:100px;background:var(--purple);color:var(--text-white)!important;font-weight:600!important;transition:all .3s}
-.btn-nav:hover{background:var(--purple-dark)}
-.hero{background:var(--bg-dark);padding:160px 0 80px;position:relative;overflow:hidden;text-align:center}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 700px 500px at 30% 20%,rgba(124,58,237,.08) 0%,transparent 70%),radial-gradient(ellipse 500px 400px at 70% 80%,rgba(124,58,237,.05) 0%,transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:60px;background:var(--bg-light);border-radius:50% 50% 0 0/100% 100% 0 0}
-.hero .wrap{position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.2);font-size:.78rem;font-weight:600;color:var(--purple-light);margin-bottom:28px}
-.hero h1{font-size:3.6rem;font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--text-white);margin-bottom:20px;max-width:820px;margin-left:auto;margin-right:auto}
-.hero h1 .gradient{background:linear-gradient(135deg,var(--purple-light),#e0b3ff,var(--purple-lighter));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.15rem;color:var(--text-white-50);line-height:1.7;max-width:640px;margin:0 auto 36px}
-.hero-ctas{display:flex;justify-content:center;gap:14px;margin-bottom:16px}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:100px;background:var(--purple);color:var(--text-white);font-size:.95rem;font-weight:700;text-decoration:none;transition:all .3s;border:none;cursor:pointer;box-shadow:0 4px 24px rgba(124,58,237,.3);font-family:var(--font)}
-.btn-primary:hover{background:var(--purple-dark);transform:translateY(-2px);box-shadow:0 6px 32px rgba(124,58,237,.4)}
-.btn-primary svg{transition:transform .2s}
-.btn-primary:hover svg{transform:translateX(3px)}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:100px;background:transparent;color:var(--text-white);font-size:.95rem;font-weight:600;text-decoration:none;transition:all .3s;border:1.5px solid var(--border-dark);cursor:pointer;font-family:var(--font)}
-.btn-outline:hover{border-color:var(--purple-light);color:var(--purple-light)}
-.hero-note{font-size:.78rem;color:var(--text-white-30);margin-bottom:48px}
-.hero-stats{display:flex;justify-content:center;gap:48px;padding-top:40px;border-top:1px solid var(--border-dark);max-width:700px;margin:0 auto}
-.hero-stat{text-align:center}
-.hero-stat-num{font-size:1.8rem;font-weight:800;color:var(--text-white);letter-spacing:-.02em}
-.hero-stat-label{font-size:.72rem;color:var(--text-white-30);font-weight:500;letter-spacing:.02em}
-.logos{padding:48px 0 56px;text-align:center;overflow:hidden}
-.logos-label{font-size:.72rem;font-weight:600;color:var(--text-dark-30);letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
-.logos-track{display:flex;gap:56px;align-items:center;animation:scroll-logos 30s linear infinite;width:max-content}
-@keyframes scroll-logos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.logo-item{font-size:1.1rem;font-weight:700;color:var(--text-dark-30);white-space:nowrap;opacity:.5;transition:opacity .3s}
-.logo-item:hover{opacity:1}
-.section{padding:88px 0}
-.section-header{text-align:center;margin-bottom:56px}
-.section-title{font-size:2.2rem;font-weight:800;line-height:1.2;letter-spacing:-.02em;color:var(--text-dark);margin-bottom:12px}
-.section-sub{font-size:1.05rem;color:var(--text-dark-50);max-width:620px;margin:0 auto;line-height:1.7}
-.section-dark{background:var(--bg-dark);color:var(--text-white)}
-.section-dark .section-title{color:var(--text-white)}
-.section-dark .section-sub{color:var(--text-white-50)}
-.section-surface{background:var(--bg-surface)}
-.outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.outcome-card{padding:30px 26px;border-radius:var(--radius-lg);background:var(--bg-light);border:1px solid var(--border-light);transition:all .3s}
-.outcome-card:hover{border-color:var(--purple);box-shadow:0 4px 24px var(--purple-glow);transform:translateY(-4px)}
-.outcome-num{font-size:2rem;font-weight:800;color:var(--purple);letter-spacing:-.03em;margin-bottom:4px}
-.outcome-label{font-size:.95rem;font-weight:700;color:var(--text-dark);margin-bottom:10px}
-.outcome-desc{font-size:.84rem;color:var(--text-dark-50);line-height:1.6}
-.arch-container{max-width:960px;margin:0 auto}
-.arch-diagram{position:relative;border-radius:var(--radius-xl);overflow:hidden;background:linear-gradient(180deg,#1a1a2e 0%,#16162a 100%);border:1px solid rgba(124,58,237,0.15);padding:36px 32px 32px}
-.arch-layer{margin-bottom:20px}
-.arch-layer:last-child{margin-bottom:0}
-.arch-layer-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:10px;padding-left:4px}
-.arch-bar{border-radius:var(--radius);padding:20px 24px;position:relative}
-.arch-bar-portal{background:linear-gradient(135deg,var(--purple),#6d28d9);border:1px solid rgba(167,139,250,0.3)}
-.arch-bar-admin{background:var(--bg-dark-card);border:1px solid var(--border-dark)}
-.arch-bar-title{font-size:.82rem;font-weight:700;color:var(--text-white);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.arch-bar-title .arch-badge{font-size:.6rem;padding:2px 8px;border-radius:100px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);font-weight:600;letter-spacing:.04em}
-.arch-items{display:flex;flex-wrap:wrap;gap:8px}
-.arch-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;background:rgba(255,255,255,0.08);font-size:.75rem;font-weight:600;color:var(--text-white-70);transition:all .2s;border:1px solid transparent}
-.arch-chip:hover{background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.3);color:var(--text-white)}
-.arch-chip-icon{font-size:.85rem}
-.arch-admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.arch-admin-col-title{font-size:.72rem;font-weight:700;color:var(--purple-light);margin-bottom:8px;letter-spacing:.02em}
-.arch-admin-col .arch-chip{width:100%;justify-content:flex-start}
-.arch-connectors{display:flex;justify-content:space-between;padding:0 8px;margin:14px 0}
-.arch-connector{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--text-white-30)}
-.arch-connector-icon{font-size:.9rem}
-.arch-bottom-note{text-align:center;margin-top:20px;font-size:.78rem;color:var(--text-white-30);font-style:italic}
-.experts-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.experts-big-num{font-size:5rem;font-weight:800;color:var(--purple);letter-spacing:-.04em;line-height:1}
-.experts-big-label{font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:4px}
-.experts-big-sub{font-size:.85rem;color:var(--text-dark-50);margin-bottom:28px}
-.experts-points{list-style:none}
-.experts-points li{font-size:.88rem;color:var(--text-dark-50);padding:8px 0;padding-left:28px;position:relative;line-height:1.55}
-.experts-points li::before{content:'';position:absolute;left:0;top:12px;width:14px;height:14px;border-radius:50%;background:var(--purple-bg);border:2px solid var(--purple)}
-.experts-points li::after{content:'✓';position:absolute;left:2.5px;top:7px;color:var(--purple);font-size:.68rem;font-weight:800}
-.blueprint-title{font-size:1.15rem;font-weight:800;color:var(--text-dark);margin-bottom:24px}
-.blueprint-step{display:flex;gap:16px;margin-bottom:16px;position:relative}
-.blueprint-step:not(:last-child)::before{content:'';position:absolute;left:23px;top:44px;bottom:-4px;width:2px;background:var(--bg-surface-2)}
-.bp-week{width:48px;height:48px;border-radius:var(--radius);background:var(--purple-bg);border:1.5px solid rgba(124,58,237,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
-.bp-week-label{font-size:.55rem;font-weight:700;color:var(--purple);letter-spacing:.04em;text-transform:uppercase;line-height:1}
-.bp-week-num{font-size:.85rem;font-weight:800;color:var(--purple);line-height:1}
-.bp-content{padding-top:4px}
-.bp-title{font-size:.88rem;font-weight:700;color:var(--text-dark);margin-bottom:2px}
-.bp-desc{font-size:.78rem;color:var(--text-dark-50);line-height:1.5}
-.dept-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.dept-card{padding:26px 22px;border-radius:var(--radius);background:var(--bg-dark-card);border:1px solid var(--border-dark);transition:all .3s}
-.dept-card:hover{border-color:var(--purple);background:rgba(124,58,237,.06)}
-.dept-icon{font-size:1.5rem;margin-bottom:12px;display:block}
-.dept-name{font-size:.9rem;font-weight:700;color:var(--text-white);margin-bottom:8px}
-.dept-examples{font-size:.76rem;color:var(--text-white-30);line-height:1.6}
-.dept-note{margin-top:32px;text-align:center;font-size:.88rem;color:var(--text-white-50);padding:16px 28px;border-radius:var(--radius);background:var(--bg-dark-card);border:1px dashed var(--border-dark);display:inline-block}
-.dept-note strong{color:var(--purple-light)}
-.dept-note-wrap{text-align:center}
-.table-wrap{overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--border-light);background:var(--bg-light);box-shadow:0 2px 16px rgba(0,0,0,.03)}
-.comp-table{width:100%;border-collapse:collapse;font-size:.84rem}
-.comp-table thead th{padding:18px 22px;font-weight:700;text-align:left;border-bottom:2px solid var(--bg-surface-2);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dark-50);background:var(--bg-surface)}
-.comp-table thead th:last-child{background:var(--purple);color:#fff;border-radius:0 var(--radius) 0 0}
-.comp-table thead th:first-child{border-radius:var(--radius) 0 0 0}
-.comp-table td{padding:15px 22px;border-bottom:1px solid var(--bg-surface);vertical-align:middle}
-.comp-table tbody tr:last-child td{border-bottom:none}
-.comp-table td:first-child{font-weight:600;color:var(--text-dark)}
-.comp-table td:nth-child(2),.comp-table td:nth-child(3){color:var(--text-dark-30)}
-.comp-table td:last-child{color:var(--purple);font-weight:700;background:var(--purple-bg)}
-.comp-table tbody tr:hover{background:var(--bg-surface)}
-.sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.sec-list{list-style:none;margin-top:24px}
-.sec-list li{font-size:.88rem;color:var(--text-white-70);padding:8px 0;padding-left:28px;position:relative;line-height:1.6}
-.sec-list li::before{content:'';position:absolute;left:0;top:13px;width:14px;height:14px;border-radius:50%;background:rgba(34,197,94,.15);border:2px solid var(--green)}
-.sec-list li::after{content:'✓';position:absolute;left:2.5px;top:8px;color:var(--green);font-size:.68rem;font-weight:800}
-.sec-badges-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.sec-badge{padding:22px 20px;border-radius:var(--radius);background:var(--bg-dark-card);border:1px solid var(--border-dark);text-align:center}
-.sec-badge-icon{font-size:1.8rem;margin-bottom:8px;display:block}
-.sec-badge-label{font-size:.78rem;font-weight:600;color:var(--text-white-70)}
-.guarantee{padding:56px 0 88px}
-.guarantee-box{max-width:820px;margin:0 auto;padding:44px 48px;border-radius:var(--radius-xl);background:var(--bg-surface);border:2px solid rgba(34,197,94,.15);text-align:center}
-.guarantee-title{font-size:1.5rem;font-weight:800;color:var(--text-dark);margin-bottom:24px}
-.guarantee-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 36px;text-align:left;max-width:620px;margin:0 auto}
-.g-item{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-dark-50);padding:4px 0}
-.g-check{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;margin-top:1px}
-.cta-section{background:var(--bg-dark);padding:100px 0;position:relative;overflow:hidden;text-align:center}
-.cta-section::before{content:'';position:absolute;top:-2px;left:0;right:0;height:60px;background:var(--bg-light);border-radius:0 0 50% 50%/0 0 100% 100%}
-.cta-section::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 600px 400px at 50% 60%,rgba(124,58,237,.1) 0%,transparent 70%);pointer-events:none}
-.cta-section .wrap{position:relative;z-index:1}
-.cta-title{font-size:2.4rem;font-weight:800;color:var(--text-white);margin-bottom:14px;letter-spacing:-.02em}
-.cta-sub{font-size:1.05rem;color:var(--text-white-50);max-width:520px;margin:0 auto 32px;line-height:1.7}
-.cta-buttons{display:flex;justify-content:center;gap:14px;margin-bottom:20px}
-.cta-note{font-size:.75rem;color:var(--text-white-30)}
-.form-section{padding:88px 0;background:var(--bg-surface)}
-.form-wrap{max-width:560px;margin:0 auto;padding:40px 36px;border-radius:var(--radius-xl);background:var(--bg-light);border:1px solid var(--border-light);box-shadow:0 4px 32px rgba(0,0,0,.04)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-group{margin-bottom:14px}
-.form-group label{display:block;font-size:.75rem;font-weight:600;color:var(--text-dark-50);margin-bottom:6px}
-.form-group input,.form-group select{width:100%;padding:11px 16px;border-radius:10px;border:1.5px solid var(--bg-surface-2);font-family:var(--font);font-size:.88rem;color:var(--text-dark);background:var(--bg-surface);transition:border-color .2s,box-shadow .2s;outline:none}
-.form-group input:focus,.form-group select:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-glow)}
-.form-group input::placeholder{color:var(--text-dark-30)}
-.btn-form{width:100%;padding:14px;border-radius:100px;background:var(--purple);color:#fff;font-family:var(--font);font-size:.95rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;margin-top:8px;box-shadow:0 4px 24px rgba(124,58,237,.25)}
-.btn-form:hover{background:var(--purple-dark)}
-.form-note{font-size:.72rem;color:var(--text-dark-30);text-align:center;margin-top:12px}
-.form-status{text-align:center;margin-top:12px;font-size:.85rem;font-weight:600;display:none}
-.form-status.success{display:block;color:var(--green)}
-.form-status.error{display:block;color:#ef4444}
-footer{background:var(--bg-dark);padding:32px 0;border-top:1px solid var(--border-dark)}
-footer .wrap{display:flex;justify-content:space-between;align-items:center}
-.footer-left{font-size:.75rem;color:var(--text-white-30)}
-.footer-links{display:flex;gap:24px}
-.footer-links a{font-size:.75rem;color:var(--text-white-30);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--text-white-70)}
-.fade-in{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
-.fade-in.will-animate{opacity:0;transform:translateY(24px)}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.hero h1{font-size:2.6rem}.hero-stats{gap:28px}.outcomes-grid{grid-template-columns:repeat(2,1fr)}.dept-grid{grid-template-columns:repeat(2,1fr)}.arch-admin-grid{grid-template-columns:1fr}.experts-layout{grid-template-columns:1fr}.sec-grid{grid-template-columns:1fr}.nav-links a:not(.btn-nav){display:none}.guarantee-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.hero h1{font-size:2rem}.hero-stats{flex-direction:column;gap:16px}.hero-ctas{flex-direction:column;align-items:center}.outcomes-grid{grid-template-columns:1fr}.dept-grid{grid-template-columns:1fr}.sec-badges-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}footer .wrap{flex-direction:column;gap:12px;text-align:center}.cta-buttons{flex-direction:column;align-items:center}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrgLogic — Enterprise AI Agent Platform</title>
+  <meta name="description"
+    content="OrgLogic is the enterprise AI agent platform that automates real operational workflows across departments. Built on a proven platform deployed across 600+ enterprises, backed by 100+ AI experts who guarantee business outcomes.">
+  <link rel="icon" type="image/svg+xml" href="orglogic-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="orglogic-favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="orglogic-favicon-16x16.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-dark-2: #111118;
+      --bg-dark-card: #18182a;
+      --bg-light: #fff;
+      --bg-surface: #f8f9fc;
+      --bg-surface-2: #f0f1f7;
+      --purple: #7C3AED;
+      --purple-light: #A78BFA;
+      --purple-lighter: #C4B5FD;
+      --purple-bg: rgba(124, 58, 237, 0.08);
+      --purple-glow: rgba(124, 58, 237, 0.15);
+      --purple-dark: #5B21B6;
+      --text-white: #fff;
+      --text-white-70: rgba(255, 255, 255, 0.7);
+      --text-white-50: rgba(255, 255, 255, 0.5);
+      --text-white-30: rgba(255, 255, 255, 0.3);
+      --text-dark: #0f0f1a;
+      --text-dark-70: #3b3b54;
+      --text-dark-50: #6b6b85;
+      --text-dark-30: #9a9ab0;
+      --green: #22c55e;
+      --green-bg: rgba(34, 197, 94, 0.1);
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(0, 0, 0, 0.08);
+      --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --max-w: 1120px;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text-dark);
+      background: var(--bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .deco-star {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px
+    }
+
+    .deco-star svg {
+      width: 20px;
+      height: 20px
+    }
+
+    .deco-star span {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase
+    }
+
+    .deco-line {
+      width: 100%;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, var(--border-light) 0, var(--border-light) 6px, transparent 6px, transparent 12px)
+    }
+
+    .deco-line-dark {
+      background: repeating-linear-gradient(90deg, var(--border-dark) 0, var(--border-dark) 6px, transparent 6px, transparent 12px)
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border-dark)
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none
+    }
+
+    .logo svg {
+      height: 28px;
+      width: auto
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px
+    }
+
+    .nav-links a {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text-white-50);
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--text-white)
+    }
+
+    .btn-nav {
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: var(--purple);
+      color: var(--text-white) !important;
+      font-weight: 600 !important;
+      transition: all .3s
+    }
+
+    .btn-nav:hover {
+      background: var(--purple-dark)
+    }
+
+    .hero {
+      background: var(--bg-dark);
+      padding: 160px 0 80px;
+      position: relative;
+      overflow: hidden;
+      text-align: center
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 700px 500px at 30% 20%, rgba(124, 58, 237, .08) 0%, transparent 70%), radial-gradient(ellipse 500px 400px at 70% 80%, rgba(124, 58, 237, .05) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--bg-light);
+      border-radius: 50% 50% 0 0/100% 100% 0 0
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 100px;
+      background: rgba(124, 58, 237, .12);
+      border: 1px solid rgba(124, 58, 237, .2);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--purple-light);
+      margin-bottom: 28px
+    }
+
+    .hero h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      color: var(--text-white);
+      margin-bottom: 20px;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--purple-light), #e0b3ff, var(--purple-lighter));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-white-50);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto 36px
+    }
+
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 16px
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 100px;
+      background: var(--purple);
+      color: var(--text-white);
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .3s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(124, 58, 237, .3);
+      font-family: var(--font)
+    }
+
+    .btn-primary:hover {
+      background: var(--purple-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 32px rgba(124, 58, 237, .4)
+    }
+
+    .btn-primary svg {
+      transition: transform .2s
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(3px)
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 100px;
+      background: transparent;
+      color: var(--text-white);
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s;
+      border: 1.5px solid var(--border-dark);
+      cursor: pointer;
+      font-family: var(--font)
+    }
+
+    .btn-outline:hover {
+      border-color: var(--purple-light);
+      color: var(--purple-light)
+    }
+
+    .hero-note {
+      font-size: .78rem;
+      color: var(--text-white-30);
+      margin-bottom: 48px
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-dark);
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .hero-stat {
+      text-align: center
+    }
+
+    .hero-stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-white);
+      letter-spacing: -.02em
+    }
+
+    .hero-stat-label {
+      font-size: .72rem;
+      color: var(--text-white-30);
+      font-weight: 500;
+      letter-spacing: .02em
+    }
+
+    .logos {
+      padding: 48px 0 56px;
+      text-align: center;
+      overflow: hidden
+    }
+
+    .logos-label {
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--text-dark-30);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 28px
+    }
+
+    .logos-track {
+      display: flex;
+      gap: 56px;
+      align-items: center;
+      animation: scroll-logos 30s linear infinite;
+      width: max-content
+    }
+
+    @keyframes scroll-logos {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    .logo-item {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark-30);
+      white-space: nowrap;
+      opacity: .5;
+      transition: opacity .3s
+    }
+
+    .logo-item:hover {
+      opacity: 1
+    }
+
+    .section {
+      padding: 88px 0
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      color: var(--text-dark);
+      margin-bottom: 12px
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-dark-50);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.7
+    }
+
+    .section-dark {
+      background: var(--bg-dark);
+      color: var(--text-white)
+    }
+
+    .section-dark .section-title {
+      color: var(--text-white)
+    }
+
+    .section-dark .section-sub {
+      color: var(--text-white-50)
+    }
+
+    .section-surface {
+      background: var(--bg-surface)
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .outcome-card {
+      padding: 30px 26px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      transition: all .3s
+    }
+
+    .outcome-card:hover {
+      border-color: var(--purple);
+      box-shadow: 0 4px 24px var(--purple-glow);
+      transform: translateY(-4px)
+    }
+
+    .outcome-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--purple);
+      letter-spacing: -.03em;
+      margin-bottom: 4px
+    }
+
+    .outcome-label {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px
+    }
+
+    .outcome-desc {
+      font-size: .84rem;
+      color: var(--text-dark-50);
+      line-height: 1.6
+    }
+
+    .arch-container {
+      max-width: 960px;
+      margin: 0 auto
+    }
+
+    .arch-diagram {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(180deg, #1a1a2e 0%, #16162a 100%);
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      padding: 36px 32px 32px
+    }
+
+    .arch-layer {
+      margin-bottom: 20px
+    }
+
+    .arch-layer:last-child {
+      margin-bottom: 0
+    }
+
+    .arch-layer-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 10px;
+      padding-left: 4px
+    }
+
+    .arch-bar {
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      position: relative
+    }
+
+    .arch-bar-portal {
+      background: linear-gradient(135deg, var(--purple), #6d28d9);
+      border: 1px solid rgba(167, 139, 250, 0.3)
+    }
+
+    .arch-bar-admin {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark)
+    }
+
+    .arch-bar-title {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .arch-bar-title .arch-badge {
+      font-size: .6rem;
+      padding: 2px 8px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      letter-spacing: .04em
+    }
+
+    .arch-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .arch-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text-white-70);
+      transition: all .2s;
+      border: 1px solid transparent
+    }
+
+    .arch-chip:hover {
+      background: rgba(124, 58, 237, 0.15);
+      border-color: rgba(124, 58, 237, 0.3);
+      color: var(--text-white)
+    }
+
+    .arch-chip-icon {
+      font-size: .85rem
+    }
+
+    .arch-admin-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .arch-admin-col-title {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--purple-light);
+      margin-bottom: 8px;
+      letter-spacing: .02em
+    }
+
+    .arch-admin-col .arch-chip {
+      width: 100%;
+      justify-content: flex-start
+    }
+
+    .arch-connectors {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 8px;
+      margin: 14px 0
+    }
+
+    .arch-connector {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .72rem;
+      color: var(--text-white-30)
+    }
+
+    .arch-connector-icon {
+      font-size: .9rem
+    }
+
+    .arch-bottom-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: .78rem;
+      color: var(--text-white-30);
+      font-style: italic
+    }
+
+    .experts-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start
+    }
+
+    .experts-big-num {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--purple);
+      letter-spacing: -.04em;
+      line-height: 1
+    }
+
+    .experts-big-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px
+    }
+
+    .experts-big-sub {
+      font-size: .85rem;
+      color: var(--text-dark-50);
+      margin-bottom: 28px
+    }
+
+    .experts-points {
+      list-style: none
+    }
+
+    .experts-points li {
+      font-size: .88rem;
+      color: var(--text-dark-50);
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.55
+    }
+
+    .experts-points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--purple-bg);
+      border: 2px solid var(--purple)
+    }
+
+    .experts-points li::after {
+      content: '✓';
+      position: absolute;
+      left: 2.5px;
+      top: 7px;
+      color: var(--purple);
+      font-size: .68rem;
+      font-weight: 800
+    }
+
+    .blueprint-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 24px
+    }
+
+    .blueprint-step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      position: relative
+    }
+
+    .blueprint-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 44px;
+      bottom: -4px;
+      width: 2px;
+      background: var(--bg-surface-2)
+    }
+
+    .bp-week {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius);
+      background: var(--purple-bg);
+      border: 1.5px solid rgba(124, 58, 237, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1
+    }
+
+    .bp-week-label {
+      font-size: .55rem;
+      font-weight: 700;
+      color: var(--purple);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      line-height: 1
+    }
+
+    .bp-week-num {
+      font-size: .85rem;
+      font-weight: 800;
+      color: var(--purple);
+      line-height: 1
+    }
+
+    .bp-content {
+      padding-top: 4px
+    }
+
+    .bp-title {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 2px
+    }
+
+    .bp-desc {
+      font-size: .78rem;
+      color: var(--text-dark-50);
+      line-height: 1.5
+    }
+
+    .dept-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px
+    }
+
+    .dept-card {
+      padding: 26px 22px;
+      border-radius: var(--radius);
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      transition: all .3s
+    }
+
+    .dept-card:hover {
+      border-color: var(--purple);
+      background: rgba(124, 58, 237, .06)
+    }
+
+    .dept-icon {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      display: block
+    }
+
+    .dept-name {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 8px
+    }
+
+    .dept-examples {
+      font-size: .76rem;
+      color: var(--text-white-30);
+      line-height: 1.6
+    }
+
+    .dept-note {
+      margin-top: 32px;
+      text-align: center;
+      font-size: .88rem;
+      color: var(--text-white-50);
+      padding: 16px 28px;
+      border-radius: var(--radius);
+      background: var(--bg-dark-card);
+      border: 1px dashed var(--border-dark);
+      display: inline-block
+    }
+
+    .dept-note strong {
+      color: var(--purple-light)
+    }
+
+    .dept-note-wrap {
+      text-align: center
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      background: var(--bg-light);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .03)
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .84rem
+    }
+
+    .comp-table thead th {
+      padding: 18px 22px;
+      font-weight: 700;
+      text-align: left;
+      border-bottom: 2px solid var(--bg-surface-2);
+      font-size: .75rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-dark-50);
+      background: var(--bg-surface)
+    }
+
+    .comp-table thead th:last-child {
+      background: var(--purple);
+      color: #fff;
+      border-radius: 0 var(--radius) 0 0
+    }
+
+    .comp-table thead th:first-child {
+      border-radius: var(--radius) 0 0 0
+    }
+
+    .comp-table td {
+      padding: 15px 22px;
+      border-bottom: 1px solid var(--bg-surface);
+      vertical-align: middle
+    }
+
+    .comp-table tbody tr:last-child td {
+      border-bottom: none
+    }
+
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--text-dark)
+    }
+
+    .comp-table td:nth-child(2),
+    .comp-table td:nth-child(3) {
+      color: var(--text-dark-30)
+    }
+
+    .comp-table td:last-child {
+      color: var(--purple);
+      font-weight: 700;
+      background: var(--purple-bg)
+    }
+
+    .comp-table tbody tr:hover {
+      background: var(--bg-surface)
+    }
+
+    .sec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center
+    }
+
+    .sec-list {
+      list-style: none;
+      margin-top: 24px
+    }
+
+    .sec-list li {
+      font-size: .88rem;
+      color: var(--text-white-70);
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.6
+    }
+
+    .sec-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, .15);
+      border: 2px solid var(--green)
+    }
+
+    .sec-list li::after {
+      content: '✓';
+      position: absolute;
+      left: 2.5px;
+      top: 8px;
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 800
+    }
+
+    .sec-badges-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px
+    }
+
+    .sec-badge {
+      padding: 22px 20px;
+      border-radius: var(--radius);
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      text-align: center
+    }
+
+    .sec-badge-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      display: block
+    }
+
+    .sec-badge-label {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--text-white-70)
+    }
+
+    .guarantee {
+      padding: 56px 0 88px
+    }
+
+    .guarantee-box {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 44px 48px;
+      border-radius: var(--radius-xl);
+      background: var(--bg-surface);
+      border: 2px solid rgba(34, 197, 94, .15);
+      text-align: center
+    }
+
+    .guarantee-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 24px
+    }
+
+    .guarantee-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 36px;
+      text-align: left;
+      max-width: 620px;
+      margin: 0 auto
+    }
+
+    .g-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .88rem;
+      color: var(--text-dark-50);
+      padding: 4px 0
+    }
+
+    .g-check {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--green-bg);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      font-weight: 800;
+      margin-top: 1px
+    }
+
+    .cta-section {
+      background: var(--bg-dark);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--bg-light);
+      border-radius: 0 0 50% 50%/0 0 100% 100%
+    }
+
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 600px 400px at 50% 60%, rgba(124, 58, 237, .1) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .cta-section .wrap {
+      position: relative;
+      z-index: 1
+    }
+
+    .cta-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 14px;
+      letter-spacing: -.02em
+    }
+
+    .cta-sub {
+      font-size: 1.05rem;
+      color: var(--text-white-50);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.7
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px
+    }
+
+    .cta-note {
+      font-size: .75rem;
+      color: var(--text-white-30)
+    }
+
+    .form-section {
+      padding: 88px 0;
+      background: var(--bg-surface)
+    }
+
+    .form-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 40px 36px;
+      border-radius: var(--radius-xl);
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 4px 32px rgba(0, 0, 0, .04)
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .form-group {
+      margin-bottom: 14px
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text-dark-50);
+      margin-bottom: 6px
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 11px 16px;
+      border-radius: 10px;
+      border: 1.5px solid var(--bg-surface-2);
+      font-family: var(--font);
+      font-size: .88rem;
+      color: var(--text-dark);
+      background: var(--bg-surface);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px var(--purple-glow)
+    }
+
+    .form-group input::placeholder {
+      color: var(--text-dark-30)
+    }
+
+    .btn-form {
+      width: 100%;
+      padding: 14px;
+      border-radius: 100px;
+      background: var(--purple);
+      color: #fff;
+      font-family: var(--font);
+      font-size: .95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+      margin-top: 8px;
+      box-shadow: 0 4px 24px rgba(124, 58, 237, .25)
+    }
+
+    .btn-form:hover {
+      background: var(--purple-dark)
+    }
+
+    .form-note {
+      font-size: .72rem;
+      color: var(--text-dark-30);
+      text-align: center;
+      margin-top: 12px
+    }
+
+    .form-status {
+      text-align: center;
+      margin-top: 12px;
+      font-size: .85rem;
+      font-weight: 600;
+      display: none
+    }
+
+    .form-status.success {
+      display: block;
+      color: var(--green)
+    }
+
+    .form-status.error {
+      display: block;
+      color: #ef4444
+    }
+
+    footer {
+      background: var(--bg-dark);
+      padding: 32px 0;
+      border-top: 1px solid var(--border-dark)
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .footer-left {
+      font-size: .75rem;
+      color: var(--text-white-30)
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px
+    }
+
+    .footer-links a {
+      font-size: .75rem;
+      color: var(--text-white-30);
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .footer-links a:hover {
+      color: var(--text-white-70)
+    }
+
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .fade-in.will-animate {
+      opacity: 0;
+      transform: translateY(24px)
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @media(max-width:900px) {
+      .hero h1 {
+        font-size: 2.6rem
+      }
+
+      .hero-stats {
+        gap: 28px
+      }
+
+      .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .dept-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .arch-admin-grid {
+        grid-template-columns: 1fr
+      }
+
+      .experts-layout {
+        grid-template-columns: 1fr
+      }
+
+      .sec-grid {
+        grid-template-columns: 1fr
+      }
+
+      .nav-links a:not(.btn-nav) {
+        display: none
+      }
+
+      .guarantee-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 2rem
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 16px
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .outcomes-grid {
+        grid-template-columns: 1fr
+      }
+
+      .dept-grid {
+        grid-template-columns: 1fr
+      }
+
+      .sec-badges-grid {
+        grid-template-columns: 1fr
+      }
+
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      footer .wrap {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="wrap">
-    <a href="#" class="logo">
-      <!-- OrgLogic logo: layered squares + cardinal nodes + wordmark -->
-      <svg viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:32px;width:auto">
-        <defs>
-          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#6D28D9"/></linearGradient>
-          <linearGradient id="lg2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient>
-        </defs>
-        <!-- Back rotated square -->
-        <rect x="9.9" y="9.9" width="12.2" height="12.2" rx="2.6" fill="#6D28D9" opacity="0.3" transform="rotate(45 16 16)"/>
-        <!-- Front square -->
-        <rect x="10.9" y="10.9" width="10.2" height="10.2" rx="2.2" fill="url(#lg2)" opacity="0.8"/>
-        <!-- Cardinal nodes -->
-        <circle cx="16" cy="8.3" r="1.1" fill="#7C3AED"/>
-        <circle cx="23.7" cy="16" r="1.1" fill="#8B5CF6"/>
-        <circle cx="16" cy="23.7" r="1.1" fill="#7C3AED"/>
-        <circle cx="8.3" cy="16" r="1.1" fill="#8B5CF6"/>
-        <!-- Center node -->
-        <circle cx="16" cy="16" r="1.6" fill="#7C3AED"/>
-        <circle cx="16" cy="16" r="0.8" fill="#ffffff"/>
-        <!-- Connecting lines -->
-        <line x1="16" y1="9.4" x2="16" y2="14.4" stroke="#7C3AED" stroke-width="0.4" opacity="0.5"/>
-        <line x1="22.6" y1="16" x2="17.6" y2="16" stroke="#8B5CF6" stroke-width="0.4" opacity="0.5"/>
-        <line x1="16" y1="22.6" x2="16" y2="17.6" stroke="#7C3AED" stroke-width="0.4" opacity="0.5"/>
-        <line x1="9.4" y1="16" x2="14.4" y2="16" stroke="#8B5CF6" stroke-width="0.4" opacity="0.5"/>
-        <!-- Wordmark -->
-        <text x="34" y="20.5" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="16" fill="white" letter-spacing="-0.3">OrgLogic</text>
-      </svg>
-    </a>
-    <div class="nav-links">
-      <a href="#platform">Platform</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#security">Security</a>
-      <a href="#book-demo" class="btn-nav">Book a Demo</a>
+  <!-- NAV -->
+  <nav>
+    <div class="wrap">
+      <a href="#" class="logo">
+        <!-- OrgLogic logo: layered squares + cardinal nodes + wordmark -->
+        <svg viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:32px;width:auto">
+          <defs>
+            <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7C3AED" />
+              <stop offset="100%" stop-color="#6D28D9" />
+            </linearGradient>
+            <linearGradient id="lg2" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#8B5CF6" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+          <!-- Back rotated square -->
+          <rect x="9.9" y="9.9" width="12.2" height="12.2" rx="2.6" fill="#6D28D9" opacity="0.3"
+            transform="rotate(45 16 16)" />
+          <!-- Front square -->
+          <rect x="10.9" y="10.9" width="10.2" height="10.2" rx="2.2" fill="url(#lg2)" opacity="0.8" />
+          <!-- Cardinal nodes -->
+          <circle cx="16" cy="8.3" r="1.1" fill="#7C3AED" />
+          <circle cx="23.7" cy="16" r="1.1" fill="#8B5CF6" />
+          <circle cx="16" cy="23.7" r="1.1" fill="#7C3AED" />
+          <circle cx="8.3" cy="16" r="1.1" fill="#8B5CF6" />
+          <!-- Center node -->
+          <circle cx="16" cy="16" r="1.6" fill="#7C3AED" />
+          <circle cx="16" cy="16" r="0.8" fill="#ffffff" />
+          <!-- Connecting lines -->
+          <line x1="16" y1="9.4" x2="16" y2="14.4" stroke="#7C3AED" stroke-width="0.4" opacity="0.5" />
+          <line x1="22.6" y1="16" x2="17.6" y2="16" stroke="#8B5CF6" stroke-width="0.4" opacity="0.5" />
+          <line x1="16" y1="22.6" x2="16" y2="17.6" stroke="#7C3AED" stroke-width="0.4" opacity="0.5" />
+          <line x1="9.4" y1="16" x2="14.4" y2="16" stroke="#8B5CF6" stroke-width="0.4" opacity="0.5" />
+          <!-- Wordmark -->
+          <text x="34" y="20.5" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="16"
+            fill="white" letter-spacing="-0.3">OrgLogic</text>
+        </svg>
+      </a>
+      <div class="nav-links">
+        <a href="#platform">Platform</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#security">Security</a>
+        <a href="#book-demo" class="btn-nav">Book a Demo</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-badge">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="#22c55e"/><circle cx="8" cy="8" r="7" stroke="#22c55e" stroke-width="1.5" opacity="0.3"/></svg>
-      Platform proven across 600+ enterprises
-    </div>
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-badge">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="4" fill="#22c55e" />
+          <circle cx="8" cy="8" r="7" stroke="#22c55e" stroke-width="1.5" opacity="0.3" />
+        </svg>
+        Platform proven across 600+ enterprises
+      </div>
 
-    <!-- WAS: "AI that actually works across your entire enterprise" (casual, vague)
+      <!-- WAS: "AI that actually works across your entire enterprise" (casual, vague)
          NOW: Directly states the value prop — automate workflows, guaranteed outcomes -->
-    <h1>The enterprise platform that turns AI into <span class="gradient">operational outcomes.</span></h1>
+      <h1>The enterprise platform that turns AI into <span class="gradient">operational outcomes.</span></h1>
 
-    <!-- WAS: "AI operating system that connects..." (infrastructure language, "no hallucinations")
+      <!-- WAS: "AI operating system that connects..." (infrastructure language, "no hallucinations")
          NOW: Matches positioning exactly — proven platform + expert delivery = guaranteed outcomes -->
-    <p class="hero-sub">OrgLogic is the enterprise AI agent platform that automates real workflows across departments. Built on a proven platform deployed at 600+ enterprises, backed by 100+ AI experts who deliver guaranteed business outcomes — not experiments.</p>
+      <p class="hero-sub">OrgLogic is the enterprise AI agent platform that automates real workflows across departments.
+        Built on a proven platform deployed at 600+ enterprises, backed by 100+ AI experts who deliver guaranteed
+        business outcomes — not experiments.</p>
 
-    <div class="hero-ctas">
-      <a href="#book-demo" class="btn-primary">Book a Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#platform" class="btn-outline">See the Platform</a>
-    </div>
-    <!-- WAS: "No credit card required" (consumer language, repeated 3x)
+      <div class="hero-ctas">
+        <a href="#book-demo" class="btn-primary">Book a Demo <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></a>
+        <a href="#platform" class="btn-outline">See the Platform</a>
+      </div>
+      <!-- WAS: "No credit card required" (consumer language, repeated 3x)
          NOW: Enterprise-appropriate, reinforces outcomes positioning -->
-    <p class="hero-note">30-min tailored demo · See outcomes from real deployments · No commitment required</p>
+      <p class="hero-note">30-min tailored demo · See outcomes from real deployments · No commitment required</p>
 
-    <!-- WAS: 300+ AI implementation experts (contradicted slide showing 100+)
+      <!-- WAS: 300+ AI implementation experts (contradicted slide showing 100+)
          NOW: Aligned to 100+ consistently -->
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">600+</div><div class="hero-stat-label">Enterprises on the platform</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">2–6 wks</div><div class="hero-stat-label">Time to production</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">100+</div><div class="hero-stat-label">AI delivery experts</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">60–80%</div><div class="hero-stat-label">Faster resolution</div></div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">600+</div>
+          <div class="hero-stat-label">Enterprises on the platform</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">2–6 wks</div>
+          <div class="hero-stat-label">Time to production</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100+</div>
+          <div class="hero-stat-label">AI delivery experts</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">60–80%</div>
+          <div class="hero-stat-label">Faster resolution</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- LOGOS -->
-<section class="logos">
-  <div class="wrap"><div class="logos-label">Proven across 600+ enterprises including</div></div>
-  <div class="logos-track">
-    <span class="logo-item">Snowflake</span><span class="logo-item">Spotify</span><span class="logo-item">Rakuten</span><span class="logo-item">Cubic</span><span class="logo-item">Aptean</span><span class="logo-item">Snap</span><span class="logo-item">Deliveryhero</span><span class="logo-item">Wayfair</span><span class="logo-item">Aurora</span>
-    <span class="logo-item">Snowflake</span><span class="logo-item">Spotify</span><span class="logo-item">Rakuten</span><span class="logo-item">Cubic</span><span class="logo-item">Aptean</span><span class="logo-item">Snap</span><span class="logo-item">Deliveryhero</span><span class="logo-item">Wayfair</span><span class="logo-item">Aurora</span>
-  </div>
-</section>
-<div class="deco-line"></div>
+  <!-- LOGOS -->
+  <section class="logos">
+    <div class="wrap">
+      <div class="logos-label">Proven across 600+ enterprises including</div>
+    </div>
+    <div class="logos-track">
+      <span class="logo-item">Snowflake</span><span class="logo-item">Spotify</span><span
+        class="logo-item">Rakuten</span><span class="logo-item">Cubic</span><span class="logo-item">Aptean</span><span
+        class="logo-item">Snap</span><span class="logo-item">Deliveryhero</span><span
+        class="logo-item">Wayfair</span><span class="logo-item">Aurora</span>
+      <span class="logo-item">Snowflake</span><span class="logo-item">Spotify</span><span
+        class="logo-item">Rakuten</span><span class="logo-item">Cubic</span><span class="logo-item">Aptean</span><span
+        class="logo-item">Snap</span><span class="logo-item">Deliveryhero</span><span
+        class="logo-item">Wayfair</span><span class="logo-item">Aurora</span>
+    </div>
+  </section>
+  <div class="deco-line"></div>
 
-<!-- ═══════════ OUTCOMES ═══════════ -->
-<section class="section fade-in">
-  <div class="wrap">
-    <div class="section-header">
-      <!-- WAS: "Measurable Outcomes" / "not projections"
+  <!-- ═══════════ OUTCOMES ═══════════ -->
+  <section class="section fade-in">
+    <div class="wrap">
+      <div class="section-header">
+        <!-- WAS: "Measurable Outcomes" / "not projections"
            NOW: Ties outcomes to the "proven platform + experts" positioning -->
-      <div class="deco-star"><svg viewBox="0 0 20 20" fill="none"><path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED"/></svg><span style="color:var(--purple)">Proven Outcomes</span></div>
-      <div class="section-title">Operational results from<br>production deployments.</div>
-      <div class="section-sub">Delivered by a proven platform and expert teams working together at live enterprises — measurable impact, not experimentation.</div>
+        <div class="deco-star"><svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED" />
+          </svg><span style="color:var(--purple)">Proven Outcomes</span></div>
+        <div class="section-title">Operational results from<br>production deployments.</div>
+        <div class="section-sub">Delivered by a proven platform and expert teams working together at live enterprises —
+          measurable impact, not experimentation.</div>
+      </div>
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-num">60–80%</div>
+          <div class="outcome-label">Faster knowledge retrieval</div>
+          <div class="outcome-desc">AI agents surface grounded, source-cited answers from any enterprise knowledge base
+            in seconds — replacing hours of manual search across docs, wikis, and databases.</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">40–60%</div>
+          <div class="outcome-label">IT ticket deflection</div>
+          <div class="outcome-desc">AI agents autonomously resolve password resets, access requests, software
+            provisioning, and common IT workflows — directly inside Slack, Teams, or any channel employees already use.
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">50–70%</div>
+          <div class="outcome-label">Customer query auto-resolution</div>
+          <div class="outcome-desc">AI agents handle tier-1 and tier-2 support end-to-end — answering questions,
+            updating records, and triggering workflows, with seamless handoff to humans when needed.</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">2–6 wks</div>
+          <div class="outcome-label">Time to production</div>
+          <div class="outcome-desc">Our expert delivery teams deploy the first agents in Week 1, expand across
+            departments by Week 3, and optimize for your specific workflows by Week 6. Not 6–18 months.</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">50–80%</div>
+          <div class="outcome-label">Lower total cost vs. alternatives</div>
+          <div class="outcome-desc">Usage-based platform pricing combined with expert delivery at globally competitive
+            rates means the lowest total cost of ownership for enterprise AI — across both platform and services.</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">90 days</div>
+          <div class="outcome-label">Typical time to measurable ROI</div>
+          <div class="outcome-desc">Most deployments show measurable operational impact within the first quarter —
+            through reduced resolution times, automated workflows, and eliminated process bottlenecks.</div>
+        </div>
+      </div>
     </div>
-    <div class="outcomes-grid">
-      <div class="outcome-card"><div class="outcome-num">60–80%</div><div class="outcome-label">Faster knowledge retrieval</div><div class="outcome-desc">AI agents surface grounded, source-cited answers from any enterprise knowledge base in seconds — replacing hours of manual search across docs, wikis, and databases.</div></div>
-      <div class="outcome-card"><div class="outcome-num">40–60%</div><div class="outcome-label">IT ticket deflection</div><div class="outcome-desc">AI agents autonomously resolve password resets, access requests, software provisioning, and common IT workflows — directly inside Slack, Teams, or any channel employees already use.</div></div>
-      <div class="outcome-card"><div class="outcome-num">50–70%</div><div class="outcome-label">Customer query auto-resolution</div><div class="outcome-desc">AI agents handle tier-1 and tier-2 support end-to-end — answering questions, updating records, and triggering workflows, with seamless handoff to humans when needed.</div></div>
-      <div class="outcome-card"><div class="outcome-num">2–6 wks</div><div class="outcome-label">Time to production</div><div class="outcome-desc">Our expert delivery teams deploy the first agents in Week 1, expand across departments by Week 3, and optimize for your specific workflows by Week 6. Not 6–18 months.</div></div>
-      <div class="outcome-card"><div class="outcome-num">50–80%</div><div class="outcome-label">Lower total cost vs. alternatives</div><div class="outcome-desc">Usage-based platform pricing combined with expert delivery at globally competitive rates means the lowest total cost of ownership for enterprise AI — across both platform and services.</div></div>
-      <div class="outcome-card"><div class="outcome-num">90 days</div><div class="outcome-label">Typical time to measurable ROI</div><div class="outcome-desc">Most deployments show measurable operational impact within the first quarter — through reduced resolution times, automated workflows, and eliminated process bottlenecks.</div></div>
-    </div>
-  </div>
-</section>
-<div class="deco-line"></div>
+  </section>
+  <div class="deco-line"></div>
 
-<!-- ═══════════ PLATFORM ═══════════ -->
-<section class="section section-dark fade-in" id="platform">
-  <div class="wrap">
-    <div class="section-header">
-      <!-- WAS: "Enterprise-grade AI infrastructure. One unified platform." (infrastructure language)
+  <!-- ═══════════ PLATFORM ═══════════ -->
+  <section class="section section-dark fade-in" id="platform">
+    <div class="wrap">
+      <div class="section-header">
+        <!-- WAS: "Enterprise-grade AI infrastructure. One unified platform." (infrastructure language)
            NOW: Focuses on what the platform enables — deploying agents, automating workflows -->
-      <div class="deco-star"><svg viewBox="0 0 20 20" fill="none"><path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#A78BFA"/></svg><span style="color:var(--purple-light)">The Platform</span></div>
-      <div class="section-title">One platform to build, deploy, and<br>govern AI agents across the enterprise.</div>
-      <!-- WAS: "operating system — eliminating shadow AI and tool sprawl"
+        <div class="deco-star"><svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#A78BFA" />
+          </svg><span style="color:var(--purple-light)">The Platform</span></div>
+        <div class="section-title">One platform to build, deploy, and<br>govern AI agents across the enterprise.</div>
+        <!-- WAS: "operating system — eliminating shadow AI and tool sprawl"
            NOW: Reinforces agent platform positioning, connects to workflow automation -->
-      <div class="section-sub">OrgLogic combines enterprise-grade AI infrastructure with agent development, deep integrations, and governance in a single platform — so AI agents can execute real work across systems and departments.</div>
-    </div>
+        <div class="section-sub">OrgLogic combines enterprise-grade AI infrastructure with agent development, deep
+          integrations, and governance in a single platform — so AI agents can execute real work across systems and
+          departments.</div>
+      </div>
 
-    <div class="arch-container">
-      <div class="arch-diagram">
-        <div class="arch-layer">
-          <div class="arch-layer-label">AI Workspace Portal — End-User Experience</div>
-          <div class="arch-bar arch-bar-portal">
-            <div class="arch-bar-title">Every employee interacts with AI agents through a secure, branded workspace <span class="arch-badge">MULTI-CHANNEL</span></div>
-            <div class="arch-items">
-              <div class="arch-chip"><span class="arch-chip-icon">💬</span> AI Chat</div>
-              <div class="arch-chip"><span class="arch-chip-icon">🤖</span> Agent Interactions</div>
-              <div class="arch-chip"><span class="arch-chip-icon">🎨</span> Branded Interface</div>
-              <div class="arch-chip"><span class="arch-chip-icon">📱</span> Slack / Teams / GChat</div>
-              <div class="arch-chip"><span class="arch-chip-icon">📧</span> Email / Voice</div>
-              <div class="arch-chip"><span class="arch-chip-icon">💻</span> WhatsApp / Web</div>
-            </div>
-          </div>
-        </div>
-        <div class="arch-connectors">
-          <div class="arch-connector"><span class="arch-connector-icon">☁️</span> 100+ LLM Providers</div>
-          <div class="arch-connector">↕ Approved Models, Agents & Governance ↕</div>
-          <div class="arch-connector"><span class="arch-connector-icon">🗄️</span> Enterprise Data & Apps</div>
-        </div>
-        <div class="arch-layer">
-          <div class="arch-layer-label">AI Workspace Admin — Full IT & Leadership Control</div>
-          <div class="arch-bar arch-bar-admin">
-            <div class="arch-admin-grid">
-              <div class="arch-admin-col">
-                <div class="arch-admin-col-title">Core Intelligence</div>
-                <div class="arch-chip"><span class="arch-chip-icon">⚡</span> AI Gateway (100+ LLMs)</div>
-                <div class="arch-chip"><span class="arch-chip-icon">🛡️</span> Guardrails</div>
-                <div class="arch-chip"><span class="arch-chip-icon">🧪</span> Agent Studio (No-Code)</div>
-                <div class="arch-chip"><span class="arch-chip-icon">🔍</span> RAG Engine</div>
-                <div class="arch-chip"><span class="arch-chip-icon">🔄</span> AI Flows (Automation)</div>
+      <div class="arch-container">
+        <div class="arch-diagram">
+          <div class="arch-layer">
+            <div class="arch-layer-label">AI Workspace Portal — End-User Experience</div>
+            <div class="arch-bar arch-bar-portal">
+              <div class="arch-bar-title">Every employee interacts with AI agents through a secure, branded workspace
+                <span class="arch-badge">MULTI-CHANNEL</span>
               </div>
-              <div class="arch-admin-col">
-                <div class="arch-admin-col-title">Deployment & Integration</div>
-                <div class="arch-chip"><span class="arch-chip-icon">📂</span> Spaces</div>
-                <div class="arch-chip"><span class="arch-chip-icon">📡</span> Channels</div>
-                <div class="arch-chip"><span class="arch-chip-icon">📚</span> Knowledge</div>
-                <div class="arch-chip"><span class="arch-chip-icon">⚙️</span> Actions</div>
-                <div class="arch-chip"><span class="arch-chip-icon">🧩</span> Apps & Integrations</div>
-              </div>
-              <div class="arch-admin-col">
-                <div class="arch-admin-col-title">Governance & Analytics</div>
-                <div class="arch-chip"><span class="arch-chip-icon">📊</span> Usage Limits & Controls</div>
-                <div class="arch-chip"><span class="arch-chip-icon">📈</span> Analytics & Insights</div>
-                <div class="arch-chip"><span class="arch-chip-icon">👤</span> User Management</div>
-                <div class="arch-chip"><span class="arch-chip-icon">📋</span> Audit Logging</div>
-                <div class="arch-chip"><span class="arch-chip-icon">💳</span> Billing</div>
+              <div class="arch-items">
+                <div class="arch-chip"><span class="arch-chip-icon">💬</span> AI Chat</div>
+                <div class="arch-chip"><span class="arch-chip-icon">🤖</span> Agent Interactions</div>
+                <div class="arch-chip"><span class="arch-chip-icon">🎨</span> Branded Interface</div>
+                <div class="arch-chip"><span class="arch-chip-icon">📱</span> Slack / Teams / GChat</div>
+                <div class="arch-chip"><span class="arch-chip-icon">📧</span> Email / Voice</div>
+                <div class="arch-chip"><span class="arch-chip-icon">💻</span> WhatsApp / Web</div>
               </div>
             </div>
           </div>
+          <div class="arch-connectors">
+            <div class="arch-connector"><span class="arch-connector-icon">☁️</span> 100+ LLM Providers</div>
+            <div class="arch-connector">↕ Approved Models, Agents & Governance ↕</div>
+            <div class="arch-connector"><span class="arch-connector-icon">🗄️</span> Enterprise Data & Apps</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-layer-label">AI Workspace Admin — Full IT & Leadership Control</div>
+            <div class="arch-bar arch-bar-admin">
+              <div class="arch-admin-grid">
+                <div class="arch-admin-col">
+                  <div class="arch-admin-col-title">Core Intelligence</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">⚡</span> AI Gateway (100+ LLMs)</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">🛡️</span> Guardrails</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">🧪</span> Agent Studio (No-Code)</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">🔍</span> RAG Engine</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">🔄</span> AI Flows (Automation)</div>
+                </div>
+                <div class="arch-admin-col">
+                  <div class="arch-admin-col-title">Deployment & Integration</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">📂</span> Spaces</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">📡</span> Channels</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">📚</span> Knowledge</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">⚙️</span> Actions</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">🧩</span> Apps & Integrations</div>
+                </div>
+                <div class="arch-admin-col">
+                  <div class="arch-admin-col-title">Governance & Analytics</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">📊</span> Usage Limits & Controls</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">📈</span> Analytics & Insights</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">👤</span> User Management</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">📋</span> Audit Logging</div>
+                  <div class="arch-chip"><span class="arch-chip-icon">💳</span> Billing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="arch-bottom-note">Connects to Jira, Salesforce, ServiceNow, Confluence, SharePoint, SAP, and
+            hundreds more enterprise systems</div>
         </div>
-        <div class="arch-bottom-note">Connects to Jira, Salesforce, ServiceNow, Confluence, SharePoint, SAP, and hundreds more enterprise systems</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════ EXPERT DELIVERY TEAMS ═══════════ -->
-<section class="section fade-in" id="experts">
-  <div class="wrap">
-    <div class="section-header">
-      <!-- WAS: "Implementation & Services" / "World-class AI experts"
+  <!-- ═══════════ EXPERT DELIVERY TEAMS ═══════════ -->
+  <section class="section fade-in" id="experts">
+    <div class="wrap">
+      <div class="section-header">
+        <!-- WAS: "Implementation & Services" / "World-class AI experts"
            NOW: Uses "expert delivery teams" language from positioning, emphasizes outcomes not just expertise -->
-      <div class="deco-star"><svg viewBox="0 0 20 20" fill="none"><path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED"/></svg><span style="color:var(--purple)">Expert Delivery</span></div>
-      <div class="section-title">Expert teams that own the outcome —<br>not just the deployment.</div>
-      <!-- WAS: "We don't just sell you a platform and walk away."
+        <div class="deco-star"><svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED" />
+          </svg><span style="color:var(--purple)">Expert Delivery</span></div>
+        <div class="section-title">Expert teams that own the outcome —<br>not just the deployment.</div>
+        <!-- WAS: "We don't just sell you a platform and walk away."
            NOW: Directly contrasts with "AI tools that require heavy experimentation" -->
-      <div class="section-sub">Unlike AI tools that require heavy experimentation, OrgLogic pairs every engagement with expert delivery teams who understand your workflows deeply enough to operationalize AI with guaranteed results.</div>
-    </div>
-
-    <div class="experts-layout">
-      <div class="experts-left">
-        <div class="experts-big-num">100+</div>
-        <div class="experts-big-label">AI Delivery Experts</div>
-        <div class="experts-big-sub">Core team + certified implementation partners</div>
-        <ul class="experts-points">
-          <!-- WAS: "Top AI talent in India — world-class expertise at the most competitive rates globally"
-               NOW: Leads with what they do (deliver outcomes), rates are implicit -->
-          <li>Deep expertise in enterprise workflows and systems — Jira, Salesforce, ServiceNow, SAP, Confluence, and more</li>
-          <li>Full lifecycle ownership: strategy, deployment, custom workflow automation, training, and ongoing optimization</li>
-          <li>Bespoke agent development for any process, any department, any complexity — delivered in days</li>
-          <li>Dedicated team assigned to each enterprise — not a shared support queue or a ticket system</li>
-          <li>Globally competitive delivery rates — enterprise-grade outcomes at a fraction of typical consulting costs</li>
-        </ul>
+        <div class="section-sub">Unlike AI tools that require heavy experimentation, OrgLogic pairs every engagement
+          with expert delivery teams who understand your workflows deeply enough to operationalize AI with guaranteed
+          results.</div>
       </div>
 
-      <div class="experts-right">
-        <div class="blueprint-title">Enterprise Deployment Blueprint</div>
-        <div class="blueprint-steps">
-          <div class="blueprint-step">
-            <div class="bp-week"><div class="bp-week-label">Week</div><div class="bp-week-num">1</div></div>
-            <div class="bp-content"><div class="bp-title">Connect & Configure</div><div class="bp-desc">Integrate enterprise apps, ingest knowledge sources, configure governance and security policies.</div></div>
-          </div>
-          <div class="blueprint-step">
-            <div class="bp-week"><div class="bp-week-label">Week</div><div class="bp-week-num">2</div></div>
-            <div class="bp-content"><div class="bp-title">Deploy First Agents</div><div class="bp-desc">Launch Knowledge Search + IT Helpdesk agents for fastest time-to-value. Live users, real workflows from day one.</div></div>
-          </div>
-          <div class="blueprint-step">
-            <div class="bp-week"><div class="bp-week-label">Week</div><div class="bp-week-num">3–4</div></div>
-            <div class="bp-content"><div class="bp-title">Expand Across Departments</div><div class="bp-desc">Roll out HR, Support, Sales, and Legal agents with pre-built workflows. Each deployment builds on the last.</div></div>
-          </div>
-          <div class="blueprint-step">
-            <div class="bp-week"><div class="bp-week-label">Week</div><div class="bp-week-num">5–6</div></div>
-            <div class="bp-content"><div class="bp-title">Custom Workflow Automation</div><div class="bp-desc">Build bespoke automations unique to your enterprise — any process, any edge case, any complexity.</div></div>
-          </div>
-          <div class="blueprint-step">
-            <div class="bp-week"><div class="bp-week-label" style="font-size:.5rem">On</div><div class="bp-week-num" style="font-size:.7rem">going</div></div>
-            <div class="bp-content"><div class="bp-title">Optimize & Scale</div><div class="bp-desc">Continuous improvement driven by analytics — new agents, expanded workflows, cross-functional orchestrations.</div></div>
+      <div class="experts-layout">
+        <div class="experts-left">
+          <div class="experts-big-num">100+</div>
+          <div class="experts-big-label">AI Delivery Experts</div>
+          <div class="experts-big-sub">Core team + certified implementation partners</div>
+          <ul class="experts-points">
+            <!-- WAS: "Top AI talent in India — world-class expertise at the most competitive rates globally"
+               NOW: Leads with what they do (deliver outcomes), rates are implicit -->
+            <li>Deep expertise in enterprise workflows and systems — Jira, Salesforce, ServiceNow, SAP, Confluence, and
+              more</li>
+            <li>Full lifecycle ownership: strategy, deployment, custom workflow automation, training, and ongoing
+              optimization</li>
+            <li>Bespoke agent development for any process, any department, any complexity — delivered in days</li>
+            <li>Dedicated team assigned to each enterprise — not a shared support queue or a ticket system</li>
+            <li>Globally competitive delivery rates — enterprise-grade outcomes at a fraction of typical consulting
+              costs</li>
+          </ul>
+        </div>
+
+        <div class="experts-right">
+          <div class="blueprint-title">Enterprise Deployment Blueprint</div>
+          <div class="blueprint-steps">
+            <div class="blueprint-step">
+              <div class="bp-week">
+                <div class="bp-week-label">Week</div>
+                <div class="bp-week-num">1</div>
+              </div>
+              <div class="bp-content">
+                <div class="bp-title">Connect & Configure</div>
+                <div class="bp-desc">Integrate enterprise apps, ingest knowledge sources, configure governance and
+                  security policies.</div>
+              </div>
+            </div>
+            <div class="blueprint-step">
+              <div class="bp-week">
+                <div class="bp-week-label">Week</div>
+                <div class="bp-week-num">2</div>
+              </div>
+              <div class="bp-content">
+                <div class="bp-title">Deploy First Agents</div>
+                <div class="bp-desc">Launch Knowledge Search + IT Helpdesk agents for fastest time-to-value. Live users,
+                  real workflows from day one.</div>
+              </div>
+            </div>
+            <div class="blueprint-step">
+              <div class="bp-week">
+                <div class="bp-week-label">Week</div>
+                <div class="bp-week-num">3–4</div>
+              </div>
+              <div class="bp-content">
+                <div class="bp-title">Expand Across Departments</div>
+                <div class="bp-desc">Roll out HR, Support, Sales, and Legal agents with pre-built workflows. Each
+                  deployment builds on the last.</div>
+              </div>
+            </div>
+            <div class="blueprint-step">
+              <div class="bp-week">
+                <div class="bp-week-label">Week</div>
+                <div class="bp-week-num">5–6</div>
+              </div>
+              <div class="bp-content">
+                <div class="bp-title">Custom Workflow Automation</div>
+                <div class="bp-desc">Build bespoke automations unique to your enterprise — any process, any edge case,
+                  any complexity.</div>
+              </div>
+            </div>
+            <div class="blueprint-step">
+              <div class="bp-week">
+                <div class="bp-week-label" style="font-size:.5rem">On</div>
+                <div class="bp-week-num" style="font-size:.7rem">going</div>
+              </div>
+              <div class="bp-content">
+                <div class="bp-title">Optimize & Scale</div>
+                <div class="bp-desc">Continuous improvement driven by analytics — new agents, expanded workflows,
+                  cross-functional orchestrations.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<div class="deco-line"></div>
+  </section>
+  <div class="deco-line"></div>
 
-<!-- ═══════════ SOLUTIONS ═══════════ -->
-<section class="section section-dark fade-in" id="solutions">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="deco-star"><svg viewBox="0 0 20 20" fill="none"><path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#A78BFA"/></svg><span style="color:var(--purple-light)">Solutions</span></div>
-      <!-- WAS: "One platform. Eight departments. Hundreds of workflows." (catchy but vague)
+  <!-- ═══════════ SOLUTIONS ═══════════ -->
+  <section class="section section-dark fade-in" id="solutions">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="deco-star"><svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#A78BFA" />
+          </svg><span style="color:var(--purple-light)">Solutions</span></div>
+        <!-- WAS: "One platform. Eight departments. Hundreds of workflows." (catchy but vague)
            NOW: Emphasizes that these are automated workflows, ready to deploy -->
-      <div class="section-title">Pre-built AI agent solutions for<br>every major department.</div>
-      <div class="section-sub">Each solution includes configurable agents, pre-built workflow automations, and enterprise governance — deployed by our expert teams in days, not months.</div>
+        <div class="section-title">Pre-built AI agent solutions for<br>every major department.</div>
+        <div class="section-sub">Each solution includes configurable agents, pre-built workflow automations, and
+          enterprise governance — deployed by our expert teams in days, not months.</div>
+      </div>
+      <div class="dept-grid">
+        <div class="dept-card"><span class="dept-icon">🖥️</span>
+          <div class="dept-name">IT Helpdesk</div>
+          <div class="dept-examples">Auto-resolve tickets · Password resets · Access provisioning · Software requests ·
+            VPN troubleshooting · Status page alerts</div>
+        </div>
+        <div class="dept-card"><span class="dept-icon">🎧</span>
+          <div class="dept-name">Customer Support</div>
+          <div class="dept-examples">Tier 1–2 auto-resolution · Ticket triage & routing · CRM updates · Refund
+            processing · Escalation workflows · CSAT improvement</div>
+        </div>
+        <div class="dept-card"><span class="dept-icon">📚</span>
+          <div class="dept-name">Knowledge Management</div>
+          <div class="dept-examples">Enterprise search · Policy Q&A · Onboarding assistant · Document summarization ·
+            Cross-system knowledge unification</div>
+        </div>
+        <div class="dept-card"><span class="dept-icon">👥</span>
+          <div class="dept-name">HR Operations</div>
+          <div class="dept-examples">Benefits Q&A · Leave management · Policy lookup · New hire onboarding · Payroll
+            inquiries · Compliance training</div>
+        </div>
+        <div class="dept-card"><span class="dept-icon">📈</span>
+          <div class="dept-name">Sales Enablement</div>
+          <div class="dept-examples">Competitive intel lookup · Proposal generation · CRM data enrichment · Deal
+            insights · Playbook retrieval</div>
+        </div>
+        <div class="dept-card"><span class="dept-icon">🛠️</span>
+          <div class="dept-name">Product & Engineering</div>
+          <div class="dept-examples">Codebase Q&A · Incident response · Sprint summary · API documentation ·
+            Architecture decision retrieval</div>
+        </div>
+        <div class="dept-card"><span class="dept-icon">⚖️</span>
+          <div class="dept-name">Legal & Compliance</div>
+          <div class="dept-examples">Contract analysis · Regulatory Q&A · Policy comparison · Audit preparation · Risk
+            assessment support</div>
+        </div>
+        <div class="dept-card"><span class="dept-icon">💰</span>
+          <div class="dept-name">Finance & Procurement</div>
+          <div class="dept-examples">Invoice processing · Budget inquiries · Vendor lookup · Expense policy Q&A ·
+            Financial report generation</div>
+        </div>
+      </div>
+      <div class="dept-note-wrap">
+        <div class="dept-note"><strong>+ Custom Workflows:</strong> Our expert delivery teams build any bespoke
+          automation your organization needs — typically within days.</div>
+      </div>
     </div>
-    <div class="dept-grid">
-      <div class="dept-card"><span class="dept-icon">🖥️</span><div class="dept-name">IT Helpdesk</div><div class="dept-examples">Auto-resolve tickets · Password resets · Access provisioning · Software requests · VPN troubleshooting · Status page alerts</div></div>
-      <div class="dept-card"><span class="dept-icon">🎧</span><div class="dept-name">Customer Support</div><div class="dept-examples">Tier 1–2 auto-resolution · Ticket triage & routing · CRM updates · Refund processing · Escalation workflows · CSAT improvement</div></div>
-      <div class="dept-card"><span class="dept-icon">📚</span><div class="dept-name">Knowledge Management</div><div class="dept-examples">Enterprise search · Policy Q&A · Onboarding assistant · Document summarization · Cross-system knowledge unification</div></div>
-      <div class="dept-card"><span class="dept-icon">👥</span><div class="dept-name">HR Operations</div><div class="dept-examples">Benefits Q&A · Leave management · Policy lookup · New hire onboarding · Payroll inquiries · Compliance training</div></div>
-      <div class="dept-card"><span class="dept-icon">📈</span><div class="dept-name">Sales Enablement</div><div class="dept-examples">Competitive intel lookup · Proposal generation · CRM data enrichment · Deal insights · Playbook retrieval</div></div>
-      <div class="dept-card"><span class="dept-icon">🛠️</span><div class="dept-name">Product & Engineering</div><div class="dept-examples">Codebase Q&A · Incident response · Sprint summary · API documentation · Architecture decision retrieval</div></div>
-      <div class="dept-card"><span class="dept-icon">⚖️</span><div class="dept-name">Legal & Compliance</div><div class="dept-examples">Contract analysis · Regulatory Q&A · Policy comparison · Audit preparation · Risk assessment support</div></div>
-      <div class="dept-card"><span class="dept-icon">💰</span><div class="dept-name">Finance & Procurement</div><div class="dept-examples">Invoice processing · Budget inquiries · Vendor lookup · Expense policy Q&A · Financial report generation</div></div>
-    </div>
-    <div class="dept-note-wrap"><div class="dept-note"><strong>+ Custom Workflows:</strong> Our expert delivery teams build any bespoke automation your organization needs — typically within days.</div></div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════ WHY ORGLOGIC ═══════════ -->
-<section class="section section-surface fade-in">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="deco-star"><svg viewBox="0 0 20 20" fill="none"><path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED"/></svg><span style="color:var(--purple)">Why OrgLogic</span></div>
-      <!-- WAS: "Not another AI chatbot. Platform + experts that deliver outcomes." (strawman)
+  <!-- ═══════════ WHY ORGLOGIC ═══════════ -->
+  <section class="section section-surface fade-in">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="deco-star"><svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED" />
+          </svg><span style="color:var(--purple)">Why OrgLogic</span></div>
+        <!-- WAS: "Not another AI chatbot. Platform + experts that deliver outcomes." (strawman)
            NOW: Uses the exact contrast from positioning — experimentation vs guaranteed outcomes -->
-      <div class="section-title">Stop experimenting with AI.<br>Start getting operational outcomes.</div>
-      <div class="section-sub">Most AI tools require heavy experimentation with uncertain outcomes. OrgLogic combines a proven agent platform with expert delivery to operationalize AI with measurable impact.</div>
-    </div>
-    <div class="table-wrap">
-      <table class="comp-table">
-        <thead><tr><th style="width:24%"></th><th style="width:22%">AI Copilots</th><th style="width:22%">Point Solutions</th><th style="width:32%">OrgLogic</th></tr></thead>
-        <tbody>
-          <tr><td>Departments</td><td>Generic, 0</td><td>1 department</td><td>8 departments, out of box</td></tr>
-          <tr><td>Data Access</td><td>None</td><td>Limited scope</td><td>Any knowledge source, any app</td></tr>
-          <tr><td>Actions in Apps</td><td>None</td><td>Read-only</td><td>Read + Write + Trigger</td></tr>
-          <tr><td>RAG Quality</td><td>No RAG</td><td>Basic</td><td>Industry-best, source-cited</td></tr>
-          <tr><td>Governance</td><td>None</td><td>Basic</td><td>Enterprise-grade, built-in</td></tr>
-          <tr><td>Workflow Automation</td><td>Prompt/response</td><td>Rule-based</td><td>Natural language, multi-step agents</td></tr>
-          <tr><td>Expert Delivery</td><td>Self-serve only</td><td>Vendor PS team</td><td>100+ dedicated AI delivery experts</td></tr>
-          <tr><td>Time to Outcomes</td><td>Immediate / low value</td><td>3–6 months</td><td>2–6 weeks to production</td></tr>
-          <tr><td>Total Cost</td><td>Low cost, no outcomes</td><td>High per department</td><td>Lowest — platform + delivery</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ SECURITY ═══════════ -->
-<section class="section section-dark fade-in" id="security">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="deco-star"><svg viewBox="0 0 20 20" fill="none"><path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#A78BFA"/></svg><span style="color:var(--purple-light)">Security & Governance</span></div>
-      <div class="section-title">Enterprise security built into<br>every layer of the platform.</div>
-      <div class="section-sub">OrgLogic is built for organizations that require strict control over data security, AI governance, and regulatory compliance.</div>
-    </div>
-    <div class="sec-grid">
-      <div>
-        <ul class="sec-list">
-          <li>SOC 2 Type II certified + ISO 27001 compliant</li>
-          <li>GDPR, HIPAA, and SOX compliant</li>
-          <li>AES-256 encryption at rest and in transit</li>
-          <li>Zero data used for model training — ever</li>
-          <li>AI Guardrails for all agent inputs/outputs + full audit logs</li>
-          <li>Role-based access control (RBAC) across all agents</li>
-          <li>Automatic PII redaction in every interaction</li>
-          <li>On-premises / private cloud / VPC deployment options</li>
-          <li>SSO & MFA via SAML 2.0 / OIDC</li>
-          <li>Regular penetration testing & vulnerability scanning</li>
-        </ul>
+        <div class="section-title">Stop experimenting with AI.<br>Start getting operational outcomes.</div>
+        <div class="section-sub">Most AI tools require heavy experimentation with uncertain outcomes. OrgLogic combines
+          a proven agent platform with expert delivery to operationalize AI with measurable impact.</div>
       </div>
-      <div class="sec-badges-grid">
-        <div class="sec-badge"><span class="sec-badge-icon">🏆</span><div class="sec-badge-label">SOC 2 Type II</div></div>
-        <div class="sec-badge"><span class="sec-badge-icon">🇪🇺</span><div class="sec-badge-label">GDPR Compliant</div></div>
-        <div class="sec-badge"><span class="sec-badge-icon">🏥</span><div class="sec-badge-label">HIPAA Ready</div></div>
-        <div class="sec-badge"><span class="sec-badge-icon">🔒</span><div class="sec-badge-label">AES-256 Encryption</div></div>
-        <div class="sec-badge"><span class="sec-badge-icon">🛡️</span><div class="sec-badge-label">AI Guardrails</div></div>
-        <div class="sec-badge"><span class="sec-badge-icon">🚫</span><div class="sec-badge-label">Zero Training on Data</div></div>
+      <div class="table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th style="width:24%"></th>
+              <th style="width:22%">AI Copilots</th>
+              <th style="width:22%">Point Solutions</th>
+              <th style="width:32%">OrgLogic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Departments</td>
+              <td>Generic, 0</td>
+              <td>1 department</td>
+              <td>8 departments, out of box</td>
+            </tr>
+            <tr>
+              <td>Data Access</td>
+              <td>None</td>
+              <td>Limited scope</td>
+              <td>Any knowledge source, any app</td>
+            </tr>
+            <tr>
+              <td>Actions in Apps</td>
+              <td>None</td>
+              <td>Read-only</td>
+              <td>Read + Write + Trigger</td>
+            </tr>
+            <tr>
+              <td>RAG Quality</td>
+              <td>No RAG</td>
+              <td>Basic</td>
+              <td>Industry-best, source-cited</td>
+            </tr>
+            <tr>
+              <td>Governance</td>
+              <td>None</td>
+              <td>Basic</td>
+              <td>Enterprise-grade, built-in</td>
+            </tr>
+            <tr>
+              <td>Workflow Automation</td>
+              <td>Prompt/response</td>
+              <td>Rule-based</td>
+              <td>Natural language, multi-step agents</td>
+            </tr>
+            <tr>
+              <td>Expert Delivery</td>
+              <td>Self-serve only</td>
+              <td>Vendor PS team</td>
+              <td>100+ dedicated AI delivery experts</td>
+            </tr>
+            <tr>
+              <td>Time to Outcomes</td>
+              <td>Immediate / low value</td>
+              <td>3–6 months</td>
+              <td>2–6 weeks to production</td>
+            </tr>
+            <tr>
+              <td>Total Cost</td>
+              <td>Low cost, no outcomes</td>
+              <td>High per department</td>
+              <td>Lowest — platform + delivery</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════ GUARANTEE ═══════════ -->
-<section class="guarantee fade-in">
-  <div class="wrap">
-    <div class="guarantee-box">
-      <!-- WAS: "Zero-risk way to get started" (consumer/PLG tone)
+  <!-- ═══════════ SECURITY ═══════════ -->
+  <section class="section section-dark fade-in" id="security">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="deco-star"><svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#A78BFA" />
+          </svg><span style="color:var(--purple-light)">Security & Governance</span></div>
+        <div class="section-title">Enterprise security built into<br>every layer of the platform.</div>
+        <div class="section-sub">OrgLogic is built for organizations that require strict control over data security, AI
+          governance, and regulatory compliance.</div>
+      </div>
+      <div class="sec-grid">
+        <div>
+          <ul class="sec-list">
+            <li>SOC 2 Type II certified + ISO 27001 compliant</li>
+            <li>GDPR, HIPAA, and SOX compliant</li>
+            <li>AES-256 encryption at rest and in transit</li>
+            <li>Zero data used for model training — ever</li>
+            <li>AI Guardrails for all agent inputs/outputs + full audit logs</li>
+            <li>Role-based access control (RBAC) across all agents</li>
+            <li>Automatic PII redaction in every interaction</li>
+            <li>On-premises / private cloud / VPC deployment options</li>
+            <li>SSO & MFA via SAML 2.0 / OIDC</li>
+            <li>Regular penetration testing & vulnerability scanning</li>
+          </ul>
+        </div>
+        <div class="sec-badges-grid">
+          <div class="sec-badge"><span class="sec-badge-icon">🏆</span>
+            <div class="sec-badge-label">SOC 2 Type II</div>
+          </div>
+          <div class="sec-badge"><span class="sec-badge-icon">🇪🇺</span>
+            <div class="sec-badge-label">GDPR Compliant</div>
+          </div>
+          <div class="sec-badge"><span class="sec-badge-icon">🏥</span>
+            <div class="sec-badge-label">HIPAA Ready</div>
+          </div>
+          <div class="sec-badge"><span class="sec-badge-icon">🔒</span>
+            <div class="sec-badge-label">AES-256 Encryption</div>
+          </div>
+          <div class="sec-badge"><span class="sec-badge-icon">🛡️</span>
+            <div class="sec-badge-label">AI Guardrails</div>
+          </div>
+          <div class="sec-badge"><span class="sec-badge-icon">🚫</span>
+            <div class="sec-badge-label">Zero Training on Data</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ GUARANTEE ═══════════ -->
+  <section class="guarantee fade-in">
+    <div class="wrap">
+      <div class="guarantee-box">
+        <!-- WAS: "Zero-risk way to get started" (consumer/PLG tone)
            NOW: Enterprise-appropriate, still removes friction -->
-      <div class="guarantee-title">Designed for enterprise procurement.</div>
-      <div class="guarantee-grid">
-        <div class="g-item"><span class="g-check">✓</span> No long-term contract required to start</div>
-        <div class="g-item"><span class="g-check">✓</span> Connects to your existing systems in hours</div>
-        <div class="g-item"><span class="g-check">✓</span> Usage-based pricing — no per-seat licensing</div>
-        <div class="g-item"><span class="g-check">✓</span> Your data stays in your environment</div>
-        <div class="g-item"><span class="g-check">✓</span> Dedicated delivery team assigned from Day 1</div>
-        <div class="g-item"><span class="g-check">✓</span> First agents in production within 1–2 weeks</div>
-        <div class="g-item"><span class="g-check">✓</span> Flexible terms — scale up or down as needed</div>
-        <div class="g-item"><span class="g-check">✓</span> 100+ expert team owns the implementation</div>
+        <div class="guarantee-title">Designed for enterprise procurement.</div>
+        <div class="guarantee-grid">
+          <div class="g-item"><span class="g-check">✓</span> No long-term contract required to start</div>
+          <div class="g-item"><span class="g-check">✓</span> Connects to your existing systems in hours</div>
+          <div class="g-item"><span class="g-check">✓</span> Usage-based pricing — no per-seat licensing</div>
+          <div class="g-item"><span class="g-check">✓</span> Your data stays in your environment</div>
+          <div class="g-item"><span class="g-check">✓</span> Dedicated delivery team assigned from Day 1</div>
+          <div class="g-item"><span class="g-check">✓</span> First agents in production within 1–2 weeks</div>
+          <div class="g-item"><span class="g-check">✓</span> Flexible terms — scale up or down as needed</div>
+          <div class="g-item"><span class="g-check">✓</span> 100+ expert team owns the implementation</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════ FORM ═══════════ -->
-<section class="form-section fade-in" id="book-demo">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="deco-star"><svg viewBox="0 0 20 20" fill="none"><path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED"/></svg><span style="color:var(--purple)">Get Started</span></div>
-      <div class="section-title">See OrgLogic in action.</div>
-      <div class="section-sub">30-minute demo tailored to your workflows, your tools, and your department priorities. We'll show you outcomes from comparable deployments.</div>
+  <!-- ═══════════ FORM ═══════════ -->
+  <section class="form-section fade-in" id="book-demo">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="deco-star"><svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 0L12.2 7.8L20 10L12.2 12.2L10 20L7.8 12.2L0 10L7.8 7.8L10 0Z" fill="#7C3AED" />
+          </svg><span style="color:var(--purple)">Get Started</span></div>
+        <div class="section-title">See OrgLogic in action.</div>
+        <div class="section-sub">30-minute demo tailored to your workflows, your tools, and your department priorities.
+          We'll show you outcomes from comparable deployments.</div>
+      </div>
+      <div class="form-wrap">
+        <form id="demo-form">
+          <input type="hidden" name="_subject" value="New OrgLogic Demo Request">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane"
+                required></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith"
+                required></div>
+          </div>
+          <div class="form-group"><label>Work Email</label><input type="email" name="email"
+              placeholder="jane@company.com" required></div>
+          <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Acme Corp"
+              required></div>
+          <div class="form-row">
+            <div class="form-group"><label>Company Size</label><select name="companySize" required>
+                <option value="">Select...</option>
+                <option>50–200</option>
+                <option>201–1,000</option>
+                <option>1,001–5,000</option>
+                <option>5,001–20,000</option>
+                <option>20,000+</option>
+              </select></div>
+            <div class="form-group"><label>Primary Use Case</label><select name="useCase" required>
+                <option value="">Select...</option>
+                <option>IT Helpdesk</option>
+                <option>Customer Support</option>
+                <option>Knowledge Management</option>
+                <option>HR Operations</option>
+                <option>Sales Enablement</option>
+                <option>Multiple Departments</option>
+                <option>Other</option>
+              </select></div>
+          </div>
+          <button class="btn-form" type="submit" id="submit-btn">Book My Demo →</button>
+          <div class="form-note">30-min tailored walkthrough · Outcomes from comparable deployments · No commitment
+          </div>
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
     </div>
-    <div class="form-wrap">
-      <form id="demo-form">
-        <input type="hidden" name="_subject" value="New OrgLogic Demo Request">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none">
-        <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required></div><div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required></div></div>
-        <div class="form-group"><label>Work Email</label><input type="email" name="email" placeholder="jane@company.com" required></div>
-        <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Acme Corp" required></div>
-        <div class="form-row"><div class="form-group"><label>Company Size</label><select name="companySize" required><option value="">Select...</option><option>50–200</option><option>201–1,000</option><option>1,001–5,000</option><option>5,001–20,000</option><option>20,000+</option></select></div><div class="form-group"><label>Primary Use Case</label><select name="useCase" required><option value="">Select...</option><option>IT Helpdesk</option><option>Customer Support</option><option>Knowledge Management</option><option>HR Operations</option><option>Sales Enablement</option><option>Multiple Departments</option><option>Other</option></select></div></div>
-        <button class="btn-form" type="submit" id="submit-btn">Book My Demo →</button>
-        <div class="form-note">30-min tailored walkthrough · Outcomes from comparable deployments · No commitment</div>
-        <div class="form-status" id="form-status"></div>
-      </form>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="cta-title">Proven platform. Expert delivery.<br>Guaranteed outcomes.</div>
+      <div class="cta-sub">See how organizations operationalize AI across departments — with a proven platform and
+        expert teams that own the outcome.</div>
+      <div class="cta-buttons">
+        <a href="#book-demo" class="btn-primary">Book a Demo <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></a>
+        <a id="cta-email-btn" href="#" class="btn-outline">Email Us Directly</a>
+      </div>
+      <div class="cta-note"><span id="cta-email-text"></span> · Typical response time: under 4 hours</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════ CTA ═══════════ -->
-<section class="cta-section">
-  <div class="wrap">
-    <div class="cta-title">Proven platform. Expert delivery.<br>Guaranteed outcomes.</div>
-    <div class="cta-sub">See how organizations operationalize AI across departments — with a proven platform and expert teams that own the outcome.</div>
-    <div class="cta-buttons">
-      <a href="#book-demo" class="btn-primary">Book a Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a id="cta-email-btn" href="#" class="btn-outline">Email Us Directly</a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="deco-line deco-line-dark" style="margin-bottom:24px"></div>
+    <div class="wrap">
+      <div class="footer-left">© 2026 Troopr Labs Inc. All Rights Reserved.</div>
+      <div class="footer-links">
+        <a href="https://www.troopr.ai/privacy" target="_blank">Privacy</a>
+        <a href="https://www.troopr.ai/tos" target="_blank">Terms</a>
+        <a href="https://www.troopr.ai/security" target="_blank">Security</a>
+        <a href="https://www.troopr.ai/gdpr" target="_blank">GDPR</a>
+        <a id="footer-email-link" href="#">Contact</a>
+      </div>
     </div>
-    <div class="cta-note"><span id="cta-email-text"></span> · Typical response time: under 4 hours</div>
-  </div>
-</section>
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div class="deco-line deco-line-dark" style="margin-bottom:24px"></div>
-  <div class="wrap">
-    <div class="footer-left">© 2026 Troopr Labs Inc. All Rights Reserved.</div>
-    <div class="footer-links">
-      <a href="https://www.troopr.ai/privacy" target="_blank">Privacy</a>
-      <a href="https://www.troopr.ai/tos" target="_blank">Terms</a>
-      <a href="https://www.troopr.ai/security" target="_blank">Security</a>
-      <a href="https://www.troopr.ai/gdpr" target="_blank">GDPR</a>
-      <a id="footer-email-link" href="#">Contact</a>
-    </div>
-  </div>
-</footer>
+  <script>
+    // Build email address in JS to prevent obfuscation
+    var _ea = 'orglogic'; var _eb = 'troopr.ai'; var _em = _ea + '@' + _eb;
+    document.getElementById('cta-email-btn').href = 'mail' + 'to:' + _em;
+    document.getElementById('cta-email-text').textContent = _em;
+    document.getElementById('footer-email-link').href = 'mail' + 'to:' + _em;
 
-<script>
-// Build email address in JS to prevent obfuscation
-var _ea='orglogic';var _eb='troopr.ai';var _em=_ea+'@'+_eb;
-document.getElementById('cta-email-btn').href='mail'+'to:'+_em;
-document.getElementById('cta-email-text').textContent=_em;
-document.getElementById('footer-email-link').href='mail'+'to:'+_em;
+    // Fade-in animations
+    var els = document.querySelectorAll('.fade-in');
+    els.forEach(function (e) { e.classList.add('will-animate') });
+    var obs = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); e.target.classList.remove('will-animate') } }) }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (e) { obs.observe(e) });
 
-// Fade-in animations
-var els=document.querySelectorAll('.fade-in');
-els.forEach(function(e){e.classList.add('will-animate')});
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');e.target.classList.remove('will-animate')}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-els.forEach(function(e){obs.observe(e)});
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    e.preventDefault();
-    var t=document.querySelector(a.getAttribute('href'));
-    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
+    // Form submission via FormSubmit.co — sends real email, no page navigation
+    document.getElementById('demo-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-// Form submission via FormSubmit.co — sends real email, no page navigation
-document.getElementById('demo-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  e.stopPropagation();
+      var form = this;
+      var d = new FormData(form);
+      var fn = d.get('firstName');
+      var ln = d.get('lastName');
+      var em = d.get('email');
+      var co = d.get('company');
+      var sz = d.get('companySize');
+      var uc = d.get('useCase');
+      var s = document.getElementById('form-status');
+      var btn = document.getElementById('submit-btn');
 
-  var form=this;
-  var d=new FormData(form);
-  var fn=d.get('firstName');
-  var ln=d.get('lastName');
-  var em=d.get('email');
-  var co=d.get('company');
-  var sz=d.get('companySize');
-  var uc=d.get('useCase');
-  var s=document.getElementById('form-status');
-  var btn=document.getElementById('submit-btn');
+      // Validate
+      if (!fn || !ln || !em || !co || !sz || !uc) {
+        s.textContent = 'Please fill in all fields.';
+        s.className = 'form-status error';
+        return false;
+      }
 
-  // Validate
-  if(!fn||!ln||!em||!co||!sz||!uc){
-    s.textContent='Please fill in all fields.';
-    s.className='form-status error';
-    return false;
-  }
+      // Disable button, show sending state
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
 
-  // Disable button, show sending state
-  btn.disabled=true;
-  btn.textContent='Sending...';
+      // Send via FormSubmit.co AJAX endpoint
+      var endpoint = 'https://formsubmit.co/ajax/' + _em;
+      var payload = JSON.stringify({
+        firstName: fn,
+        lastName: ln,
+        email: em,
+        company: co,
+        companySize: sz,
+        useCase: uc,
+        _subject: 'OrgLogic Demo Request — ' + co,
+        _template: 'table'
+      });
 
-  // Send via FormSubmit.co AJAX endpoint
-  var endpoint='https://formsubmit.co/ajax/'+_em;
-  var payload=JSON.stringify({
-    firstName:fn,
-    lastName:ln,
-    email:em,
-    company:co,
-    companySize:sz,
-    useCase:uc,
-    _subject:'OrgLogic Demo Request — '+co,
-    _template:'table'
-  });
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: payload
+      })
+        .then(function (r) { return r.json() })
+        .then(function (data) {
+          // Check for success — FormSubmit can return {success:"false"} (string) on errors
+          if (data.success === false || data.success === 'false') {
+            throw new Error(data.message || 'Submission failed');
+          }
+          // Hide the form, show thank-you
+          form.style.display = 'none';
+          s.innerHTML = ''
+            + '<div style="padding:40px 0;text-align:center">'
+            + '<div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,0.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>'
+            + '<div style="font-size:1.3rem;font-weight:800;color:#0f0f1a;margin-bottom:8px">Thank you, ' + fn + '!</div>'
+            + '<div style="font-size:.95rem;color:#6b6b85;line-height:1.7;margin-bottom:4px">Your demo request for <strong>' + co + '</strong> has been submitted.</div>'
+            + '<div style="font-size:.95rem;color:#6b6b85;line-height:1.7;margin-bottom:20px">We\'ll reach out to <strong>' + em + '</strong> within 4 hours.</div>'
+            + '<div style="font-size:.82rem;color:#9a9ab0">Questions? Email us at <a href="' + 'mail' + 'to:' + _em + '" style="color:#7C3AED;text-decoration:none;font-weight:600">' + _em + '</a></div>'
+            + '</div>';
+          s.className = 'form-status success';
+        })
+        .catch(function (err) {
+          // On any error (network or bad FormSubmit response), re-enable and show message
+          btn.disabled = false;
+          btn.textContent = 'Book My Demo →';
+          var msg = (err && err.message && err.message !== 'Submission failed') ? err.message : '';
+          s.innerHTML = (msg ? '<strong>' + msg + '</strong><br>' : '') + 'Something went wrong. Please try again or email us at <a href="' + 'mail' + 'to:' + _em + '" style="color:#7C3AED;text-decoration:none;font-weight:600">' + _em + '</a>';
+          s.className = 'form-status error';
+        });
 
-  fetch(endpoint,{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:payload
-  })
-  .then(function(r){return r.json()})
-  .then(function(data){
-    // Hide the form, show thank-you
-    form.style.display='none';
-    s.innerHTML=''
-      +'<div style="padding:40px 0;text-align:center">'
-      +'<div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,0.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>'
-      +'<div style="font-size:1.3rem;font-weight:800;color:#0f0f1a;margin-bottom:8px">Thank you, '+fn+'!</div>'
-      +'<div style="font-size:.95rem;color:#6b6b85;line-height:1.7;margin-bottom:4px">Your demo request for <strong>'+co+'</strong> has been submitted.</div>'
-      +'<div style="font-size:.95rem;color:#6b6b85;line-height:1.7;margin-bottom:20px">We\'ll reach out to <strong>'+em+'</strong> within 4 hours.</div>'
-      +'<div style="font-size:.82rem;color:#9a9ab0">Questions? Email us at <a href="'+'mail'+'to:'+_em+'" style="color:#7C3AED;text-decoration:none;font-weight:600">'+_em+'</a></div>'
-      +'</div>';
-    s.className='form-status success';
-  })
-  .catch(function(err){
-    // On network error, show fallback
-    btn.disabled=false;
-    btn.textContent='Book My Demo →';
-    s.innerHTML='Something went wrong. Please email us directly at <a href="'+'mail'+'to:'+_em+'" style="color:#7C3AED;text-decoration:none;font-weight:600">'+_em+'</a>';
-    s.className='form-status error';
-  });
-
-  return false;
-});
-</script>
+      return false;
+    });
+  </script>
 </body>
+
 </html>
