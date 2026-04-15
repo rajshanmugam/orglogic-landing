@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OrgLogic — The AI Workspace for Your Entire Company</title>
-<meta name="description" content="Named AI Agents that know your domain and act in your systems. Every model, full governance, $8/seat. Free for 25 users. BYOK. SOC 2 certified.">
+<title>OrgLogic | Enterprise AI Workspace — AI Agents, AI Governance, Every Model</title>
+<meta name="description" content="The enterprise AI platform with every model, AI Agents that act in Salesforce, Jira, and Confluence, and full AI governance. BYOK, audit trails, PII redaction. SOC 2 + ISO 27001. Free for 25 users.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://orglogic.ai/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://orglogic.ai/">
 <meta property="og:site_name" content="OrgLogic">
-<meta property="og:title" content="OrgLogic — The AI Workspace for Your Entire Company">
-<meta property="og:description" content="Named AI Agents that know your domain and act in your systems. Every model, full governance, $8/seat. Free for 25 users. BYOK. SOC 2 certified.">
+<meta property="og:title" content="OrgLogic | Enterprise AI Workspace — AI Agents, AI Governance, Every Model">
+<meta property="og:description" content="The enterprise AI platform with every model, AI Agents that act in Salesforce, Jira, and Confluence, and full AI governance. BYOK, audit trails, PII redaction. SOC 2 + ISO 27001. Free for 25 users.">
 <meta property="og:image" content="https://orglogic.ai/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OrgLogic — The AI Workspace for Your Entire Company">
-<meta name="twitter:description" content="Named AI Agents that know your domain and act in your systems. Every model, full governance, $8/seat. Free for 25 users. BYOK. SOC 2 certified.">
+<meta name="twitter:title" content="OrgLogic | Enterprise AI Workspace — AI Agents, AI Governance, Every Model">
+<meta name="twitter:description" content="The enterprise AI platform with every model, AI Agents that act in Salesforce, Jira, and Confluence, and full AI governance. BYOK, audit trails, PII redaction. SOC 2 + ISO 27001. Free for 25 users.">
 <meta name="twitter:image" content="https://orglogic.ai/og-image.png">
 <link rel="icon" href="favicon.ico">
 <link rel="icon" type="image/svg+xml" href="orglogic-favicon.svg">
@@ -81,15 +81,20 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between;height:10
 /* ============================================================
    HERO
    ============================================================ */
-.hero{padding:80px 0 60px;position:relative;overflow:hidden}
+.hero{padding:64px 0 56px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-200px;right:-300px;width:800px;height:800px;background:radial-gradient(circle,rgba(124,58,237,.06) 0%,transparent 70%);pointer-events:none}
-.heb{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--p600);background:var(--p50);border:1px solid var(--p200);padding:6px 16px;border-radius:100px;margin-bottom:28px;letter-spacing:.2px}
+.heb{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--p600);background:var(--p50);border:1px solid var(--p200);padding:6px 16px;border-radius:100px;margin-bottom:20px;letter-spacing:.2px}
 .heb span{display:inline-block;width:6px;height:6px;background:var(--p500);border-radius:50%}
-.hero h1{font-size:clamp(42px,5.5vw,68px);letter-spacing:-1.8px;max-width:720px;margin-bottom:24px;font-weight:800}
-.hsub{font-size:19px;line-height:1.6;color:var(--tx2);max-width:580px;margin-bottom:40px}
-.hctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
-.hproof p{font-size:13px;font-weight:500;color:var(--txm);letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
-.logos{display:flex;align-items:center;gap:36px;flex-wrap:wrap;opacity:.45}
+.hero h1{font-size:clamp(42px,5.5vw,68px);letter-spacing:-1.8px;margin-bottom:20px;font-weight:800}
+.hsub{font-size:19px;line-height:1.6;color:var(--tx2);max-width:740px;margin-bottom:32px}
+.hctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.hero-lines{margin-bottom:40px;max-width:640px}
+.hero-lines .hl-pain{font-size:20px;font-weight:600;color:var(--p600);margin-bottom:12px;letter-spacing:-.2px}
+.hero-lines .hl-mechanism{font-size:19px;line-height:1.6;color:var(--tx2);margin-bottom:12px}
+.hero-lines .hl-proof{font-size:17px;color:var(--txm);font-weight:500}
+.hero-lines .hl-proof strong{color:var(--tx1);font-weight:700}
+.hproof p{font-size:13px;font-weight:500;color:var(--txm);letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+.logos{display:flex;align-items:center;gap:28px;flex-wrap:wrap;opacity:.45}
 .logos span{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--tx1);letter-spacing:-.2px;white-space:nowrap}
 
 /* ============================================================
@@ -175,6 +180,9 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between;height:10
 .pcta{margin-top:auto}
 .pcta a{width:100%;text-align:center;justify-content:center}
 .pnote{margin-top:32px;font-size:14px;color:var(--txm);font-style:italic}
+.credit-badge{background:linear-gradient(135deg,var(--p50),#F0EDFF);border:1.5px solid var(--p200);border-radius:10px;padding:12px 16px;margin-bottom:24px;text-align:center}
+.credit-badge{font-size:15px;font-weight:700;color:var(--p700);letter-spacing:-.2px}
+.credit-badge span{display:block;font-size:12px;font-weight:500;color:var(--txm);margin-top:2px;letter-spacing:0}
 
 /* ============================================================
    HOW IT WORKS
@@ -197,12 +205,39 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between;height:10
 .ucc p{font-size:14px;color:var(--tx2);line-height:1.55}
 
 /* ============================================================
+   RESULTS
+   ============================================================ */
+.results{padding:var(--spy) 0;background:var(--tx1);color:#fff;position:relative;overflow:hidden}
+.results::before{content:'';position:absolute;top:-200px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(124,58,237,.2) 0%,transparent 60%);pointer-events:none}
+.results .seb{color:var(--p300)}
+.results .sh{color:#fff;position:relative}
+.results .ss{color:rgba(255,255,255,.6);position:relative}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;position:relative}
+.rc{padding:32px 24px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.rnum{font-family:var(--fd);font-size:44px;font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:6px;background:linear-gradient(135deg,#D4C4FB,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.rlbl{font-size:15px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:6px}
+.rdsc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.5}
+.rquote{margin-top:48px;position:relative;max-width:720px}
+.rquote blockquote{font-size:18px;font-weight:500;line-height:1.65;color:rgba(255,255,255,.85);font-style:italic;padding-left:24px;border-left:3px solid var(--p500)}
+.rquote cite{display:block;margin-top:16px;padding-left:24px;font-size:14px;font-style:normal;color:rgba(255,255,255,.45);line-height:1.5}
+.rquote cite strong{color:rgba(255,255,255,.65);font-weight:600}
+
+/* ============================================================
    SECURITY
    ============================================================ */
 .sec{padding:var(--spy) 0;background:var(--bgf);border-top:1px solid var(--bdrf);border-bottom:1px solid var(--bdrf)}
 .secgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:48px;max-width:800px}
 .si{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg);border:1px solid var(--bdr);border-radius:10px;font-size:14.5px;font-weight:500}
 .sii{width:36px;height:36px;background:var(--p50);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{padding:var(--spy) 0}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px}
+.faq-item{padding:28px 28px;border-radius:14px;border:1px solid var(--bdr);background:var(--bg)}
+.faq-item h3{font-size:16px;font-weight:700;letter-spacing:-.3px;margin-bottom:10px;color:var(--tx1)}
+.faq-item p{font-size:14.5px;color:var(--tx2);line-height:1.65}
 
 /* ============================================================
    SOCIAL PROOF
@@ -405,7 +440,7 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 /* ============================================================
    MOCK VISUAL CONTAINERS
    ============================================================ */
-.hero-mock{margin-top:56px}
+.hero-mock{margin-top:40px}
 .gov-mock{margin-top:48px}
 
 /* ============================================================
@@ -413,7 +448,8 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
    ============================================================ */
 @media(max-width:900px){
   :root{--spy:80px}
-  .stgrid,.fgrid,.pgrid,.sgrid,.ucgrid{grid-template-columns:1fr}
+  .stgrid,.fgrid,.pgrid,.sgrid,.ucgrid,.faq-grid{grid-template-columns:1fr}
+  .rgrid{grid-template-columns:repeat(2,1fr)}
   .secgrid{grid-template-columns:1fr}
   .fgr{grid-template-columns:1fr 1fr;gap:32px}
   .fld{flex-direction:column}.fla{transform:rotate(90deg)}
@@ -431,6 +467,107 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
   .ucgrid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OrgLogic",
+  "legalName": "Troopr Labs Inc.",
+  "url": "https://orglogic.ai",
+  "logo": "https://orglogic.ai/orglogic-logo.svg",
+  "description": "The enterprise AI workspace with AI Chat, AI Agents, and full IT governance.",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OrgLogic",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Up to 25 users with BYOK and full governance"
+    },
+    {
+      "@type": "Offer",
+      "name": "Business",
+      "price": "8",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "8",
+        "priceCurrency": "USD",
+        "billingDuration": "P1M",
+        "unitText": "seat"
+      },
+      "description": "Full governance, named Agents, Skills, per-Agent permissions"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is OrgLogic different from ChatGPT Enterprise or Microsoft Copilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Single-model AI tools lock you into one provider at $25-60/seat. OrgLogic is a multi-model AI workspace with named Agents that act in your systems (Salesforce, Jira, Confluence, ServiceNow), packaged Skills for domain expertise, and full governance at $8/seat. You get every model, not just one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does BYOK mean and how does it work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bring Your Own Key means you connect your own API keys from OpenAI, Anthropic, Google, or any provider. Your data flows directly to the model provider. OrgLogic never sees, stores, or processes your prompts or responses. Zero surcharge on your own keys."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Agents and Skills? How are they different from a chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An Agent is a named AI worker with a defined job, connected to your systems via Connectors. A Skill is packaged expertise that teaches an Agent how to do specific work consistently. Unlike a generic chatbot, a Deal Prep Agent with a Salesforce Connector pulls real CRM data and produces structured call briefs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What AI governance controls does OrgLogic provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every Workspace includes per-Agent Connector permissions, Agent-level audit trails, automatic PII redaction, per-team budget controls, model-level access controls, and configurable guardrails. Governance is the default environment on every plan, including Free. SOC 2 Type II, ISO 27001, HIPAA, and GDPR compliant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does pricing work? What does $8/seat cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Free plan covers 25 users with $500 in credits ($20 per active user, pooled). The Business plan is $8/seat/month (annual) or $10 monthly. The seat fee covers the full platform: Agents, Skills, Connectors, governance dashboard, 5 surfaces, and all features. Model usage is separate: BYOK at zero surcharge, or OrgLogic-managed models at cost + 6%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you solve the shadow AI problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "80% of employees already use AI tools without IT approval. OrgLogic replaces fragmented, ungoverned tools with one AI workspace employees actually want to use, available on web, Slack, Teams, Chrome, and API."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -455,12 +592,12 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <!-- HERO -->
 <section class="hero">
   <div class="ctn">
-    <div class="heb rv"><span></span> Free for up to 25 users</div>
-    <h1 class="rv rv-d1">AI Agents for your entire company. Governed by default.</h1>
-    <p class="hsub rv rv-d2">Named Agents that know your domain and act in Salesforce, Jira, Confluence, and Slack. Every model. Full governance for IT. $8/seat.</p>
+    <div class="heb rv"><span></span> Trusted by Snowflake, Spotify, Snap · SOC 2 · ISO 27001</div>
+    <h1 class="rv rv-d1">The enterprise AI workspace<br>for company-wide adoption.</h1>
+    <p class="hsub rv rv-d2">Every employee gets AI chat with any model and autonomous Agents that know your domain and work across your systems. IT gets complete governance over all of it.</p>
     <div class="hctas rv rv-d3">
-      <a href="https://app.orglogic.ai/signup" class="bp blg">Sign up free</a>
-      <a href="#platform" class="bs blg">See the platform</a>
+      <a href="https://app.orglogic.ai/signup" class="bp blg">Start free with $500 in credits</a>
+      <a href="https://calendly.com/d/cyqt-jps-sh8/orglogic-demo" target="_blank" class="bs blg">Book a demo</a>
     </div>
     <div class="hproof rv rv-d4">
       <p>Proven across 600+ enterprise deployments</p>
@@ -599,95 +736,80 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
   </div>
 </section>
 
-<!-- PLATFORM ARCHITECTURE -->
-<section class="arch-section" id="platform">
+
+<!-- AI CHAT -->
+<section class="feat feat-alt">
   <div class="ctn">
-    <div class="seb rv">Architecture</div>
-    <h2 class="sh rv rv-d1">The full platform.</h2>
-    <p class="ss rv rv-d2">Everything employees need to use AI and everything IT needs to control it — in a single platform.</p>
-
-    <div class="arch rv rv-d3">
-      <div class="arch-section-label">Employee Surfaces</div>
-      <div class="arch-row">
-        <div class="arch-block surface">🌐 Web Portal</div>
-        <div class="arch-block surface">💬 Slack</div>
-        <div class="arch-block surface">🟣 Teams</div>
-        <div class="arch-block surface">🔌 Chrome</div>
-        <div class="arch-block surface">⚡ API / SDK</div>
-      </div>
-
-      <div class="arch-connector">↕</div>
-
-      <div class="arch-section-label">AI Workspace — Agents, Skills &amp; Routing</div>
-      <div class="arch-row">
-        <div class="arch-block core">Named Agents</div>
-        <div class="arch-block core">Skills Engine</div>
-        <div class="arch-block core">Smart Router</div>
-        <div class="arch-block core">RAG Engine</div>
-      </div>
-
-      <div class="arch-connector">↕</div>
-
-      <div class="arch-section-label">Workspace Governance — IT &amp; Security Control</div>
-      <div class="arch-row">
-        <div class="arch-block gov">🔑 BYOK Manager</div>
-        <div class="arch-block gov">🛡️ PII Redaction</div>
-        <div class="arch-block gov">🚧 Guardrails</div>
-        <div class="arch-block gov">👤 Per-Agent Permissions</div>
-        <div class="arch-block gov">📋 Agent-Level Audit</div>
-        <div class="arch-block gov">📊 Budget Controls</div>
-      </div>
-
-      <hr class="arch-divider">
-
-      <div class="arch-section-label">Connectors — Per-Agent Permission Scopes</div>
-      <div class="arch-row">
-        <div class="arch-block sys">Salesforce</div>
-        <div class="arch-block sys">Jira</div>
-        <div class="arch-block sys">Confluence</div>
-        <div class="arch-block sys">ServiceNow</div>
-        <div class="arch-block sys">SharePoint</div>
-        <div class="arch-block sys">Google Workspace</div>
-        <div class="arch-block sys">Slack</div>
-        <div class="arch-block sys">Custom APIs</div>
-      </div>
-
-      <hr class="arch-divider">
-
-      <div class="arch-section-label">LLM Providers (BYOK at zero surcharge)</div>
-      <div class="arch-row">
-        <div class="arch-block model">OpenAI (GPT-4o)</div>
-        <div class="arch-block model">Anthropic (Claude)</div>
-        <div class="arch-block model">Google (Gemini)</div>
-        <div class="arch-block model">Meta (Llama)</div>
-        <div class="arch-block model">Any LLM</div>
-      </div>
+    <div class="seb rv">AI Chat</div>
+    <h2 class="sh rv rv-d1">Every AI model in one workspace. Replace $25-60/seat tools.</h2>
+    <p class="ss rv rv-d2">GPT-4o, Claude, Gemini, Llama, Mistral, and more. Smart routing picks the best model per task. BYOK means your data flows directly to model providers, OrgLogic never sees it.</p>
+    <div class="fgrid">
+      <div class="fc rv rv-d1"><div class="fic">🔀</div><h3>Every model, one place</h3><p>Access GPT-4o, Claude, Gemini, Llama, Mistral, and DeepSeek from a single workspace. Switch models mid-conversation. No more juggling subscriptions.</p></div>
+      <div class="fc rv rv-d2"><div class="fic">⚡</div><h3>Smart model routing</h3><p>Queries are automatically routed to the optimal model per task. One customer cut AI spend by 70% through BYOK and smart routing alone.</p></div>
+      <div class="fc rv rv-d3"><div class="fic">🖥️</div><h3>5 native surfaces</h3><p>Web app, Slack, Microsoft Teams, Chrome extension, and API/SDK. One workspace, everywhere your team already works.</p></div>
+    </div>
+    <div class="bdgs rv">
+      <div class="bdg">🔑 BYOK at zero surcharge</div><div class="bdg">💬 Multi-model chat</div><div class="bdg">🔀 Model switching mid-chat</div><div class="bdg">📎 File upload + analysis</div><div class="bdg">🌐 Web search + citations</div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES: FOR EVERYONE -->
-<section class="feat">
+<!-- AI AGENTS -->
+<section class="feat" id="platform">
   <div class="ctn">
-    <div class="seb rv">For every employee</div>
-    <h2 class="sh rv rv-d1">AI Agents that work in your systems. Not just a chat window.</h2>
+    <div class="seb rv">AI Agents</div>
+    <h2 class="sh rv rv-d1">AI Agents that act in Salesforce, Jira, and Confluence.</h2>
     <p class="ss rv rv-d2">Named Agents with domain expertise and system access, deployed to your team across every surface where they already work.</p>
     <div class="fgrid">
       <div class="fc rv rv-d1"><div class="fic">🤖</div><h3>Named Agents</h3><p>AI workers with a defined job, domain Skills, and Connector access. Built once, deployed to the team. Not just another chat window.</p></div>
       <div class="fc rv rv-d2"><div class="fic">🧠</div><h3>Skills — packaged expertise</h3><p>Teach an Agent how your best performer does the work. Reusable across Agents, versioned, authored in plain language. No code required.</p></div>
-      <div class="fc rv rv-d3"><div class="fic">🔀</div><h3>Every model, one workspace</h3><p>GPT-4o, Claude, Gemini, Llama, Mistral, DeepSeek — switch models mid-conversation. Smart routing picks the best model per task automatically.</p></div>
-      <div class="fc rv rv-d1"><div class="fic">🖥️</div><h3>5 native surfaces</h3><p>Web app, Slack, Microsoft Teams, Chrome extension, and API/SDK. One workspace, everywhere your team already works.</p></div>
+      <div class="fc rv rv-d3"><div class="fic">📦</div><h3>Pre-built Agent templates</h3><p>Deploy ready-made Agents for sales, support, engineering, HR, and legal on day one. Customize with your own Skills and Connectors.</p></div>
+      <div class="fc rv rv-d1"><div class="fic">📅</div><h3>Event-triggered and scheduled</h3><p>Agents run on demand, on schedule, or triggered by events in connected systems. Automate recurring work without manual intervention.</p></div>
       <div class="fc rv rv-d2"><div class="fic">🔗</div><h3>Connected to your systems</h3><p>Agents act in Salesforce, Jira, Confluence, ServiceNow, Google Workspace, SharePoint, and more. No copy-paste between tools.</p></div>
-      <div class="fc rv rv-d3"><div class="fic">⚡</div><h3>Smart model routing</h3><p>Auto-routes queries to the optimal model per task. One customer cut AI spend by 70% through BYOK and smart routing alone.</p></div>
+      <div class="fc rv rv-d3"><div class="fic">🎯</div><h3>Per-Agent Connector permissions</h3><p>Security approves exactly what each Agent can access. Not blanket Connector access — scoped per-Agent, per-Connector, controlled by IT.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES: FOR IT -->
-<section class="feat feat-alt">
+<!-- USE CASES -->
+<section class="uc">
   <div class="ctn">
-    <div class="seb rv">For IT and security teams</div>
-    <h2 class="sh rv rv-d1">Per-Agent governance. Agent-level audit trails.<br>Zero data exposure.</h2>
+    <div class="seb rv">Use cases</div>
+    <h2 class="sh rv rv-d1">Named Agents for every team.</h2>
+    <div class="ucgrid">
+      <div class="ucc rv rv-d1"><h3>💻 Engineering</h3><div class="agent-name">PR Review Agent · Debug Agent · Docs Agent</div><p>Reviews PRs on GitHub, debugs with logs + Jira context, and generates documentation from code changes. No copy-paste.</p></div>
+      <div class="ucc rv rv-d2"><h3>📈 Sales</h3><div class="agent-name">Deal Prep Agent · Account History Agent</div><p>Prepares call briefs from Salesforce data, drafts proposals, and pulls account history. Grounded in your CRM, not guesswork.</p></div>
+      <div class="ucc rv rv-d3"><h3>📣 Marketing</h3><div class="agent-name">Content Agent · Campaign Agent</div><p>Writes on-brand content using a Brand Voice Skill, translates campaigns, and generates creative briefs across Google Workspace.</p></div>
+      <div class="ucc rv rv-d1"><h3>🎧 Customer Support</h3><div class="agent-name">Ticket Resolution Agent</div><p>Auto-drafts responses from ServiceNow + Confluence. Resolves tickets end-to-end without leaving the ticketing system.</p></div>
+      <div class="ucc rv rv-d2"><h3>👥 HR &amp; People</h3><div class="agent-name">Policy Agent · Onboarding Agent</div><p>Answers policy questions from your handbook, streamlines onboarding, and generates JDs. Connected to your HR systems.</p></div>
+      <div class="ucc rv rv-d3"><h3>⚖️ Legal &amp; Compliance</h3><div class="agent-name">Contract Review Agent</div><p>Reviews contracts on SharePoint, flags risk, and generates compliance documentation. Full audit trail on every interaction.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results">
+  <div class="ctn">
+    <div class="seb rv">Results</div>
+    <h2 class="sh rv rv-d1">What happens when you replace<br>fragmented AI with one governed workspace.</h2>
+    <div class="rgrid">
+      <div class="rc rv rv-d1"><div class="rnum">91%</div><div class="rlbl">Shadow AI eliminated</div><div class="rdsc">Unsanctioned AI tool usage dropped 91% within 6 weeks of company-wide deployment.</div></div>
+      <div class="rc rv rv-d2"><div class="rnum">70%</div><div class="rlbl">Lower AI spend</div><div class="rdsc">Consolidated from ~$40K/month to ~$12K/month through BYOK and smart model routing.</div></div>
+      <div class="rc rv rv-d3"><div class="rnum">12→1</div><div class="rlbl">Tools consolidated</div><div class="rdsc">Replaced 12 fragmented AI tools with one governed workspace across all departments.</div></div>
+      <div class="rc rv rv-d4"><div class="rnum">2 wks</div><div class="rlbl">Time to adoption</div><div class="rdsc">Engineers adopted within 2 weeks via Slack and Chrome extension. No training required.</div></div>
+    </div>
+    <div class="rquote rv rv-d3">
+      <blockquote>We consolidated 12 AI tools into one governed workspace and had full audit trail coverage across every AI interaction in the first month. Security signed off on company-wide rollout.</blockquote>
+      <cite><strong>Head of Digital Transformation</strong><br>Defense and transportation technology company, 6,000+ employees</cite>
+    </div>
+  </div>
+</section>
+
+<!-- IT GOVERNANCE -->
+<section class="feat feat-alt" id="security">
+  <div class="ctn">
+    <div class="seb rv">IT Governance</div>
+    <h2 class="sh rv rv-d1">AI governance with per-Agent permissions,<br>audit trails, and zero data exposure.</h2>
     <p class="ss rv rv-d2">Every Agent operates inside a governed Workspace. BYOK means your data flows directly to model providers — OrgLogic never sees it. Zero surcharge on your own keys.</p>
     <div class="fgrid">
       <div class="fc rv rv-d1"><div class="fic">🔑</div><h3>BYOK at zero surcharge</h3><p>Connect your own API keys from any provider. Your data flows directly to the model provider, OrgLogic never sees it. No markup on your usage — ever.</p></div>
@@ -792,19 +914,101 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
   </div>
 </section>
 
+<!-- PLATFORM ARCHITECTURE -->
+<section class="arch-section">
+  <div class="ctn">
+    <div class="seb rv">Architecture</div>
+    <h2 class="sh rv rv-d1">The complete enterprise AI platform.</h2>
+    <p class="ss rv rv-d2">Everything employees need to use AI and everything IT needs to control it — in a single platform.</p>
+
+    <div class="arch rv rv-d3">
+      <div class="arch-section-label">Employee Surfaces</div>
+      <div class="arch-row">
+        <div class="arch-block surface">🌐 Web Portal</div>
+        <div class="arch-block surface">💬 Slack</div>
+        <div class="arch-block surface">🟣 Teams</div>
+        <div class="arch-block surface">🔌 Chrome</div>
+        <div class="arch-block surface">⚡ API / SDK</div>
+      </div>
+
+      <div class="arch-connector">↕</div>
+
+      <div class="arch-section-label">AI Workspace — Agents, Skills &amp; Routing</div>
+      <div class="arch-row">
+        <div class="arch-block core">Named Agents</div>
+        <div class="arch-block core">Skills Engine</div>
+        <div class="arch-block core">Smart Router</div>
+        <div class="arch-block core">RAG Engine</div>
+      </div>
+
+      <div class="arch-connector">↕</div>
+
+      <div class="arch-section-label">Workspace Governance — IT &amp; Security Control</div>
+      <div class="arch-row">
+        <div class="arch-block gov">🔑 BYOK Manager</div>
+        <div class="arch-block gov">🛡️ PII Redaction</div>
+        <div class="arch-block gov">🚧 Guardrails</div>
+        <div class="arch-block gov">👤 Per-Agent Permissions</div>
+        <div class="arch-block gov">📋 Agent-Level Audit</div>
+        <div class="arch-block gov">📊 Budget Controls</div>
+      </div>
+
+      <hr class="arch-divider">
+
+      <div class="arch-section-label">Connectors — Per-Agent Permission Scopes</div>
+      <div class="arch-row">
+        <div class="arch-block sys">Salesforce</div>
+        <div class="arch-block sys">Jira</div>
+        <div class="arch-block sys">Confluence</div>
+        <div class="arch-block sys">ServiceNow</div>
+        <div class="arch-block sys">SharePoint</div>
+        <div class="arch-block sys">Google Workspace</div>
+        <div class="arch-block sys">Slack</div>
+        <div class="arch-block sys">Custom APIs</div>
+      </div>
+
+      <hr class="arch-divider">
+
+      <div class="arch-section-label">LLM Providers (BYOK at zero surcharge)</div>
+      <div class="arch-row">
+        <div class="arch-block model">OpenAI (GPT-4o)</div>
+        <div class="arch-block model">Anthropic (Claude)</div>
+        <div class="arch-block model">Google (Gemini)</div>
+        <div class="arch-block model">Meta (Llama)</div>
+        <div class="arch-block model">Any LLM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="hiw">
+  <div class="ctn">
+    <div class="seb rv">Get started</div>
+    <h2 class="sh rv rv-d1">Live in five minutes. No sales call required.</h2>
+    <div class="sgrid">
+      <div class="sc rv rv-d1"><div class="sn">01</div><h3>Sign up and create your Workspace</h3><p>Create your governed Workspace in 30 seconds. Invite teammates by email or domain. Free for up to 25 users with credits included.</p></div>
+      <div class="sc rv rv-d2"><div class="sn">02</div><h3>Connect your keys and systems</h3><p>Add your OpenAI, Anthropic, or Google API keys (BYOK, zero surcharge). Connect Salesforce, Jira, Confluence, or any system your Agents need.</p></div>
+      <div class="sc rv rv-d3"><div class="sn">03</div><h3>Deploy Agents to your team</h3><p>Start with the default Chat Agent or deploy pre-built Agents for sales, support, engineering, HR, and legal. Build custom Agents with Skills in minutes.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="ctn">
     <div class="seb rv">Pricing</div>
     <h2 class="sh rv rv-d1">$8/seat. Every model. Full governance.</h2>
-    <p class="ss rv rv-d2">Free for up to 25 users with $20 in credits per active user. BYOK at zero surcharge, or OrgLogic-managed models at cost + 6%. Governance included on every plan.</p>
+    <p class="ss rv rv-d2">Start with $500 in free credits across 25 users. No credit card, no time limit. BYOK at zero surcharge, or OrgLogic-managed models at cost + 6%. Governance included on every plan.</p>
     <div class="pgrid">
       <div class="pc rv rv-d1">
         <div class="pt">Free</div><div class="pd">Up to 25 users · BYOK included</div>
         <div class="pprice">$0<small> forever</small></div>
-        <div class="pprice-note">No credit card required · $20 in credits per active user</div>
+        <div class="pprice-note">No credit card required</div>
+        <div class="credit-badge">Includes $500 in free credits<span>$20 per active user, pooled</span></div>
         <ul class="pf"><li>Multi-model chat (all major models)</li><li>Default Chat Agent ("Assistant")</li><li>Agent builder + pre-built templates</li><li>Web, Slack, Teams, Chrome, API</li><li>Knowledge integrations (Connectors)</li><li>Basic admin &amp; user management</li><li>Community support</li></ul>
-        <div class="pcta"><a href="https://app.orglogic.ai/signup" class="bp" style="width:100%;justify-content:center">Sign up free</a></div>
+        <div class="pcta"><a href="https://app.orglogic.ai/signup" class="bp" style="width:100%;justify-content:center">Start free with $500 in credits</a></div>
       </div>
       <div class="pc ft rv rv-d2">
         <div class="pt">Business</div><div class="pd">For teams that need full governance</div>
@@ -825,56 +1029,6 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="hiw">
-  <div class="ctn">
-    <div class="seb rv">Get started</div>
-    <h2 class="sh rv rv-d1">Live in five minutes. No sales call required.</h2>
-    <div class="sgrid">
-      <div class="sc rv rv-d1"><div class="sn">01</div><h3>Sign up and create your Workspace</h3><p>Create your governed Workspace in 30 seconds. Invite teammates by email or domain. Free for up to 25 users.</p></div>
-      <div class="sc rv rv-d2"><div class="sn">02</div><h3>Connect your keys and systems</h3><p>Add your OpenAI, Anthropic, or Google API keys (BYOK, zero surcharge). Connect Salesforce, Jira, Confluence, or any system your Agents need.</p></div>
-      <div class="sc rv rv-d3"><div class="sn">03</div><h3>Deploy Agents to your team</h3><p>Start with the default Chat Agent or deploy pre-built Agents for sales, support, engineering, HR, and legal. Build custom Agents with Skills in minutes.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- USE CASES -->
-<section class="uc">
-  <div class="ctn">
-    <div class="seb rv">Use cases</div>
-    <h2 class="sh rv rv-d1">Named Agents for every team.</h2>
-    <div class="ucgrid">
-      <div class="ucc rv rv-d1"><h3>💻 Engineering</h3><div class="agent-name">PR Review Agent · Debug Agent · Docs Agent</div><p>Reviews PRs on GitHub, debugs with logs + Jira context, and generates documentation from code changes. No copy-paste.</p></div>
-      <div class="ucc rv rv-d2"><h3>📈 Sales</h3><div class="agent-name">Deal Prep Agent · Account History Agent</div><p>Prepares call briefs from Salesforce data, drafts proposals, and pulls account history. Grounded in your CRM, not guesswork.</p></div>
-      <div class="ucc rv rv-d3"><h3>📣 Marketing</h3><div class="agent-name">Content Agent · Campaign Agent</div><p>Writes on-brand content using a Brand Voice Skill, translates campaigns, and generates creative briefs across Google Workspace.</p></div>
-      <div class="ucc rv rv-d1"><h3>🎧 Customer Support</h3><div class="agent-name">Ticket Resolution Agent</div><p>Auto-drafts responses from ServiceNow + Confluence. Resolves tickets end-to-end without leaving the ticketing system.</p></div>
-      <div class="ucc rv rv-d2"><h3>👥 HR &amp; People</h3><div class="agent-name">Policy Agent · Onboarding Agent</div><p>Answers policy questions from your handbook, streamlines onboarding, and generates JDs. Connected to your HR systems.</p></div>
-      <div class="ucc rv rv-d3"><h3>⚖️ Legal &amp; Compliance</h3><div class="agent-name">Contract Review Agent</div><p>Reviews contracts on SharePoint, flags risk, and generates compliance documentation. Full audit trail on every interaction.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SECURITY -->
-<section class="sec" id="security">
-  <div class="ctn">
-    <div class="seb rv">Security</div>
-    <h2 class="sh rv rv-d1">Enterprise security.<br>Not an upgrade tier.</h2>
-    <p class="ss rv rv-d2">Governance isn't bolted on — it's the default environment. Every plan, including Free, runs on the same enterprise-grade infrastructure proven across 600+ deployments.</p>
-    <div class="secgrid">
-      <div class="si rv"><div class="sii">🔑</div>BYOK at zero surcharge — your data never touches our servers</div>
-      <div class="si rv rv-d1"><div class="sii">🏆</div>SOC 2 Type II + ISO 27001 certified</div>
-      <div class="si rv rv-d1"><div class="sii">🎯</div>Per-Agent Connector permissions (unique to OrgLogic)</div>
-      <div class="si rv rv-d2"><div class="sii">🛡️</div>PII redaction on every query, every model</div>
-      <div class="si rv rv-d2"><div class="sii">📋</div>Agent-level audit trail — exportable for compliance</div>
-      <div class="si rv rv-d3"><div class="sii">💰</div>Per-team budget controls and cost analytics</div>
-      <div class="si rv rv-d3"><div class="sii">👤</div>Model-level access controls per team</div>
-      <div class="si rv rv-d4"><div class="sii">🏠</div>On-prem / VPC deployment available</div>
-      <div class="si rv rv-d4"><div class="sii">🌍</div>GDPR &amp; HIPAA compliant</div>
-      <div class="si rv rv-d5"><div class="sii">🔐</div>SSO &amp; SCIM (SAML / OIDC / Okta / Azure AD)</div>
-    </div>
-  </div>
-</section>
-
 <!-- SOCIAL PROOF -->
 <section class="sp">
   <div class="ctn">
@@ -891,16 +1045,58 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="ctn">
+    <div class="seb rv">FAQ</div>
+    <h2 class="sh rv rv-d1">Common questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item rv rv-d1">
+        <h3>How is OrgLogic different from ChatGPT Enterprise or Microsoft Copilot?</h3>
+        <p>Single-model AI tools lock you into one provider at $25-60/seat. OrgLogic is a multi-model AI workspace with named Agents that act in your systems (Salesforce, Jira, Confluence, ServiceNow), packaged Skills for domain expertise, and full governance at $8/seat. You get every model, not just one.</p>
+      </div>
+      <div class="faq-item rv rv-d2">
+        <h3>What does BYOK mean and how does it work?</h3>
+        <p>Bring Your Own Key means you connect your own API keys from OpenAI, Anthropic, Google, or any provider. Your data flows directly to the model provider. OrgLogic never sees, stores, or processes your prompts or responses. Zero surcharge on your own keys. This is the #1 requirement for security teams evaluating enterprise AI platforms.</p>
+      </div>
+      <div class="faq-item rv rv-d1">
+        <h3>What are Agents and Skills? How are they different from a chatbot?</h3>
+        <p>An Agent is a named AI worker with a defined job, connected to your systems via Connectors. A Skill is packaged expertise that teaches an Agent how to do specific work consistently. Unlike a generic chatbot, a Deal Prep Agent with a Salesforce Connector pulls real CRM data and produces structured call briefs. Skills are reusable across Agents, versioned, and authored in plain language.</p>
+      </div>
+      <div class="faq-item rv rv-d2">
+        <h3>What AI governance controls does OrgLogic provide?</h3>
+        <p>Every Workspace includes per-Agent Connector permissions (each Agent gets scoped access, not blanket access), Agent-level audit trails, automatic PII redaction, per-team budget controls, model-level access controls, and configurable guardrails. Governance is the default environment on every plan, including Free. SOC 2 Type II, ISO 27001, HIPAA, and GDPR compliant.</p>
+      </div>
+      <div class="faq-item rv rv-d1">
+        <h3>How does pricing work? What does $8/seat cover?</h3>
+        <p>The Free plan covers 25 users with $500 in credits ($20 per active user, pooled). The Business plan is $8/seat/month (annual) or $10 monthly. The seat fee covers the full platform: Agents, Skills, Connectors, governance dashboard, 5 surfaces, and all features. Model usage is separate: BYOK at zero surcharge, or OrgLogic-managed models at cost + 6%.</p>
+      </div>
+      <div class="faq-item rv rv-d2">
+        <h3>How do you solve the shadow AI problem?</h3>
+        <p>80% of employees already use AI tools without IT approval. OrgLogic replaces fragmented, ungoverned tools with one AI workspace employees actually want to use, available on web, Slack, Teams, Chrome, and API. One customer, a regulated tech company with 1,500 employees, reduced shadow AI by 91% within 6 weeks while cutting AI spend by 70%.</p>
+      </div>
+      <div class="faq-item rv rv-d1">
+        <h3>What systems does OrgLogic connect to?</h3>
+        <p>OrgLogic Connectors integrate with Salesforce, Jira, Confluence, ServiceNow, SharePoint, Google Workspace, Slack, SAP, and more via custom APIs. Each Connector has per-Agent permission scopes controlled by IT, so your Deal Prep Agent only accesses the Salesforce objects you approve. The Connector library is growing and new integrations ship regularly.</p>
+      </div>
+      <div class="faq-item rv rv-d2">
+        <h3>How fast can we deploy OrgLogic?</h3>
+        <p>Self-serve signup takes 30 seconds. Connect your API keys in 2 minutes. Deploy pre-built Agents for sales, support, engineering, HR, and legal on day one. The Free plan (25 users, full governance) lets you pilot without procurement. One customer had engineers adopting within 2 weeks across Slack and Chrome. Enterprise plans add SSO/SCIM, VPC, and on-prem deployment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="fcta" id="contact">
   <div class="ctn">
-    <h2 class="sh rv">Free for 25 users. $8/seat after that.<br>Live in 5 minutes.</h2>
-    <p class="ss rv rv-d1">Sign up, connect your API keys, and deploy AI Agents to your team today. No sales call required. Or book a 30-minute walkthrough if you want a guided setup.</p>
+    <h2 class="sh rv">Replace shadow AI with governed Agents<br>your whole company actually uses.</h2>
+    <p class="ss rv rv-d1">One workspace. Every model. Agents that act in your systems. Full governance for IT. Free to start, no credit card required.</p>
     <div class="ctab rv rv-d2">
-      <a href="https://app.orglogic.ai/signup" class="bp blg">Sign up free</a>
+      <a href="https://app.orglogic.ai/signup" class="bp blg">Start free with $500 in credits</a>
       <a href="https://calendly.com/d/cyqt-jps-sh8/orglogic-demo" target="_blank" class="bs blg">Book a demo</a>
     </div>
-    <div class="fnote rv rv-d3">Free up to 25 users · BYOK included · No credit card required</div>
+    <div class="fnote rv rv-d3">25 users · $20 per active user, pooled · BYOK included</div>
   </div>
 </section>
 
@@ -910,7 +1106,7 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
     <div class="fgr">
       <div class="fbr">
         <a href="#" class="nlogo"><img src="orglogic-logo.svg" alt="OrgLogic">OrgLogic</a>
-        <p>The AI workspace for your entire company. Named Agents, every model, full governance. Free for 25 users.</p>
+        <p>The AI workspace for your entire company. Named Agents, every model, full governance. Free to start.</p>
       </div>
       <div class="fcl"><h4>Product</h4><a href="#platform">Platform</a><a href="#pricing">Pricing</a><a href="#security">Security</a><a href="#">Changelog</a></div>
       <div class="fcl"><h4>Company</h4><a href="#">About</a><a href="#">Blog</a><a href="/cdn-cgi/l/email-protection#177f7279797a577867727978707e743974786a">Contact</a><a href="#">Careers</a></div>
