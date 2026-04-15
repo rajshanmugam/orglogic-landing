@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OrgLogic — One AI Workspace for Your Entire Company</title>
-<meta name="description" content="Give every team access to ChatGPT, Claude, Gemini, and more from one governed platform. Free for your first 100 users. BYOK. SOC 2 certified.">
+<title>OrgLogic — The AI Workspace for Your Entire Company</title>
+<meta name="description" content="Named AI Agents that know your domain and act in your systems. Every model, full governance, $8/seat. Free for 25 users. BYOK. SOC 2 certified.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://orglogic.ai/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://orglogic.ai/">
 <meta property="og:site_name" content="OrgLogic">
-<meta property="og:title" content="OrgLogic — One AI Workspace for Your Entire Company">
-<meta property="og:description" content="Give every team access to ChatGPT, Claude, Gemini, and more from one governed platform. Free for your first 100 users. BYOK. SOC 2 certified.">
+<meta property="og:title" content="OrgLogic — The AI Workspace for Your Entire Company">
+<meta property="og:description" content="Named AI Agents that know your domain and act in your systems. Every model, full governance, $8/seat. Free for 25 users. BYOK. SOC 2 certified.">
 <meta property="og:image" content="https://orglogic.ai/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OrgLogic — One AI Workspace for Your Entire Company">
-<meta name="twitter:description" content="Give every team access to ChatGPT, Claude, Gemini, and more from one governed platform. Free for your first 100 users. BYOK. SOC 2 certified.">
+<meta name="twitter:title" content="OrgLogic — The AI Workspace for Your Entire Company">
+<meta name="twitter:description" content="Named AI Agents that know your domain and act in your systems. Every model, full governance, $8/seat. Free for 25 users. BYOK. SOC 2 certified.">
 <meta name="twitter:image" content="https://orglogic.ai/og-image.png">
 <link rel="icon" href="favicon.ico">
 <link rel="icon" type="image/svg+xml" href="orglogic-favicon.svg">
@@ -108,12 +108,16 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between;height:10
    ============================================================ */
 .solution{padding:var(--spy) 0;text-align:center}
 .solution .ss{margin:0 auto 48px}
-.solv{max-width:800px;margin:0 auto;background:var(--bgf);border:1px solid var(--bdr);border-radius:14px;padding:48px}
+.solv{max-width:860px;margin:0 auto;background:var(--bgf);border:1px solid var(--bdr);border-radius:14px;padding:48px}
 .fld{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
 .fln{background:var(--bg);border:1.5px solid var(--bdr);border-radius:12px;padding:20px 28px;font-weight:600;font-size:15px;min-width:160px;text-align:center}
 .fln.acc{background:var(--p600);border-color:var(--p600);color:#fff}
 .fln small{display:block;font-weight:400;font-size:12px;margin-top:4px;opacity:.75}
 .fla{font-size:22px;color:var(--p400);font-weight:300}
+.sol-primitives{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;text-align:left}
+.sol-prim{padding:18px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--bdr)}
+.sol-prim h4{font-size:14px;font-weight:700;margin-bottom:4px;letter-spacing:-.2px}
+.sol-prim p{font-size:12.5px;color:var(--txm);line-height:1.45}
 
 /* ============================================================
    FEATURES
@@ -161,6 +165,9 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between;height:10
 .pc.ft::before{content:'Most Popular';position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:700;color:#fff;background:var(--p600);padding:4px 16px;border-radius:100px}
 .pt{font-family:var(--fd);font-size:22px;font-weight:700;margin-bottom:6px}
 .pd{font-size:14px;color:var(--txm);margin-bottom:8px}
+.pprice{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-1.5px;color:var(--tx1);margin-bottom:4px}
+.pprice small{font-size:15px;font-weight:500;color:var(--txm);letter-spacing:0}
+.pprice-note{font-size:13px;color:var(--txm);margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--bdr)}
 .ph{font-size:14.5px;font-weight:600;color:var(--p600);margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--bdr)}
 .pf{list-style:none;margin-bottom:32px;flex:1}
 .pf li{font-size:14px;color:var(--tx2);padding:6px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
@@ -185,7 +192,8 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between;height:10
 .ucgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
 .ucc{padding:28px 24px;border-radius:12px;border:1px solid var(--bdr);background:var(--bg);transition:border-color .3s,transform .3s}
 .ucc:hover{border-color:var(--p300);transform:translateY(-2px)}
-.ucc h3{font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px}
+.ucc h3{font-size:16px;font-weight:700;margin-bottom:4px;letter-spacing:-.2px}
+.ucc .agent-name{font-size:13px;font-weight:600;color:var(--p600);margin-bottom:10px}
 .ucc p{font-size:14px;color:var(--tx2);line-height:1.55}
 
 /* ============================================================
@@ -257,122 +265,125 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 .m-nav .nb{margin-left:auto;font-size:10px;font-weight:700;background:#FEE2E2;color:#DC2626;padding:1px 6px;border-radius:100px}
 .m-sb-hist{flex:1;overflow:hidden;padding:0 12px}
 .m-hist-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:#A0A0A0;margin:12px 4px 6px}
-.m-hist{padding:6px 8px;border-radius:7px;font-size:12px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.m-hist.act{background:#EDEAFF;color:#5B21B6;font-weight:500}
-.m-sb-ft{padding:10px 14px;border-top:1px solid #EBEBEB;display:flex;align-items:center;gap:8px}
-.m-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#6D28D9,#A78BFA);display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;flex-shrink:0}
-.m-uname{font-size:12px;font-weight:600;color:#1A1A2E}
-.m-urole{font-size:10px;color:#999}
-.m-agt{display:flex;align-items:center;gap:8px;padding:6px 14px;font-size:12.5px;color:#444;font-weight:500}
-.m-agt-ic{width:24px;height:24px;border-radius:6px;background:#F0F0F0;display:flex;align-items:center;justify-content:center;font-size:13px}
-.m-sb-more{font-size:11px;color:#999;padding:4px 14px 4px 46px}
-.m-sb-div{height:1px;background:#EBEBEB;margin:6px 14px}
-.m-ws-name{font-size:12px;font-weight:600;color:#1A1A2E;margin-bottom:2px}
-.m-ws-info{font-size:10px;color:#999;display:flex;align-items:center;gap:5px}
-.m-ws-dot{width:6px;height:6px;border-radius:50%;background:#22C55E}
+.m-hist{padding:6px 8px;border-radius:6px;font-size:12px;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.m-hist:hover{background:#F0F0F0}
+.m-hist.act{background:#F0EDFF;color:#5B21B6;font-weight:500}
+.m-sb-ft{padding:12px 14px;border-top:1px solid #EBEBEB;display:flex;align-items:center;gap:10px;margin-top:auto}
+.m-avatar{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#6D28D9,#A78BFA);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0}
+.m-uname{font-size:12.5px;font-weight:600;color:#333}
+.m-urole{font-size:11px;color:#999}
 
-/* ============================================================
-   MOCK — Chat UI specific
-   ============================================================ */
+/* Agent sidebar items */
+.m-agt{display:flex;align-items:center;gap:8px;padding:6px 14px;font-size:12.5px;font-weight:500;color:#555;cursor:pointer}
+.m-agt:hover{background:#F0F0F0}
+.m-agt-ic{width:22px;height:22px;border-radius:6px;background:#F0EDFF;display:flex;align-items:center;justify-content:center;font-size:12px}
+.m-sb-more{padding:4px 14px;font-size:11px;color:#A78BFA;font-weight:600;cursor:pointer}
+.m-sb-div{height:1px;background:#EBEBEB;margin:6px 12px}
+
+/* Chat main */
 .mc-main{flex:1;display:flex;flex-direction:column;background:#fff}
-.mc-top{height:44px;border-bottom:1px solid #F0F0F0;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
-.mc-model{display:flex;align-items:center;gap:7px;font-weight:600;font-size:13px;color:#1A1A2E;padding:5px 10px;border-radius:7px}
-.mc-mic{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;background:#FDF0E2}
-.mc-chev{font-size:9px;color:#999}
-.mc-tr{display:flex;align-items:center;gap:10px}
-.mc-rbadge{font-size:10px;color:#16A34A;background:#F0FDF4;border:1px solid #BBF7D0;padding:3px 9px;border-radius:100px;font-weight:600;display:flex;align-items:center;gap:4px}
-.mc-rbadge .rdot{width:4px;height:4px;background:#16A34A;border-radius:50%}
-.mc-tbtn{padding:5px 10px;border:1px solid #E8E8E8;border-radius:6px;font-size:11px;font-weight:600;color:#666;background:#fff}
+.mc-top{padding:10px 20px;border-bottom:1px solid #EBEBEB;display:flex;align-items:center;justify-content:space-between}
+.mc-model{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#333;cursor:pointer}
+.mc-mic{width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,#D4956A,#C2845A);display:flex;align-items:center;justify-content:center}
+.mc-chev{font-size:10px;color:#AAA;margin-left:2px}
+.mc-tr{display:flex;align-items:center;gap:12px}
+.mc-rbadge{font-size:11px;color:#22C55E;font-weight:600;display:flex;align-items:center;gap:5px}
+.rdot{width:6px;height:6px;background:#22C55E;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.mc-tbtn{font-size:12px;color:#AAA;cursor:pointer;font-weight:500}
 
-.mc-msgs{flex:1;overflow:hidden;padding:24px 36px}
-.mc-msg{margin-bottom:22px}
+/* Messages */
+.mc-msgs{flex:1;overflow-y:auto;padding:24px 24px 16px}
+.mc-msg{margin-bottom:20px}
 .mc-msg.usr{display:flex;justify-content:flex-end}
-.mc-bbl{background:#F3F0FF;border-radius:16px 16px 4px 16px;padding:12px 16px;max-width:480px;font-size:13px;color:#2D2050;line-height:1.5;font-weight:500}
-.mc-att{display:inline-flex;align-items:center;gap:7px;background:#E9E4FF;border-radius:7px;padding:7px 10px;margin-bottom:8px;font-size:11.5px;font-weight:600;color:#5B21B6}
-.mc-att-ic{width:24px;height:24px;background:#6D28D9;border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
-.mc-att-meta{font-size:9.5px;color:#8B7AB8;font-weight:400}
+.mc-bbl{background:#F3F0FF;border-radius:14px 14px 4px 14px;padding:14px 18px;max-width:480px;font-size:13.5px;line-height:1.55;color:#333}
+.mc-att{display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(109,40,217,.06);border-radius:8px;font-size:12px;font-weight:500}
+.mc-att-ic{font-size:18px}
+.mc-att-meta{font-size:10.5px;color:#999;margin-top:1px}
 .mc-msg.ai{display:flex;gap:12px}
-.mc-ai-av{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#E8C9A0,#D4956A);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.mc-ai-av svg{width:14px;height:14px}
-.mc-aic{flex:1}
-.mc-aic .mlbl{font-size:10.5px;color:#999;margin-bottom:6px;font-weight:500;display:flex;align-items:center;gap:5px}
-.mc-aic .mlbl strong{color:#555;font-weight:600}
-.mc-aic p{font-size:13px;color:#333;line-height:1.6;margin-bottom:10px}
-.mc-aic strong{font-weight:600;color:#1A1A2E}
-.mc-sum{background:#FAFAFA;border:1px solid #EBEBEB;border-radius:10px;padding:16px;margin:12px 0}
-.mc-sum h4{font-size:12.5px;font-weight:700;color:#1A1A2E;margin-bottom:10px;display:flex;align-items:center;gap:7px}
-.mc-sum li{font-size:12.5px;color:#555;padding:4px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.4;list-style:none}
-.mc-sum .blt{width:5px;height:5px;background:#A78BFA;border-radius:50%;flex-shrink:0;margin-top:5px}
-.mc-srcs{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
-.mc-src{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;border:1px solid #E9E4FF;border-radius:6px;padding:4px 9px;font-size:10.5px;color:#6D28D9;font-weight:600}
-.mc-cursor{display:inline-block;width:2px;height:14px;background:#6D28D9;border-radius:1px;animation:blink 1s infinite;vertical-align:text-bottom;margin-left:2px}
+.mc-ai-av{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#6D28D9,#8B5CF6);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.mc-aic{flex:1;max-width:520px}
+.mc-aic .mlbl{font-size:12px;color:#888;margin-bottom:8px}
+.mc-aic p{font-size:13.5px;line-height:1.6;color:#444;margin-bottom:10px}
+.mc-sum{background:#FAFAFA;border:1px solid #EBEBEB;border-radius:10px;padding:16px 18px;margin:10px 0}
+.mc-sum h4{font-size:13px;font-weight:700;margin-bottom:10px;color:#333}
+.mc-sum ul{list-style:none}
+.mc-sum li{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#555;line-height:1.5;padding:3px 0}
+.blt{width:6px;height:6px;border-radius:50%;background:var(--p500);flex-shrink:0;margin-top:6px}
+.mc-srcs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.mc-src{font-size:11px;color:#888;background:#F5F5F5;padding:4px 10px;border-radius:6px;display:flex;align-items:center;gap:4px}
+.mc-cursor{display:inline-block;width:2px;height:14px;background:var(--p500);animation:blink 1s infinite;vertical-align:middle;margin-left:2px}
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
 
-.mc-input{padding:12px 36px 18px}
-.mc-inbox{border:1.5px solid #E5E5E5;border-radius:12px;background:#fff;overflow:hidden}
-.mc-intop{padding:12px 14px;font-size:13px;color:#B0B0B0}
-.mc-inbot{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-top:1px solid #F0F0F0}
-.mc-tools{display:flex;align-items:center;gap:5px}
-.mc-tool{display:inline-flex;align-items:center;gap:4px;padding:5px 9px;border-radius:6px;font-size:11.5px;font-weight:600;color:#666;background:#F8F8F8;border:1px solid #EBEBEB}
-.mc-tool.on{background:#F0EDFF;border-color:#D4C4FB;color:#6D28D9}
-.mc-send{width:30px;height:30px;border-radius:8px;background:#6D28D9;border:none;color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center}
+/* Input */
+.mc-input{padding:12px 20px 16px;border-top:1px solid #F0F0F0}
+.mc-inbox{border:1.5px solid #E0E0E0;border-radius:12px;overflow:hidden}
+.mc-intop{padding:12px 16px;font-size:13px;color:#BBB}
+.mc-inbot{display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-top:1px solid #F0F0F0;background:#FAFAFA}
+.mc-tools{display:flex;gap:4px}
+.mc-tool{font-size:12px;color:#999;padding:4px 10px;border-radius:6px;display:flex;align-items:center;gap:4px;cursor:pointer}
+.mc-tool:hover{background:#F0F0F0}
+.mc-tool.on{background:#F0EDFF;color:#6D28D9;font-weight:500}
+.mc-send{width:28px;height:28px;border-radius:8px;background:var(--p600);border:none;color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 
 /* ============================================================
-   MOCK — Governance Dashboard specific
+   MOCK — Governance Dashboard
    ============================================================ */
-.md-main{flex:1;background:#F8F7FC;overflow:hidden;padding:20px 24px}
-.md-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-.md-hdr h2{font-family:'DM Sans';font-size:18px;font-weight:700;color:#1A1A2E;letter-spacing:-.4px}
-.md-hdr-r{display:flex;align-items:center;gap:8px}
-.md-period{display:flex;background:#fff;border:1px solid #E5E5E5;border-radius:7px;overflow:hidden}
-.md-pbtn{padding:4px 11px;font-size:11px;font-weight:600;color:#888;border:none;background:transparent;font-family:inherit}
-.md-pbtn.act{background:#6D28D9;color:#fff}
-.md-export{padding:5px 11px;border:1px solid #E5E5E5;border-radius:7px;background:#fff;font-size:11px;font-weight:600;color:#555;font-family:inherit}
+.m-ws-name{font-size:12.5px;font-weight:700;color:#333}
+.m-ws-info{font-size:11px;color:#999;display:flex;align-items:center;gap:4px;margin-top:1px}
+.m-ws-dot{width:6px;height:6px;background:#22C55E;border-radius:50%}
+.md-main{flex:1;display:flex;flex-direction:column;background:#fff;overflow-y:auto}
+.md-hdr{padding:16px 24px;border-bottom:1px solid #EBEBEB;display:flex;align-items:center;justify-content:space-between}
+.md-hdr h2{font-family:var(--fd);font-size:18px;font-weight:700;letter-spacing:-.3px}
+.md-hdr-r{display:flex;align-items:center;gap:12px}
+.md-period{display:flex;gap:2px;background:#F5F5F5;border-radius:6px;padding:2px}
+.md-pbtn{font-size:11px;font-weight:600;color:#888;background:transparent;border:none;padding:4px 10px;border-radius:5px;cursor:pointer}
+.md-pbtn.act{background:#fff;color:#333;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.md-export{font-size:11.5px;font-weight:600;color:#888;background:#F5F5F5;border:none;padding:5px 12px;border-radius:6px;cursor:pointer}
 
-.md-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
-.md-sc{background:#fff;border:1px solid #EBEBEB;border-radius:10px;padding:14px 16px}
-.md-sc .l{font-size:10.5px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px;display:flex;align-items:center;gap:5px}
-.md-sc .v{font-size:24px;font-weight:700;color:#1A1A2E;letter-spacing:-.8px;line-height:1;margin-bottom:4px;font-family:'DM Mono',monospace}
-.md-sc .c{font-size:10.5px;font-weight:600}
-.md-sc .c.up{color:#16A34A}.md-sc .c.dn{color:#DC2626}.md-sc .c.nu{color:#999}
+.md-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 24px}
+.md-sc{padding:14px 16px;background:#FAFAFA;border-radius:10px;border:1px solid #F0F0F0}
+.md-sc .l{font-size:11px;font-weight:600;color:#999;margin-bottom:4px}
+.md-sc .v{font-family:var(--fd);font-size:22px;font-weight:700;letter-spacing:-.5px;color:#1A1A2E}
+.md-sc .c{font-size:10.5px;font-weight:600;margin-top:3px}
+.md-sc .c.up{color:#16A34A}
+.md-sc .c.nu{color:#888}
 
-.md-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.md-card{background:#fff;border:1px solid #EBEBEB;border-radius:10px;padding:16px 18px}
-.md-ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.md-ct{font-size:12.5px;font-weight:700;color:#1A1A2E}
-.md-ca{font-size:10px;font-weight:600;color:#6D28D9}
+.md-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 24px 10px}
+.md-card{border:1px solid #F0F0F0;border-radius:10px;padding:16px;background:#fff}
+.md-ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.md-ct{font-size:12.5px;font-weight:700;color:#333}
+.md-ca{font-size:11px;color:var(--p500);font-weight:600;cursor:pointer}
 
 /* Usage table */
-.md-trow{display:flex;align-items:center;padding:7px 0;border-bottom:1px solid #F5F5F5;font-size:12px}
-.md-trow:last-child{border-bottom:none}
-.md-trow.hdr{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#A0A0A0;padding-bottom:8px;border-bottom:1px solid #EBEBEB}
-.md-ct1{flex:1;font-weight:600;color:#333;display:flex;align-items:center;gap:6px}
-.md-ct2{width:45px;text-align:right;color:#666;font-weight:500}
-.md-ct3{width:60px;text-align:right;color:#666;font-weight:500;font-family:'DM Mono',monospace;font-size:11px}
-.md-ct4{width:60px;text-align:right;font-weight:600;color:#1A1A2E;font-family:'DM Mono',monospace;font-size:11px}
-.md-ct5{width:75px;padding-left:10px}
-.tdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.tbar{width:100%;height:5px;background:#F0F0F0;border-radius:3px;overflow:hidden}
-.tbar-f{height:100%;border-radius:3px;background:linear-gradient(90deg,#8B5CF6,#6D28D9)}
+.md-trow{display:grid;grid-template-columns:1.3fr .6fr .7fr .6fr 1fr;align-items:center;padding:5px 0;font-size:11.5px;color:#555;border-bottom:1px solid #F8F8F8}
+.md-trow.hdr{font-size:10px;font-weight:700;color:#AAA;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #F0F0F0;padding-bottom:8px;margin-bottom:4px}
+.md-ct1{display:flex;align-items:center;gap:6px;font-weight:500}
+.tdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tbar{height:5px;background:#F0F0F0;border-radius:3px;width:100%}
+.tbar-f{height:100%;background:var(--p500);border-radius:3px}
 
 /* Model cost rows */
-.md-mrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #F5F5F5}
+.md-mrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #F8F8F8}
 .md-mrow:last-child{border-bottom:none}
 .md-mi{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
-.md-mi.oa{background:#FDF0E2;color:#D4956A}.md-mi.gp{background:#E8F5E9;color:#2E7D32}
-.md-mi.gl{background:#E3F2FD;color:#1565C0}.md-mi.mt{background:#F3E5F5;color:#7B1FA2}
+.md-mi.oa{background:linear-gradient(135deg,#D4956A,#C2845A)}
+.md-mi.gp{background:#10A37F;color:#fff}
+.md-mi.gl{background:#4285F4;color:#fff}
+.md-mi.mt{background:#1A1A2E;color:#fff}
 .md-minfo{flex:1}
 .md-mn{font-size:12px;font-weight:600;color:#333}
-.md-mq{font-size:10px;color:#999}
-.md-mc{font-size:12.5px;font-weight:700;color:#1A1A2E;font-family:'DM Mono',monospace;text-align:right}
-.md-mp{font-size:10px;color:#999;text-align:right}
+.md-mq{font-size:10.5px;color:#AAA}
+.md-mc{font-size:13px;font-weight:700;color:#333;text-align:right}
+.md-mp{font-size:10.5px;color:#AAA;text-align:right}
 
 /* Budget bars */
-.md-brow{margin-bottom:11px}
-.md-blbl{display:flex;justify-content:space-between;margin-bottom:4px;font-size:11.5px}
-.md-bln{font-weight:600;color:#333}
-.md-blv{font-weight:600;color:#1A1A2E;font-family:'DM Mono',monospace;font-size:11px}
-.md-btrk{width:100%;height:7px;background:#F0F0F0;border-radius:4px;overflow:hidden}
+.md-brow{margin-bottom:10px}
+.md-brow:last-child{margin-bottom:0}
+.md-blbl{display:flex;justify-content:space-between;margin-bottom:4px}
+.md-bln{font-size:11.5px;font-weight:600;color:#555}
+.md-blv{font-size:11px;color:#AAA;font-weight:500}
+.md-btrk{height:6px;background:#F0F0F0;border-radius:4px;overflow:hidden}
 .md-bfill{height:100%;border-radius:4px}
 .md-bfill.safe{background:linear-gradient(90deg,#22C55E,#16A34A)}
 .md-bfill.warn{background:linear-gradient(90deg,#F59E0B,#D97706)}
@@ -398,24 +409,6 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 .gov-mock{margin-top:48px}
 
 /* ============================================================
-   DEMO FORM
-   ============================================================ */
-.demo-form{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:0 auto;position:relative;text-align:left}
-.demo-form .form-row{display:flex;gap:10px}
-.demo-form .form-row>*{flex:1}
-.demo-form input,.demo-form select{padding:13px 16px;border-radius:9px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);color:#fff;font-family:var(--fb);font-size:14px;width:100%;transition:border-color .2s}
-.demo-form input::placeholder{color:rgba(255,255,255,.35)}
-.demo-form input:focus,.demo-form select:focus{outline:none;border-color:var(--p400);box-shadow:0 0 0 3px rgba(139,92,246,.2)}
-.demo-form select{appearance:none;cursor:pointer;color:rgba(255,255,255,.35)}
-.demo-form select option{background:var(--tx1);color:#fff}
-.demo-form select:valid{color:#fff}
-.demo-form .submit-btn{padding:14px;border-radius:9px;background:#fff;color:var(--p700);font-family:var(--fb);font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .25s}
-.demo-form .submit-btn:hover{background:var(--p50);box-shadow:0 4px 20px rgba(255,255,255,.2);transform:translateY(-1px)}
-.demo-form .submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.demo-form .form-note{font-size:12px;color:rgba(255,255,255,.35);text-align:center}
-#form-status a{color:var(--p300);text-decoration:none;font-weight:600}
-
-/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media(max-width:900px){
@@ -424,12 +417,12 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
   .secgrid{grid-template-columns:1fr}
   .fgr{grid-template-columns:1fr 1fr;gap:32px}
   .fld{flex-direction:column}.fla{transform:rotate(90deg)}
+  .sol-primitives{grid-template-columns:1fr 1fr}
   .nlinks{display:none}
   .hero h1{font-size:36px;letter-spacing:-1px}
   .hsub{font-size:17px}
   .logos{gap:20px}.splogos{gap:24px}
   .mock{display:none}
-  .demo-form .form-row{flex-direction:column;gap:10px}
   .arch-row{gap:6px}
   .arch-block{min-width:70px;font-size:11px;padding:8px 10px}
 }
@@ -453,8 +446,8 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
       </div>
     </div>
     <div class="nr">
-      <a href="#contact" class="bg">Book a demo</a>
-      <a href="#contact" class="bp">Get early access</a>
+      <a href="https://calendly.com/d/cyqt-jps-sh8/orglogic-demo" target="_blank" class="bg">Book a demo</a>
+      <a href="https://app.orglogic.ai/signup" class="bp">Sign up free</a>
     </div>
   </div>
 </nav>
@@ -462,15 +455,15 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <!-- HERO -->
 <section class="hero">
   <div class="ctn">
-    <div class="heb rv"><span></span> Free for your first 100 users</div>
-    <h1 class="rv rv-d1">One AI workspace for your entire company.</h1>
-    <p class="hsub rv rv-d2">Give every team access to ChatGPT, Claude, Gemini, and more — from one secure platform with built-in governance. No per-seat markup. Bring your own API keys.</p>
+    <div class="heb rv"><span></span> Free for up to 25 users</div>
+    <h1 class="rv rv-d1">AI Agents for your entire company. Governed by default.</h1>
+    <p class="hsub rv rv-d2">Named Agents that know your domain and act in Salesforce, Jira, Confluence, and Slack. Every model. Full governance for IT. $8/seat.</p>
     <div class="hctas rv rv-d3">
-      <a href="#contact" class="bp blg">Get early access →</a>
+      <a href="https://app.orglogic.ai/signup" class="bp blg">Sign up free</a>
       <a href="#platform" class="bs blg">See the platform</a>
     </div>
     <div class="hproof rv rv-d4">
-      <p>Platform proven across 600+ enterprises</p>
+      <p>Proven across 600+ enterprise deployments</p>
       <div class="logos"><span>Snowflake</span><span>Spotify</span><span>Rakuten</span><span>Snap</span><span>Delivery Hero</span><span>Wayfair</span><span>Aptean</span><span>Cubic</span></div>
     </div>
 
@@ -486,9 +479,9 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
           <div class="m-sb-btn"><span>✏️</span> New chat</div>
           <div class="m-sb-search"><span>🔍</span> Search chats…</div>
           <div class="m-sb-lbl">Agents</div>
-          <div class="m-agt"><div class="m-agt-ic">📊</div>Data Analyst</div>
-          <div class="m-agt"><div class="m-agt-ic">✍️</div>Content Writer</div>
-          <div class="m-agt"><div class="m-agt-ic">🛠️</div>IT Helpdesk</div>
+          <div class="m-agt"><div class="m-agt-ic">📊</div>Deal Prep Agent</div>
+          <div class="m-agt"><div class="m-agt-ic">🛠️</div>PR Review Agent</div>
+          <div class="m-agt"><div class="m-agt-ic">🎧</div>Ticket Resolution Agent</div>
           <div class="m-sb-more">+ 8 more agents</div>
           <div class="m-sb-hist">
             <div class="m-hist-lbl">Your chats</div>
@@ -575,9 +568,9 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
     <h2 class="sh rv rv-d1">Your team is already using AI.<br>You just can't see it.</h2>
     <p class="ss rv rv-d2">80% of employees use AI tools at work without IT approval. They're pasting company data into personal accounts, switching between fragmented subscriptions, and creating security blind spots your governance can't reach.</p>
     <div class="stgrid">
-      <div class="stc rv rv-d1"><div class="stnum">98%</div><div class="stlbl">of organizations</div><div class="stdsc">have employees using unsanctioned AI tools with zero governance or audit trail.</div></div>
+      <div class="stc rv rv-d1"><div class="stnum">80%</div><div class="stlbl">of employees</div><div class="stdsc">already use unsanctioned AI tools with zero governance or audit trail.</div></div>
       <div class="stc rv rv-d2"><div class="stnum">$3,200</div><div class="stlbl">per employee per year</div><div class="stdsc">wasted on fragmented AI subscriptions and context switching between tools.</div></div>
-      <div class="stc rv rv-d3"><div class="stnum">89%</div><div class="stlbl">reduction in shadow AI</div><div class="stdsc">when companies provide employees with an approved, full-featured AI workspace.</div></div>
+      <div class="stc rv rv-d3"><div class="stnum">91%</div><div class="stlbl">reduction in shadow AI</div><div class="stdsc">when a regulated tech company deployed OrgLogic as its approved AI workspace.</div></div>
     </div>
   </div>
 </section>
@@ -586,15 +579,21 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <section class="solution">
   <div class="ctn">
     <div class="seb rv">The fix</div>
-    <h2 class="sh rv rv-d1">One workspace. Every model. Full control.</h2>
-    <p class="ss rv rv-d2">OrgLogic replaces fragmented AI tools with a single platform your whole company actually wants to use — and your IT team can actually govern.</p>
+    <h2 class="sh rv rv-d1">Named Agents. Every model. Full governance.</h2>
+    <p class="ss rv rv-d2">OrgLogic replaces fragmented AI tools with AI Agents that know your domain, act in your systems, and operate inside a governed workspace IT controls.</p>
     <div class="solv rv rv-d3">
       <div class="fld">
         <div class="fln">👤 Your Team<small>Web · Slack · Teams · Chrome · API</small></div>
         <div class="fla">→</div>
-        <div class="fln acc">OrgLogic<small>Governance · Routing · Guardrails</small></div>
+        <div class="fln acc">OrgLogic<small>Agents · Skills · Connectors · Governance</small></div>
         <div class="fla">→</div>
         <div class="fln">Any LLM<small>GPT · Claude · Gemini · Llama · Mistral</small></div>
+      </div>
+      <div class="sol-primitives rv rv-d4">
+        <div class="sol-prim"><h4>🤖 Agents</h4><p>Named AI workers with a defined job. Built once, deployed to your team. Run on demand, on schedule, or on events.</p></div>
+        <div class="sol-prim"><h4>🧠 Skills</h4><p>Packaged expertise that teaches Agents how to do specific work. Reusable, versioned, authored in plain language.</p></div>
+        <div class="sol-prim"><h4>🔗 Connectors</h4><p>Secure links to Salesforce, Jira, Confluence, Slack, and more. Per-Agent permission scopes controlled by IT.</p></div>
+        <div class="sol-prim"><h4>🏢 Workspaces</h4><p>The governed environment. Controls Agents, models, access, budgets, and guardrails. Every action is logged.</p></div>
       </div>
     </div>
   </div>
@@ -619,53 +618,43 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 
       <div class="arch-connector">↕</div>
 
-      <div class="arch-section-label">AI Workspace — Core Intelligence</div>
+      <div class="arch-section-label">AI Workspace — Agents, Skills &amp; Routing</div>
       <div class="arch-row">
-        <div class="arch-block core">AI Gateway</div>
-        <div class="arch-block core">Multi-Model Router</div>
+        <div class="arch-block core">Named Agents</div>
+        <div class="arch-block core">Skills Engine</div>
+        <div class="arch-block core">Smart Router</div>
         <div class="arch-block core">RAG Engine</div>
-        <div class="arch-block core">Agent Runtime</div>
       </div>
 
       <div class="arch-connector">↕</div>
 
-      <div class="arch-section-label">AI Governance — IT &amp; Security Control</div>
+      <div class="arch-section-label">Workspace Governance — IT &amp; Security Control</div>
       <div class="arch-row">
         <div class="arch-block gov">🔑 BYOK Manager</div>
         <div class="arch-block gov">🛡️ PII Redaction</div>
         <div class="arch-block gov">🚧 Guardrails</div>
-        <div class="arch-block gov">👤 Access Controls</div>
-        <div class="arch-block gov">📋 Audit Trail</div>
-        <div class="arch-block gov">📊 Cost Analytics</div>
+        <div class="arch-block gov">👤 Per-Agent Permissions</div>
+        <div class="arch-block gov">📋 Agent-Level Audit</div>
+        <div class="arch-block gov">📊 Budget Controls</div>
       </div>
 
       <hr class="arch-divider">
 
-      <div class="arch-section-label">Agent Studio</div>
+      <div class="arch-section-label">Connectors — Per-Agent Permission Scopes</div>
       <div class="arch-row">
-        <div class="arch-block agent">No-Code Builder</div>
-        <div class="arch-block agent">Pre-Built Templates</div>
-        <div class="arch-block agent">Tool Integrations</div>
-        <div class="arch-block agent">Custom Connectors</div>
-      </div>
-
-      <hr class="arch-divider">
-
-      <div class="arch-section-label">Connected Enterprise Systems</div>
-      <div class="arch-row">
+        <div class="arch-block sys">Salesforce</div>
         <div class="arch-block sys">Jira</div>
         <div class="arch-block sys">Confluence</div>
         <div class="arch-block sys">ServiceNow</div>
         <div class="arch-block sys">SharePoint</div>
-        <div class="arch-block sys">Salesforce</div>
         <div class="arch-block sys">Google Workspace</div>
-        <div class="arch-block sys">SAP</div>
+        <div class="arch-block sys">Slack</div>
         <div class="arch-block sys">Custom APIs</div>
       </div>
 
       <hr class="arch-divider">
 
-      <div class="arch-section-label">LLM Providers (via BYOK)</div>
+      <div class="arch-section-label">LLM Providers (BYOK at zero surcharge)</div>
       <div class="arch-row">
         <div class="arch-block model">OpenAI (GPT-4o)</div>
         <div class="arch-block model">Anthropic (Claude)</div>
@@ -681,15 +670,15 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <section class="feat">
   <div class="ctn">
     <div class="seb rv">For every employee</div>
-    <h2 class="sh rv rv-d1">All the AI your team needs. One login.</h2>
-    <p class="ss rv rv-d2">Access every leading AI model from a single workspace — on every surface where your team already works.</p>
+    <h2 class="sh rv rv-d1">AI Agents that work in your systems. Not just a chat window.</h2>
+    <p class="ss rv rv-d2">Named Agents with domain expertise and system access, deployed to your team across every surface where they already work.</p>
     <div class="fgrid">
-      <div class="fc rv rv-d1"><div class="fic">🔀</div><h3>Any model, one chat</h3><p>Access GPT-4o, Claude, Gemini, Llama, Mistral, DeepSeek — and switch between them mid-conversation. No separate subscriptions.</p></div>
-      <div class="fc rv rv-d2"><div class="fic">🖥️</div><h3>Works where you work</h3><p>Available as a web app, in Slack, in Microsoft Teams, as a Chrome extension, and embedded in your tools via API. Five surfaces, one workspace.</p></div>
-      <div class="fc rv rv-d3"><div class="fic">🤝</div><h3>Shared prompts &amp; agents</h3><p>Turn your best prompts into reusable assets. Build no-code agents in minutes. Share across teams so everyone benefits from what one person builds.</p></div>
-      <div class="fc rv rv-d1"><div class="fic">🔗</div><h3>Connected to your knowledge</h3><p>Plug in Confluence, Google Drive, SharePoint, Notion, Slack, Jira, Salesforce, and more. AI answers grounded in your company's data.</p></div>
-      <div class="fc rv rv-d2"><div class="fic">⚡</div><h3>Smart model routing</h3><p>OrgLogic automatically routes queries to the optimal model for the task — saving 60–80% on AI costs vs. single-model platforms.</p></div>
-      <div class="fc rv rv-d3"><div class="fic">🤖</div><h3>Agents that take action</h3><p>Build agents that don't just answer questions — they create Jira tickets, update ServiceNow, pull Salesforce data, and trigger workflows.</p></div>
+      <div class="fc rv rv-d1"><div class="fic">🤖</div><h3>Named Agents</h3><p>AI workers with a defined job, domain Skills, and Connector access. Built once, deployed to the team. Not just another chat window.</p></div>
+      <div class="fc rv rv-d2"><div class="fic">🧠</div><h3>Skills — packaged expertise</h3><p>Teach an Agent how your best performer does the work. Reusable across Agents, versioned, authored in plain language. No code required.</p></div>
+      <div class="fc rv rv-d3"><div class="fic">🔀</div><h3>Every model, one workspace</h3><p>GPT-4o, Claude, Gemini, Llama, Mistral, DeepSeek — switch models mid-conversation. Smart routing picks the best model per task automatically.</p></div>
+      <div class="fc rv rv-d1"><div class="fic">🖥️</div><h3>5 native surfaces</h3><p>Web app, Slack, Microsoft Teams, Chrome extension, and API/SDK. One workspace, everywhere your team already works.</p></div>
+      <div class="fc rv rv-d2"><div class="fic">🔗</div><h3>Connected to your systems</h3><p>Agents act in Salesforce, Jira, Confluence, ServiceNow, Google Workspace, SharePoint, and more. No copy-paste between tools.</p></div>
+      <div class="fc rv rv-d3"><div class="fic">⚡</div><h3>Smart model routing</h3><p>Auto-routes queries to the optimal model per task. One customer cut AI spend by 70% through BYOK and smart routing alone.</p></div>
     </div>
   </div>
 </section>
@@ -698,15 +687,15 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <section class="feat feat-alt">
   <div class="ctn">
     <div class="seb rv">For IT and security teams</div>
-    <h2 class="sh rv rv-d1">Complete visibility. Total control.<br>Zero data exposure.</h2>
-    <p class="ss rv rv-d2">Every AI interaction across every surface passes through OrgLogic's governance layer. BYOK means your data never touches our servers.</p>
+    <h2 class="sh rv rv-d1">Per-Agent governance. Agent-level audit trails.<br>Zero data exposure.</h2>
+    <p class="ss rv rv-d2">Every Agent operates inside a governed Workspace. BYOK means your data flows directly to model providers — OrgLogic never sees it. Zero surcharge on your own keys.</p>
     <div class="fgrid">
-      <div class="fc rv rv-d1"><div class="fic">🔑</div><h3>BYOK — Bring Your Own Key</h3><p>Connect your own API keys from OpenAI, Anthropic, Google, or any provider. Your data flows directly to the model provider. We never see it.</p></div>
-      <div class="fc rv rv-d2"><div class="fic">🛡️</div><h3>AI Gateway</h3><p>Smart routing, response caching, model fallback, and load balancing — all in one layer. Reduce costs, improve reliability, maintain control.</p></div>
-      <div class="fc rv rv-d3"><div class="fic">🎛️</div><h3>Granular access controls</h3><p>Decide which teams use which models. Set per-team budgets, rate limits, and usage policies. Enforce guardrails organization-wide.</p></div>
-      <div class="fc rv rv-d1"><div class="fic">📋</div><h3>Full audit trail</h3><p>Every query, every response, every model, every user — logged and searchable. Exportable for compliance reviews and security audits.</p></div>
-      <div class="fc rv rv-d2"><div class="fic">🚫</div><h3>PII redaction</h3><p>Sensitive data is automatically detected and redacted before it reaches any model provider. Configurable policies per team and use case.</p></div>
-      <div class="fc rv rv-d3"><div class="fic">📊</div><h3>Cost analytics</h3><p>Real-time dashboard showing AI spend per team, per user, per model. Set alerts and caps before budgets are hit. No surprises.</p></div>
+      <div class="fc rv rv-d1"><div class="fic">🔑</div><h3>BYOK at zero surcharge</h3><p>Connect your own API keys from any provider. Your data flows directly to the model provider, OrgLogic never sees it. No markup on your usage — ever.</p></div>
+      <div class="fc rv rv-d2"><div class="fic">🎯</div><h3>Per-Agent Connector permissions</h3><p>Security approves exactly what each Agent can access. Not blanket Connector access — scoped per-Agent, per-Connector. No other platform offers this.</p></div>
+      <div class="fc rv rv-d3"><div class="fic">📋</div><h3>Agent-level audit trail</h3><p>Which Agent accessed which system, for which user, at what time. Every interaction logged, searchable, exportable. Hand it to an auditor without a 2-week project.</p></div>
+      <div class="fc rv rv-d1"><div class="fic">💰</div><h3>Per-team budget controls</h3><p>Set spending limits per team, per Agent. Real-time cost analytics with alerts before budgets are hit. Full cost transparency across the org.</p></div>
+      <div class="fc rv rv-d2"><div class="fic">🛡️</div><h3>PII redaction</h3><p>Sensitive data is automatically detected and redacted before it reaches any model provider. Configurable policies per team and use case.</p></div>
+      <div class="fc rv rv-d3"><div class="fic">🎛️</div><h3>Model-level access controls</h3><p>Decide which teams use which models. Enforce guardrails organization-wide. SSO/SCIM for centralized deployment on Enterprise plan.</p></div>
     </div>
     <div class="bdgs rv">
       <div class="bdg">🏆 SOC 2 Type II</div><div class="bdg">📜 ISO 27001</div><div class="bdg">🇪🇺 GDPR</div><div class="bdg">🏥 HIPAA</div><div class="bdg">🔒 AES-256</div><div class="bdg">🔐 SSO / SAML / OIDC</div>
@@ -732,7 +721,8 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
           <div class="m-sb-div"></div>
           <div class="m-sb-lbl">Configure</div>
           <div class="m-nav"><span class="ni">🤖</span> Agents</div>
-          <div class="m-nav"><span class="ni">🔗</span> Integrations</div>
+          <div class="m-nav"><span class="ni">🧠</span> Skills</div>
+          <div class="m-nav"><span class="ni">🔗</span> Connectors</div>
           <div class="m-nav"><span class="ni">⚙️</span> Settings</div>
           <div style="flex:1"></div>
           <div class="m-sb-ft">
@@ -789,11 +779,11 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
             <!-- Audit -->
             <div class="md-card">
               <div class="md-ch"><div class="md-ct">Recent Activity</div><div class="md-ca">Full audit trail →</div></div>
-              <div class="md-ai"><div class="md-at">2m</div><div class="md-aic2 sh">🛡️</div><div class="md-atx"><strong>PII detected</strong> — SSN pattern in query by M. Torres (Sales)<span class="md-tag red">Redacted</span></div></div>
-              <div class="md-ai"><div class="md-at">8m</div><div class="md-aic2 al">⚠️</div><div class="md-atx"><strong>Budget alert</strong> — Sales at 85% of monthly limit ($682 / $800)</div></div>
-              <div class="md-ai"><div class="md-at">14m</div><div class="md-aic2 sh">🛡️</div><div class="md-atx"><strong>Guardrail triggered</strong> — Blocked query with competitor NDA content<span class="md-tag blk">Blocked</span></div></div>
+              <div class="md-ai"><div class="md-at">2m</div><div class="md-aic2 sh">🛡️</div><div class="md-atx"><strong>PII detected</strong> — SSN pattern in query by M. Torres via <strong>Deal Prep Agent</strong><span class="md-tag red">Redacted</span></div></div>
+              <div class="md-ai"><div class="md-at">8m</div><div class="md-aic2 al">⚠️</div><div class="md-atx"><strong>Budget alert</strong> — Sales team at 85% of monthly limit ($682 / $800)</div></div>
+              <div class="md-ai"><div class="md-at">14m</div><div class="md-aic2 sh">🛡️</div><div class="md-atx"><strong>Guardrail triggered</strong> — <strong>PR Review Agent</strong> blocked query with competitor NDA content<span class="md-tag blk">Blocked</span></div></div>
               <div class="md-ai"><div class="md-at">22m</div><div class="md-aic2 ky">🔑</div><div class="md-atx"><strong>API key rotated</strong> — OpenAI key updated by J. Park (IT Admin)</div></div>
-              <div class="md-ai"><div class="md-at">31m</div><div class="md-aic2 us">👤</div><div class="md-atx"><strong>Access granted</strong> — Claude Opus enabled for Legal (12 users)<span class="md-tag grn">Granted</span></div></div>
+              <div class="md-ai"><div class="md-at">31m</div><div class="md-aic2 us">👤</div><div class="md-atx"><strong>Connector scoped</strong> — Salesforce read-only for <strong>Ticket Resolution Agent</strong><span class="md-tag grn">Approved</span></div></div>
             </div>
           </div>
         </div>
@@ -806,29 +796,32 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <section class="pricing" id="pricing">
   <div class="ctn">
     <div class="seb rv">Pricing</div>
-    <h2 class="sh rv rv-d1">Free for your first 100 users. No catch.</h2>
-    <p class="ss rv rv-d2">Start with up to 100 users at zero cost — no time limit, no usage cap. Bring your own API keys and pay model providers directly. Governance included at every tier.</p>
+    <h2 class="sh rv rv-d1">$8/seat. Every model. Full governance.</h2>
+    <p class="ss rv rv-d2">Free for up to 25 users with $20 in credits per active user. BYOK at zero surcharge, or OrgLogic-managed models at cost + 6%. Governance included on every plan.</p>
     <div class="pgrid">
       <div class="pc rv rv-d1">
-        <div class="pt">Free</div><div class="pd">Up to 100 users · BYOK</div>
-        <div class="ph">$0 forever — no credit card required</div>
-        <ul class="pf"><li>Multi-model chat (all major models)</li><li>Shared prompts &amp; agent builder</li><li>Web, Slack, Teams, Chrome, API</li><li>Knowledge integrations</li><li>Basic admin &amp; user management</li><li>Community support</li></ul>
-        <div class="pcta"><a href="#contact" class="bp" style="width:100%;justify-content:center">Get early access →</a></div>
+        <div class="pt">Free</div><div class="pd">Up to 25 users · BYOK included</div>
+        <div class="pprice">$0<small> forever</small></div>
+        <div class="pprice-note">No credit card required · $20 in credits per active user</div>
+        <ul class="pf"><li>Multi-model chat (all major models)</li><li>Default Chat Agent ("Assistant")</li><li>Agent builder + pre-built templates</li><li>Web, Slack, Teams, Chrome, API</li><li>Knowledge integrations (Connectors)</li><li>Basic admin &amp; user management</li><li>Community support</li></ul>
+        <div class="pcta"><a href="https://app.orglogic.ai/signup" class="bp" style="width:100%;justify-content:center">Sign up free</a></div>
       </div>
       <div class="pc ft rv rv-d2">
-        <div class="pt">Business</div><div class="pd">For growing teams that need governance</div>
-        <div class="ph">Per-seat pricing · Annual &amp; monthly plans</div>
-        <ul class="pf"><li>Everything in Free, plus:</li><li>SSO (SAML, OKTA, Azure AD) + SCIM</li><li>AI Gateway (routing, caching, fallback)</li><li>Governance dashboard &amp; cost analytics</li><li>Granular budget controls &amp; rate limits</li><li>Guardrails &amp; PII redaction</li><li>Full audit trail</li><li>Priority support</li><li>Managed models available</li></ul>
-        <div class="pcta"><a href="#contact" class="bp" style="width:100%;justify-content:center">Request pricing →</a></div>
+        <div class="pt">Business</div><div class="pd">For teams that need full governance</div>
+        <div class="pprice">$8<small> /seat/mo (annual)</small></div>
+        <div class="pprice-note">$10/seat billed monthly · BYOK at zero surcharge</div>
+        <ul class="pf"><li>Everything in Free, plus:</li><li>Named Agents with Skills</li><li>Per-Agent Connector permissions</li><li>Smart model routing (auto)</li><li>Full audit trail (Agent-level)</li><li>PII redaction &amp; guardrails</li><li>Per-team budget controls &amp; cost analytics</li><li>SSO (SAML, Okta, Azure AD) + SCIM</li><li>Priority support</li></ul>
+        <div class="pcta"><a href="https://app.orglogic.ai/signup" class="bp" style="width:100%;justify-content:center">Start with Business</a></div>
       </div>
       <div class="pc rv rv-d3">
         <div class="pt">Enterprise</div><div class="pd">500+ users · Dedicated deployment</div>
-        <div class="ph">Custom plans with volume discounts</div>
-        <ul class="pf"><li>Everything in Business, plus:</li><li>Dedicated VPC / single-tenant deployment</li><li>Unlimited audit log retention</li><li>Custom model hosting</li><li>Advanced DLP &amp; compliance policies</li><li>Dedicated CSM + onboarding</li><li>SLA (99.9% uptime)</li><li>Volume discounts on managed models</li></ul>
-        <div class="pcta"><a href="#contact" class="bs" style="width:100%;justify-content:center">Talk to sales →</a></div>
+        <div class="pprice">Custom</div>
+        <div class="pprice-note">Volume discounts · Dedicated infrastructure</div>
+        <ul class="pf"><li>Everything in Business, plus:</li><li>Dedicated VPC / single-tenant deployment</li><li>On-prem deployment option</li><li>Unlimited audit log retention</li><li>Custom model hosting</li><li>Advanced DLP &amp; compliance policies</li><li>Dedicated CSM + onboarding</li><li>SLA (99.9% uptime)</li></ul>
+        <div class="pcta"><a href="https://calendly.com/d/cyqt-jps-sh8/orglogic-demo" target="_blank" class="bs" style="width:100%;justify-content:center">Talk to sales</a></div>
       </div>
     </div>
-    <p class="pnote rv">The average company pays $25–60/user/month for a single-model AI platform. OrgLogic gives you every model, full governance, and the first 100 users free.</p>
+    <p class="pnote rv">The average company pays $25-60/user/month for a single-model AI tool. OrgLogic gives you every model, named Agents, and full governance at $8/seat. BYOK at zero surcharge, or managed models at cost + 6%.</p>
   </div>
 </section>
 
@@ -838,9 +831,9 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
     <div class="seb rv">Get started</div>
     <h2 class="sh rv rv-d1">Live in five minutes. No sales call required.</h2>
     <div class="sgrid">
-      <div class="sc rv rv-d1"><div class="sn">01</div><h3>Sign up and invite your team</h3><p>Create your workspace in 30 seconds. Invite teammates by email or domain. Free for up to 100 users.</p></div>
-      <div class="sc rv rv-d2"><div class="sn">02</div><h3>Connect your API keys</h3><p>Add your OpenAI, Anthropic, or Google API keys. Your data stays in your environment. Takes 2 minutes.</p></div>
-      <div class="sc rv rv-d3"><div class="sn">03</div><h3>Start working with AI</h3><p>Your team gets instant access to every model — on web, Slack, Teams, Chrome, and API. Build and share prompts from day one.</p></div>
+      <div class="sc rv rv-d1"><div class="sn">01</div><h3>Sign up and create your Workspace</h3><p>Create your governed Workspace in 30 seconds. Invite teammates by email or domain. Free for up to 25 users.</p></div>
+      <div class="sc rv rv-d2"><div class="sn">02</div><h3>Connect your keys and systems</h3><p>Add your OpenAI, Anthropic, or Google API keys (BYOK, zero surcharge). Connect Salesforce, Jira, Confluence, or any system your Agents need.</p></div>
+      <div class="sc rv rv-d3"><div class="sn">03</div><h3>Deploy Agents to your team</h3><p>Start with the default Chat Agent or deploy pre-built Agents for sales, support, engineering, HR, and legal. Build custom Agents with Skills in minutes.</p></div>
     </div>
   </div>
 </section>
@@ -849,14 +842,14 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <section class="uc">
   <div class="ctn">
     <div class="seb rv">Use cases</div>
-    <h2 class="sh rv rv-d1">Built for every team.</h2>
+    <h2 class="sh rv rv-d1">Named Agents for every team.</h2>
     <div class="ucgrid">
-      <div class="ucc rv rv-d1"><h3>💻 Engineering</h3><p>Debug code, generate documentation, review PRs, and query internal systems — with the best model for each task.</p></div>
-      <div class="ucc rv rv-d2"><h3>📈 Sales</h3><p>Draft proposals, prepare for calls, analyze competitors, and build account summaries grounded in CRM data.</p></div>
-      <div class="ucc rv rv-d3"><h3>📣 Marketing</h3><p>Write on-brand content, translate campaigns, analyze performance, and generate creative briefs in minutes.</p></div>
-      <div class="ucc rv rv-d1"><h3>🎧 Customer Support</h3><p>Resolve tickets faster with AI grounded in your knowledge base. Auto-draft responses and surface relevant docs.</p></div>
-      <div class="ucc rv rv-d2"><h3>👥 HR &amp; People</h3><p>Answer policy questions, streamline onboarding, draft job descriptions, and analyze employee feedback at scale.</p></div>
-      <div class="ucc rv rv-d3"><h3>⚖️ Legal &amp; Compliance</h3><p>Review contracts, summarize regulatory changes, and generate compliance documentation with full audit trails.</p></div>
+      <div class="ucc rv rv-d1"><h3>💻 Engineering</h3><div class="agent-name">PR Review Agent · Debug Agent · Docs Agent</div><p>Reviews PRs on GitHub, debugs with logs + Jira context, and generates documentation from code changes. No copy-paste.</p></div>
+      <div class="ucc rv rv-d2"><h3>📈 Sales</h3><div class="agent-name">Deal Prep Agent · Account History Agent</div><p>Prepares call briefs from Salesforce data, drafts proposals, and pulls account history. Grounded in your CRM, not guesswork.</p></div>
+      <div class="ucc rv rv-d3"><h3>📣 Marketing</h3><div class="agent-name">Content Agent · Campaign Agent</div><p>Writes on-brand content using a Brand Voice Skill, translates campaigns, and generates creative briefs across Google Workspace.</p></div>
+      <div class="ucc rv rv-d1"><h3>🎧 Customer Support</h3><div class="agent-name">Ticket Resolution Agent</div><p>Auto-drafts responses from ServiceNow + Confluence. Resolves tickets end-to-end without leaving the ticketing system.</p></div>
+      <div class="ucc rv rv-d2"><h3>👥 HR &amp; People</h3><div class="agent-name">Policy Agent · Onboarding Agent</div><p>Answers policy questions from your handbook, streamlines onboarding, and generates JDs. Connected to your HR systems.</p></div>
+      <div class="ucc rv rv-d3"><h3>⚖️ Legal &amp; Compliance</h3><div class="agent-name">Contract Review Agent</div><p>Reviews contracts on SharePoint, flags risk, and generates compliance documentation. Full audit trail on every interaction.</p></div>
     </div>
   </div>
 </section>
@@ -866,18 +859,18 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
   <div class="ctn">
     <div class="seb rv">Security</div>
     <h2 class="sh rv rv-d1">Enterprise security.<br>Not an upgrade tier.</h2>
-    <p class="ss rv rv-d2">Governance isn't bolted on — it's the foundation. Every plan, including Free, runs on the same enterprise-grade infrastructure proven across 600+ deployments.</p>
+    <p class="ss rv rv-d2">Governance isn't bolted on — it's the default environment. Every plan, including Free, runs on the same enterprise-grade infrastructure proven across 600+ deployments.</p>
     <div class="secgrid">
-      <div class="si rv"><div class="sii">🔑</div>BYOK — Zero vendor data access</div>
-      <div class="si rv rv-d1"><div class="sii">🏆</div>SOC 2 Type II + ISO 27001</div>
-      <div class="si rv rv-d1"><div class="sii">🔒</div>AES-256 encryption at rest &amp; in transit</div>
-      <div class="si rv rv-d2"><div class="sii">🛡️</div>PII redaction on every query</div>
-      <div class="si rv rv-d2"><div class="sii">📋</div>Full audit trail on every interaction</div>
-      <div class="si rv rv-d3"><div class="sii">👤</div>Model-level access controls</div>
-      <div class="si rv rv-d3"><div class="sii">🏠</div>On-prem / VPC deployment available</div>
-      <div class="si rv rv-d4"><div class="sii">🚫</div>Data never used for model training</div>
+      <div class="si rv"><div class="sii">🔑</div>BYOK at zero surcharge — your data never touches our servers</div>
+      <div class="si rv rv-d1"><div class="sii">🏆</div>SOC 2 Type II + ISO 27001 certified</div>
+      <div class="si rv rv-d1"><div class="sii">🎯</div>Per-Agent Connector permissions (unique to OrgLogic)</div>
+      <div class="si rv rv-d2"><div class="sii">🛡️</div>PII redaction on every query, every model</div>
+      <div class="si rv rv-d2"><div class="sii">📋</div>Agent-level audit trail — exportable for compliance</div>
+      <div class="si rv rv-d3"><div class="sii">💰</div>Per-team budget controls and cost analytics</div>
+      <div class="si rv rv-d3"><div class="sii">👤</div>Model-level access controls per team</div>
+      <div class="si rv rv-d4"><div class="sii">🏠</div>On-prem / VPC deployment available</div>
       <div class="si rv rv-d4"><div class="sii">🌍</div>GDPR &amp; HIPAA compliant</div>
-      <div class="si rv rv-d5"><div class="sii">🔐</div>SSO &amp; MFA (SAML / OIDC)</div>
+      <div class="si rv rv-d5"><div class="sii">🔐</div>SSO &amp; SCIM (SAML / OIDC / Okta / Azure AD)</div>
     </div>
   </div>
 </section>
@@ -892,8 +885,8 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
       <div class="spsi"><div class="dot"></div>600+ enterprise deployments</div>
       <div class="spsi"><div class="dot"></div>SOC 2 Type II</div>
       <div class="spsi"><div class="dot"></div>ISO 27001</div>
-      <div class="spsi"><div class="dot"></div>5 surfaces</div>
-      <div class="spsi"><div class="dot"></div>Any LLM</div>
+      <div class="spsi"><div class="dot"></div>5 native surfaces</div>
+      <div class="spsi"><div class="dot"></div>Any LLM · BYOK</div>
     </div>
   </div>
 </section>
@@ -901,34 +894,13 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
 <!-- FINAL CTA -->
 <section class="fcta" id="contact">
   <div class="ctn">
-    <h2 class="sh rv">Your first 100 users are free.<br>See OrgLogic in 30 minutes.</h2>
-    <p class="ss rv rv-d1">We'll walk you through the platform, connect your first knowledge source, and have your team using OrgLogic the same day.</p>
-    <div rv rv-d2 style="max-width:440px;margin:0 auto;position:relative;padding-top:32px">
-      <form class="demo-form" id="demo-form">
-        <input type="hidden" name="_subject" value="[OrgLogic] Demo Request">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none">
-        <div class="form-row">
-          <input type="text" name="first_name" placeholder="First Name" required>
-          <input type="text" name="last_name" placeholder="Last Name" required>
-        </div>
-        <input type="email" name="email" placeholder="Work Email" required>
-        <input type="text" name="company" placeholder="Company" required>
-        <select name="size" required>
-          <option value="" disabled selected>Company Size</option>
-          <option value="1-200">1–200</option>
-          <option value="200-500">200–500</option>
-          <option value="500-2000">500–2,000</option>
-          <option value="2000-10000">2,000–10,000</option>
-          <option value="10000+">10,000+</option>
-        </select>
-        <button type="submit" class="submit-btn" id="submit-btn">Book my demo →</button>
-        <div class="form-note">30-min walkthrough · Live same day · No commitment</div>
-        <div id="form-status" style="text-align:center;margin-top:10px;font-size:13px;font-weight:600;display:none"></div>
-      </form>
+    <h2 class="sh rv">Free for 25 users. $8/seat after that.<br>Live in 5 minutes.</h2>
+    <p class="ss rv rv-d1">Sign up, connect your API keys, and deploy AI Agents to your team today. No sales call required. Or book a 30-minute walkthrough if you want a guided setup.</p>
+    <div class="ctab rv rv-d2">
+      <a href="https://app.orglogic.ai/signup" class="bp blg">Sign up free</a>
+      <a href="https://calendly.com/d/cyqt-jps-sh8/orglogic-demo" target="_blank" class="bs blg">Book a demo</a>
     </div>
-    <div class="fnote rv rv-d3" style="margin-top:28px">Free up to 100 users · BYOK included · No credit card required</div>
+    <div class="fnote rv rv-d3">Free up to 25 users · BYOK included · No credit card required</div>
   </div>
 </section>
 
@@ -938,10 +910,10 @@ footer{padding:56px 0 40px;border-top:1px solid var(--bdrf)}
     <div class="fgr">
       <div class="fbr">
         <a href="#" class="nlogo"><img src="orglogic-logo.svg" alt="OrgLogic">OrgLogic</a>
-        <p>One AI workspace for your entire company. Every model, full governance, free for your first 100 users.</p>
+        <p>The AI workspace for your entire company. Named Agents, every model, full governance. Free for 25 users.</p>
       </div>
       <div class="fcl"><h4>Product</h4><a href="#platform">Platform</a><a href="#pricing">Pricing</a><a href="#security">Security</a><a href="#">Changelog</a></div>
-      <div class="fcl"><h4>Company</h4><a href="#">About</a><a href="#">Blog</a><a href="/cdn-cgi/l/email-protection#157d7079797a557a6772797a727c763b747c">Contact</a><a href="#">Careers</a></div>
+      <div class="fcl"><h4>Company</h4><a href="#">About</a><a href="#">Blog</a><a href="/cdn-cgi/l/email-protection#177f7279797a577867727978707e743974786a">Contact</a><a href="#">Careers</a></div>
       <div class="fcl"><h4>Legal</h4><a href="https://www.troopr.ai/privacy">Privacy</a><a href="https://www.troopr.ai/tos">Terms</a><a href="https://www.troopr.ai/security">Security</a></div>
     </div>
     <div class="fbot">© 2026 Troopr Labs Inc. All rights reserved.</div>
@@ -966,75 +938,6 @@ document.addEventListener('DOMContentLoaded',function(){
       var t=document.querySelector(href);
       if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
     });
-  });
-
-  // Build email in JS to prevent scraping
-  var _ea='orglogic';var _eb='troopr.ai';var _em=_ea+'@'+_eb;
-
-  // Form submission via FormSubmit.co AJAX
-  document.getElementById('demo-form').addEventListener('submit',function(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    var form=this;
-    var d=new FormData(form);
-    var fn=d.get('first_name');
-    var ln=d.get('last_name');
-    var em=d.get('email');
-    var co=d.get('company');
-    var sz=d.get('size');
-    var s=document.getElementById('form-status');
-    var btn=document.getElementById('submit-btn');
-
-    if(!fn||!ln||!em||!co||!sz){
-      s.textContent='Please fill in all fields.';
-      s.style.display='block';
-      s.style.color='#ef4444';
-      return false;
-    }
-
-    btn.disabled=true;
-    btn.textContent='Sending...';
-
-    var endpoint='https://formsubmit.co/ajax/'+_em;
-    var payload=JSON.stringify({
-      first_name:fn,last_name:ln,email:em,company:co,size:sz,
-      _subject:'[OrgLogic] Demo Request — '+co,
-      _template:'table'
-    });
-
-    fetch(endpoint,{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:payload
-    })
-    .then(function(r){return r.json()})
-    .then(function(data){
-      if(data.success===false||data.success==='false'){
-        throw new Error(data.message||'Submission failed');
-      }
-      form.style.display='none';
-      s.innerHTML=''
-        +'<div style="padding:24px 0;text-align:center">'
-        +'<div style="font-size:32px;margin-bottom:12px">✅</div>'
-        +'<div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:6px">Thank you, '+fn+'!</div>'
-        +'<div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:4px">Your demo request for <strong>'+co+'</strong> has been submitted.</div>'
-        +'<div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:16px">We\'ll reach out to <strong>'+em+'</strong> within 4 hours.</div>'
-        +'<div style="font-size:12px;color:rgba(255,255,255,.35)">Questions? Email us at <a href="'+'mail'+'to:'+_em+'" style="color:#A78BFA;text-decoration:none;font-weight:600">'+_em+'</a></div>'
-        +'</div>';
-      s.style.display='block';
-      s.style.color='inherit';
-    })
-    .catch(function(err){
-      btn.disabled=false;
-      btn.textContent='Book my demo →';
-      var msg=(err&&err.message&&err.message!=='Submission failed')?err.message:'';
-      s.innerHTML=(msg?'<strong>'+msg+'</strong><br>':'')+'Something went wrong. Please try again or email us at <a href="'+'mail'+'to:'+_em+'" style="color:#A78BFA;text-decoration:none;font-weight:600">'+_em+'</a>';
-      s.style.display='block';
-      s.style.color='#ef4444';
-    });
-
-    return false;
   });
 });
 </script>
